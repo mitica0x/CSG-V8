@@ -29,14 +29,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { title: 'COINsiglieri — Bridging Vision and Execution in Web3' },
+      { name: 'description', content: 'Web3-native since 2017. Ecosystem operator — licensing, tokenomics, fundraising, smart contracts, crypto payments, and go-to-market.' },
+      { name: 'author', content: 'COINsiglieri' },
+      { property: 'og:title', content: 'COINsiglieri — Bridging Vision and Execution in Web3' },
+      { property: 'og:description', content: 'Web3-native since 2017. Ecosystem operator with real market presence.' },
+      { property: 'og:type', content: 'website' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@COINsiglieriRO' },
     ],
     links: [
       {
