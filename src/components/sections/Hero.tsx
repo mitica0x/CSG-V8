@@ -60,24 +60,10 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center py-32 pt-40">
         <motion.div variants={container} initial="hidden" animate="visible">
 
-          {/* Badge */}
-          <motion.div variants={item} className="flex justify-center mb-8">
-            <span
-              className="px-4 py-1.5 rounded-full text-xs font-semibold tracking-[0.2em] uppercase"
-              style={{
-                background: 'rgba(6,182,212,0.08)',
-                border: '1px solid rgba(6,182,212,0.25)',
-                color: '#22d3ee',
-              }}
-            >
-              Web3-Native Since 2017
-            </span>
-          </motion.div>
-
           {/* Heading */}
           <motion.h1
             variants={item}
-            className="font-bold leading-none tracking-tight mb-8"
+            className="font-bold leading-none tracking-tight mb-10"
             style={{ fontSize: 'clamp(3.5rem, 10vw, 9rem)', letterSpacing: '-0.02em' }}
           >
             <span style={{ color: '#f8fafc' }}>COIN</span>
@@ -89,15 +75,15 @@ export default function Hero() {
             </span>
           </motion.h1>
 
-          {/* Tagline */}
+          {/* Tagline (motto) — bigger */}
           <motion.p
             variants={item}
-            className="font-medium mb-6"
+            className="font-semibold mb-6"
             style={{
-              fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
-              color: '#94a3b8',
-              lineHeight: 1.5,
-              letterSpacing: '-0.01em',
+              fontSize: 'clamp(1.5rem, 3.6vw, 2.4rem)',
+              color: '#cbd5e1',
+              lineHeight: 1.25,
+              letterSpacing: '-0.015em',
             }}
           >
             Bridging the Gap between{' '}
@@ -106,58 +92,52 @@ export default function Hero() {
             <span className="gradient-cyan">Execution</span>
           </motion.p>
 
-          {/* Description */}
+          {/* Description — centered under motto */}
           <motion.p
             variants={item}
-            className="max-w-2xl mx-auto mb-8 leading-relaxed"
-            style={{ color: '#64748b', fontSize: '1rem' }}
+            className="max-w-3xl mx-auto mb-10 leading-relaxed text-center"
+            style={{ color: '#94a3b8', fontSize: 'clamp(1rem, 1.4vw, 1.15rem)' }}
           >
-            The one-stop-shop for Web3 projects — from idea to execution across strategy, legal,
-            licensing, tokenomics, fundraising, smart contracts, crypto payments, marketing, and go-to-market.
+            The one-stop-Web3-shop — from idea to execution across legal and licensing,
+            strategy and fundraising, smart contract development, marketing and go-to-market.
           </motion.p>
 
-          {/* Sub-tagline */}
-          <motion.p
-            variants={item}
-            className="text-sm font-medium mb-12"
-            style={{ color: '#475569' }}
-          >
-            Curated experts. One management. Synced vision.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div variants={item} className="flex flex-wrap justify-center gap-4 mb-16">
+          {/* CTAs — bigger, more readable */}
+          <motion.div variants={item} className="flex flex-wrap justify-center gap-5 mb-14">
             <button
               onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 cursor-pointer"
+              className="px-10 py-4.5 rounded-xl text-base font-semibold transition-all duration-300 cursor-pointer"
               style={{
                 background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                border: '1px solid rgba(255,255,255,0.18)',
                 color: '#f8fafc',
+                padding: '1.05rem 2.4rem',
+                fontSize: '1rem',
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement
                 el.style.background = 'rgba(255,255,255,0.09)'
-                el.style.borderColor = 'rgba(255,255,255,0.22)'
+                el.style.borderColor = 'rgba(255,255,255,0.3)'
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLElement
                 el.style.background = 'rgba(255,255,255,0.05)'
-                el.style.borderColor = 'rgba(255,255,255,0.12)'
+                el.style.borderColor = 'rgba(255,255,255,0.18)'
               }}
             >
               Explore Services
-              <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
 
             <button
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-7 py-3.5 rounded-xl text-sm font-bold cursor-pointer transition-all duration-300"
+              className="rounded-xl font-bold cursor-pointer transition-all duration-300"
               style={{
                 background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)',
                 color: '#030712',
                 border: 'none',
                 boxShadow: '0 0 28px rgba(6,182,212,0.45)',
+                padding: '1.05rem 2.4rem',
+                fontSize: '1rem',
               }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 50px rgba(6,182,212,0.7)')}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 28px rgba(6,182,212,0.45)')}
@@ -166,16 +146,16 @@ export default function Hero() {
             </button>
           </motion.div>
 
-          {/* Trust pills */}
-          <motion.div variants={item} className="flex flex-wrap justify-center gap-2 mb-12">
+          {/* Trust pills — slightly bigger, more readable */}
+          <motion.div variants={item} className="flex flex-wrap justify-center gap-2.5 mb-10">
             {trustPills.map((pill) => (
               <span
                 key={pill}
-                className="px-3 py-1 rounded-full text-xs font-medium"
+                className="px-4 py-1.5 rounded-full text-sm font-medium"
                 style={{
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  color: '#475569',
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  color: '#94a3b8',
                 }}
               >
                 {pill}
@@ -183,21 +163,25 @@ export default function Hero() {
             ))}
           </motion.div>
 
-          {/* Partner names */}
-          <motion.div variants={item} className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 mb-6">
+          {/* Partner names — more readable */}
+          <motion.div variants={item} className="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 mb-6">
             {partners.map((p) => (
               <span
                 key={p}
-                className="text-xs font-semibold tracking-widest uppercase"
-                style={{ color: '#2d3748' }}
+                className="text-sm font-semibold tracking-widest uppercase"
+                style={{ color: '#475569' }}
               >
                 {p}
               </span>
             ))}
           </motion.div>
 
-          <motion.p variants={item} className="text-xs italic" style={{ color: '#2d3748' }}>
-            Early movers. Ecosystem operators. Execution-driven since 2017.
+          <motion.p
+            variants={item}
+            className="italic"
+            style={{ color: '#64748b', fontSize: '0.95rem', letterSpacing: '0.02em' }}
+          >
+            Early movers · Ecosystem operators · Execution-driven since 2017
           </motion.p>
 
         </motion.div>
