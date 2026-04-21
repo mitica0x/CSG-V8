@@ -4,7 +4,7 @@ const cards = [
   {
     category: 'Partnership',
     title: 'Bybit Brand Ambassador',
-    body: 'Official Brand Ambassador for Bybit in Romania since 2024. Managing events, affiliate programs, sponsorships. Beach, Please! 2024.',
+    body: 'Official Brand Ambassador for Bybit in Romania. Events, affiliates, sponsorships.',
     accent: '#06b6d4',
   },
   {
@@ -16,7 +16,7 @@ const cards = [
   {
     category: 'Conferences',
     title: 'Global Presence',
-    body: 'TOKEN2049 Singapore · EBC Barcelona · NFT Show Europe Valencia · Blockchain Economy Summit · NBX Warsaw · Crypto Gibraltar · GoTech World.',
+    body: 'TOKEN2049 · EBC · NFT Show Europe · Blockchain Economy Summit · NBX Warsaw · Crypto Gibraltar · GoTech World.',
     accent: '#06b6d4',
   },
   {
@@ -56,7 +56,7 @@ export default function Ecosystem() {
       />
 
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section header */}
+        {/* Section header — only Track Record + The Ecosystem */}
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -64,30 +64,31 @@ export default function Ecosystem() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: '#22d3ee' }}>
+          <p
+            className="font-semibold tracking-[0.25em] uppercase mb-5"
+            style={{ color: '#22d3ee', fontSize: '0.85rem' }}
+          >
             Track Record
           </p>
           <h2
-            className="font-bold mb-5"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', color: '#f8fafc', letterSpacing: '-0.02em' }}
+            className="font-bold mx-auto"
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#f8fafc', letterSpacing: '-0.02em', lineHeight: 1.05 }}
           >
-            In the Ecosystem
+            The Ecosystem
           </h2>
-          <p className="text-lg" style={{ color: '#64748b' }}>
-            Where we've been. What we've built.
-          </p>
         </motion.div>
 
-        {/* Cards — equal-height grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Cards — bigger text, bigger padding, centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {cards.map((card, i) => (
             <motion.div
               key={card.title}
-              className="group relative rounded-xl p-8 flex flex-col cursor-default transition-all duration-300"
+              className="group relative rounded-2xl p-10 flex flex-col cursor-default transition-all duration-300"
               style={{
                 background: 'rgba(255,255,255,0.025)',
-                border: '1px solid rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.07)',
                 backdropFilter: 'blur(12px)',
+                minHeight: 280,
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -99,27 +100,26 @@ export default function Ecosystem() {
                 y: -4,
               }}
             >
-              {/* Top accent line */}
               <div
-                className="absolute top-0 left-0 right-0 h-px rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute top-0 left-0 right-0 h-px rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ background: `linear-gradient(90deg, transparent, ${card.accent}, transparent)` }}
               />
 
               <p
-                className="text-xs font-semibold tracking-[0.2em] uppercase mb-4"
-                style={{ color: card.accent }}
+                className="font-semibold tracking-[0.25em] uppercase mb-5"
+                style={{ color: card.accent, fontSize: '0.78rem' }}
               >
                 {card.category}
               </p>
 
               <h3
-                className="font-bold mb-4"
-                style={{ fontSize: '1.1rem', color: '#f8fafc', lineHeight: 1.35 }}
+                className="font-bold mb-5"
+                style={{ fontSize: '1.5rem', color: '#f8fafc', lineHeight: 1.25 }}
               >
                 {card.title}
               </h3>
 
-              <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
+              <p style={{ color: '#94a3b8', fontSize: '1rem', lineHeight: 1.7 }}>
                 {card.body}
               </p>
             </motion.div>
