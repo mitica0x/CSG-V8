@@ -1,20 +1,26 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { Menu, X } from 'lucide-react'
+import { Link, useNavigate } from '@tanstack/react-router'
 
-const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Crypto POS', href: '#crypto-pos' },
-  { label: 'Competition', href: '#competition' },
-  { label: 'Media', href: '#media' },
-  { label: 'Team', href: '#people' },
-  { label: 'Contact', href: '#contact' },
+type RoutePath = '/' | '/services' | '/products' | '/crypto-pos' | '/competition' | '/media' | '/team' | '/contact'
+type NavLink = { label: string; type: 'scroll' | 'route'; href?: string; to?: RoutePath; accent?: boolean }
+
+const navLinks: NavLink[] = [
+  { label: 'About',       type: 'scroll', href: '#about' },
+  { label: 'Services',    type: 'route',  to: '/services' },
+  { label: 'Products',    type: 'route',  to: '/products', accent: true },
+  { label: 'Crypto POS',  type: 'route',  to: '/crypto-pos' },
+  { label: 'Competition', type: 'route',  to: '/competition' },
+  { label: 'Media',       type: 'route',  to: '/media' },
+  { label: 'Team',        type: 'route',  to: '/team' },
+  { label: 'Contact',     type: 'route',  to: '/contact' },
 ]
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -22,10 +28,14 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (link: NavLink) => {
     setMobileOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (link.type === 'scroll') {
+      const el = document.querySelector(link.href!)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate({ to: link.to! })
+    }
   }
 
   return (
@@ -39,13 +49,13 @@ export default function Navigation() {
         }}
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1.5 }}
+        transition={{ duration: 0.5 }}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo — bigger, more prominent */}
-          <a
-            href="#hero"
-            onClick={(e) => { e.preventDefault(); handleNavClick('#hero') }}
+          <Link
+            to="/"
+            onClick={() => setMobileOpen(false)}
             className="flex items-center gap-0 cursor-pointer select-none flex-none"
             style={{ textDecoration: 'none' }}
           >
@@ -61,24 +71,30 @@ export default function Navigation() {
             >
               siglieri
             </span>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-7">
-            {links.map((link) => (
+            {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => handleNavClick(link.href)}
+                onClick={() => handleNavClick(link)}
+                style={{
+                  fontSize: '0.875rem',
+                  color: link.accent ? '#06b6d4' : '#94a3b8',
+                  background: 'none',
+                  border: 'none',
+                  padding: '4px 0',
+                }}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = link.accent ? '#22d3ee' : '#f8fafc')}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = link.accent ? '#06b6d4' : '#94a3b8')}
                 className="font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap"
-                style={{ fontSize: '0.875rem', color: '#94a3b8', background: 'none', border: 'none', padding: '4px 0' }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#f8fafc')}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#94a3b8')}
               >
                 {link.label}
               </button>
             ))}
             <button
-              onClick={() => handleNavClick('#contact')}
+              onClick={() => navigate({ to: '/contact' })}
               className="font-bold transition-all duration-200 cursor-pointer whitespace-nowrap"
               style={{
                 fontSize: '0.875rem',
@@ -120,12 +136,12 @@ export default function Navigation() {
             transition={{ duration: 0.25 }}
           >
             <nav className="flex flex-col items-center gap-6">
-              {links.map((link, i) => (
+              {navLinks.map((link, i) => (
                 <motion.button
                   key={link.label}
-                  onClick={() => handleNavClick(link.href)}
+                  onClick={() => handleNavClick(link)}
                   className="text-2xl font-semibold cursor-pointer"
-                  style={{ background: 'none', border: 'none', color: '#f8fafc', fontFamily: 'Space Grotesk, sans-serif' }}
+                  style={{ background: 'none', border: 'none', color: link.accent ? '#06b6d4' : '#f8fafc', fontFamily: 'Space Grotesk, sans-serif' }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.06 }}
@@ -135,7 +151,7 @@ export default function Navigation() {
                 </motion.button>
               ))}
               <motion.button
-                onClick={() => handleNavClick('#contact')}
+                onClick={() => { setMobileOpen(false); navigate({ to: '/contact' }) }}
                 className="mt-4 px-8 py-3 rounded-lg text-base font-semibold cursor-pointer"
                 style={{
                   background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)',
@@ -144,7 +160,7 @@ export default function Navigation() {
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: links.length * 0.06 }}
+                transition={{ delay: navLinks.length * 0.06 }}
               >
                 Start a Project
               </motion.button>

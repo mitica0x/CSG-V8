@@ -1,41 +1,24 @@
+import { Link } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 
 const cards = [
   {
-    category: 'Partnership',
-    title: 'Bybit Brand Ambassador',
-    body: 'Official Brand Ambassador for Bybit in Romania. Events, affiliates, sponsorships.',
-    accent: '#06b6d4',
-  },
-  {
     category: 'Flagship',
     title: 'Web3 Startup Competition',
     body: 'Banking 4.0 × Banca Transilvania (2023) — €152,000+. NBX Warsaw (2025) — €287,000+. 30+ startups shaped.',
-    accent: '#8b5cf6',
-  },
-  {
-    category: 'Conferences',
-    title: 'Global Presence',
-    body: 'TOKEN2049 · EBC · NFT Show Europe · Blockchain Economy Summit · NBX Warsaw · Crypto Gibraltar · GoTech World.',
     accent: '#06b6d4',
-  },
-  {
-    category: 'Press',
-    title: 'Media & Publications',
-    body: 'The Paypers · Agerpres · OTcrypto · HackerNoon · Crypto.ro · NoCash.ro · Clutch.co · Qwoted — real editorial coverage.',
-    accent: '#8b5cf6',
   },
   {
     category: 'Real-World Execution',
     title: 'Crypto Payments at Scale',
-    body: 'Beach, Please! 2024 — 120,000+ attendees. LUNU · Global Records · Bybit · Nuba. First crypto POS deployment in Romania.',
-    accent: '#06b6d4',
+    body: 'Beach, Please! 2024 — 120,000+ attendees. First crypto POS deployment in Romania. LUNU · Global Records · Bybit · Nuba.',
+    accent: '#8b5cf6',
   },
   {
     category: 'Network',
     title: '60+ Partners & 4,000+ VCs',
     body: 'Curated ecosystem built over 7+ years. Capital access, strategic introductions, and market presence that compounds.',
-    accent: '#8b5cf6',
+    accent: '#06b6d4',
   },
 ]
 
@@ -43,7 +26,7 @@ export default function Ecosystem() {
   return (
     <section
       id="ecosystem"
-      className="relative py-32 overflow-hidden"
+      className="relative py-24 overflow-hidden section-divide"
       style={{ background: 'linear-gradient(180deg, #030712 0%, #06101d 100%)' }}
     >
       <div
@@ -56,7 +39,6 @@ export default function Ecosystem() {
       />
 
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section header — only Track Record + The Ecosystem */}
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -64,31 +46,30 @@ export default function Ecosystem() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p
-            className="font-semibold tracking-[0.25em] uppercase mb-5"
-            style={{ color: '#22d3ee', fontSize: '0.85rem' }}
-          >
+          <p className="text-sm font-semibold tracking-[0.22em] uppercase mb-4" style={{ color: '#22d3ee' }}>
             Track Record
           </p>
           <h2
-            className="font-bold mx-auto"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#f8fafc', letterSpacing: '-0.02em', lineHeight: 1.05 }}
+            className="font-bold"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', color: '#f8fafc', letterSpacing: '-0.02em', marginBottom: '1.5rem' }}
           >
-            The Ecosystem
+            In the Ecosystem
           </h2>
+          <p style={{ color: '#64748b', fontSize: '1.125rem' }}>
+            Where we've been. What we've built.
+          </p>
         </motion.div>
 
-        {/* Cards — bigger text, bigger padding, centered */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
           {cards.map((card, i) => (
             <motion.div
               key={card.title}
-              className="group relative rounded-2xl p-10 flex flex-col cursor-default transition-all duration-300"
+              className="group relative rounded-xl p-8 flex flex-col text-center cursor-default transition-all duration-300"
               style={{
                 background: 'rgba(255,255,255,0.025)',
-                border: '1px solid rgba(255,255,255,0.07)',
+                border: '1px solid rgba(255,255,255,0.06)',
                 backdropFilter: 'blur(12px)',
-                minHeight: 280,
+                minHeight: 220,
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -101,29 +82,45 @@ export default function Ecosystem() {
               }}
             >
               <div
-                className="absolute top-0 left-0 right-0 h-px rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute top-0 left-0 right-0 h-px rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ background: `linear-gradient(90deg, transparent, ${card.accent}, transparent)` }}
               />
 
               <p
-                className="font-semibold tracking-[0.25em] uppercase mb-5"
-                style={{ color: card.accent, fontSize: '0.78rem' }}
+                className="text-sm font-semibold tracking-[0.22em] uppercase mb-4"
+                style={{ color: card.accent }}
               >
                 {card.category}
               </p>
 
               <h3
-                className="font-bold mb-5"
-                style={{ fontSize: '1.5rem', color: '#f8fafc', lineHeight: 1.25 }}
+                className="font-bold mb-4"
+                style={{ fontSize: '1.15rem', color: '#f8fafc', lineHeight: 1.35 }}
               >
                 {card.title}
               </h3>
 
-              <p style={{ color: '#94a3b8', fontSize: '1rem', lineHeight: 1.7 }}>
+              <p style={{ color: '#64748b', fontSize: '1rem', lineHeight: 1.75 }}>
                 {card.body}
               </p>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-10 text-right">
+          <Link
+            to="/competition"
+            style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: 11,
+              color: '#64748b',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              textDecoration: 'none',
+            }}
+          >
+            See full track record →
+          </Link>
         </div>
       </div>
     </section>

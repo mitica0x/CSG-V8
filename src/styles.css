@@ -97,6 +97,23 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
+/* COINsiglieri design tokens (appended — does not modify the oklch system above).
+   .gradient-cyan / .gradient-purple / .glass already exist further down in this file. */
+:root {
+  --cs-bg:         #030712;
+  --cs-surface:    #0a0e1a;
+  --cs-surface-2:  #0d1117;
+  --cs-border:     rgba(255,255,255,0.06);
+  --cs-border-mid: rgba(255,255,255,0.10);
+  --cs-text:       #f8fafc;
+  --cs-muted:      #64748b;
+  --cs-secondary:  #94a3b8;
+  --cs-cyan:       #06b6d4;
+  --cs-cyan-light: #22d3ee;
+  --cs-purple:     #8b5cf6;
+  --cs-amber:      #D4A853;
+}
+
 .dark {
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);

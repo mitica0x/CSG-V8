@@ -30,3 +30,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code / Codex local workspace (not app code)
+.claude
+.codex
+__pycache__/
+*.pyc
+
+# Stray local databases (e.g. ruflo/ruvector)
+ruvector.db
+*.db
