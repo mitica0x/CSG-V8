@@ -1,4 +1,4 @@
-import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
+import { Outlet, createRootRoute, HeadContent, Scripts, Link } from '@tanstack/react-router'
 import appCss from '../index.css?url'
 
 export const Route = createRootRoute({
@@ -24,6 +24,30 @@ export const Route = createRootRoute({
       { rel: 'stylesheet', href: appCss },
     ],
   }),
+  notFoundComponent: () => (
+    <div
+      style={{
+        minHeight: '100vh',
+        background: '#030712',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 16,
+        textAlign: 'center',
+        padding: 24,
+      }}
+    >
+      <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 96, fontWeight: 700, color: '#06b6d4', lineHeight: 1 }}>404</p>
+      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 20, color: '#f8fafc' }}>Page not found</p>
+      <Link
+        to="/"
+        style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 13, color: '#64748b', textDecoration: 'none', marginTop: 8 }}
+      >
+        ← Back to home
+      </Link>
+    </div>
+  ),
   component: () => (
     <html lang="en">
       <head><HeadContent /></head>

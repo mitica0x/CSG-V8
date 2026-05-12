@@ -1,7 +1,8 @@
 import { Link } from '@tanstack/react-router'
 import { Link2, AtSign, Mail, ExternalLink } from 'lucide-react'
 
-type FooterLink = { label: string; to: string; hash?: string }
+type RoutePath = '/' | '/services' | '/products' | '/crypto-pos' | '/competition' | '/media' | '/team' | '/contact'
+type FooterLink = { label: string; to: RoutePath; hash?: string }
 
 const navLinks: FooterLink[] = [
   { label: 'About', to: '/', hash: 'about' },

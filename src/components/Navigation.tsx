@@ -3,7 +3,8 @@ import { Link } from '@tanstack/react-router'
 import { motion, AnimatePresence } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 
-type NavLink = { label: string; to: string; hash?: string; accent?: boolean }
+type RoutePath = '/' | '/services' | '/products' | '/crypto-pos' | '/competition' | '/media' | '/team' | '/contact'
+type NavLink = { label: string; to: RoutePath; hash?: string; accent?: boolean }
 
 const links: NavLink[] = [
   { label: 'About', to: '/', hash: 'about' },
@@ -39,7 +40,7 @@ export default function Navigation() {
         }}
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1.5 }}
+        transition={{ duration: 0.5 }}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
