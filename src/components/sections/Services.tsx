@@ -100,23 +100,32 @@ export default function Services() {
         {/* Cards — drag scroll with right-edge mask fade */}
         <div className="relative">
           {scrollLeft > 20 && (
-            <span
-              aria-hidden="true"
+            <button
+              type="button"
+              aria-label="Scroll left"
+              onClick={() => scrollRef.current?.scrollBy({ left: -420, behavior: 'smooth' })}
               style={{
                 position: 'absolute',
-                left: 8,
+                left: 10,
                 top: '50%',
                 transform: 'translateY(-50%)',
-                color: 'white',
-                opacity: 0.22,
-                pointerEvents: 'none',
-                zIndex: 2,
+                color: 'var(--cs-cyan, #06b6d4)',
+                opacity: 0.35,
+                pointerEvents: 'auto',
+                zIndex: 3,
+                cursor: 'pointer',
+                background: 'none',
+                border: 'none',
+                padding: 0,
                 display: 'flex',
                 alignItems: 'center',
+                transition: 'opacity 200ms ease',
               }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.75' }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.35' }}
             >
               <ChevronLeft size={20} />
-            </span>
+            </button>
           )}
           <div
             ref={scrollRef}
@@ -200,23 +209,32 @@ export default function Services() {
           </div>
 
           {scrollProgress < 95 && (
-            <span
-              aria-hidden="true"
+            <button
+              type="button"
+              aria-label="Scroll right"
+              onClick={() => scrollRef.current?.scrollBy({ left: 420, behavior: 'smooth' })}
               style={{
                 position: 'absolute',
-                right: 8,
+                right: 10,
                 top: '50%',
                 transform: 'translateY(-50%)',
-                color: 'white',
-                opacity: 0.22,
-                pointerEvents: 'none',
-                zIndex: 2,
+                color: 'var(--cs-cyan, #06b6d4)',
+                opacity: 0.35,
+                pointerEvents: 'auto',
+                zIndex: 3,
+                cursor: 'pointer',
+                background: 'none',
+                border: 'none',
+                padding: 0,
                 display: 'flex',
                 alignItems: 'center',
+                transition: 'opacity 200ms ease',
               }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.75' }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.35' }}
             >
               <ChevronRight size={20} />
-            </span>
+            </button>
           )}
 
           {/* Scrubber track */}
