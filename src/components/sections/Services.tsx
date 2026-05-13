@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
-import { ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const services = [
   {
@@ -50,6 +50,7 @@ const MASK_FADE_RIGHT = 'linear-gradient(to right, black 85%, transparent 100%)'
 export default function Services() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [scrollLeft, setScrollLeft] = useState(0)
   const [hintVisible, setHintVisible] = useState(true)
 
   useEffect(() => {
@@ -61,6 +62,7 @@ export default function Services() {
     const el = scrollRef.current
     if (!el) return
     const max = el.scrollWidth - el.clientWidth
+    setScrollLeft(el.scrollLeft)
     setScrollProgress(max > 0 ? (el.scrollLeft / max) * 100 : 0)
   }
 
@@ -97,6 +99,25 @@ export default function Services() {
 
         {/* Cards — drag scroll with right-edge mask fade */}
         <div className="relative">
+          {scrollLeft > 20 && (
+            <span
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                left: 8,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                color: 'white',
+                opacity: 0.22,
+                pointerEvents: 'none',
+                zIndex: 2,
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <ChevronLeft size={20} />
+            </span>
+          )}
           <div
             ref={scrollRef}
             onScroll={onScroll}
@@ -177,6 +198,26 @@ export default function Services() {
               </motion.div>
             ))}
           </div>
+
+          {scrollProgress < 95 && (
+            <span
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                right: 8,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                color: 'white',
+                opacity: 0.22,
+                pointerEvents: 'none',
+                zIndex: 2,
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <ChevronRight size={20} />
+            </span>
+          )}
 
           {/* Scrubber track */}
           <div
