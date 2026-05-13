@@ -47,6 +47,9 @@ const services = [
 
 export default function Services() {
   const scrollRef = useRef<HTMLDivElement>(null)
+  const scroll = (dir: 'left' | 'right') => {
+    scrollRef.current?.scrollBy({ left: dir === 'left' ? -320 : 320, behavior: 'smooth' })
+  }
 
   return (
     <section
@@ -63,22 +66,40 @@ export default function Services() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
-            Capabilities
-          </p>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
-            <h2
-              className="font-bold"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', color: '#f8fafc', letterSpacing: '-0.02em' }}
-            >
-              Services &{' '}
-              <span className="gradient-cyan">Deliverables</span>
-            </h2>
-            <p className="max-w-sm text-base leading-relaxed" style={{ color: '#64748b' }}>
-              COINsiglieri delivers turnkey support across strategy, product, legal, fundraising,
-              infrastructure, marketing, and real-world execution.
-            </p>
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 28 }}>
+            <div>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
+                Capabilities
+              </p>
+              <h2
+                className="font-bold"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', color: '#f8fafc', letterSpacing: '-0.02em' }}
+              >
+                Services &{' '}
+                <span className="gradient-cyan">Deliverables</span>
+              </h2>
+            </div>
+            <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
+              <button
+                onClick={() => scroll('left')}
+                style={{ width: 36, height: 36, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)', color: '#f8fafc', cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#06b6d4'; e.currentTarget.style.color = '#06b6d4'; e.currentTarget.style.background = 'rgba(6,182,212,0.1)' }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#f8fafc'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
+                aria-label="Scroll left"
+              >←</button>
+              <button
+                onClick={() => scroll('right')}
+                style={{ width: 36, height: 36, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)', color: '#f8fafc', cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#06b6d4'; e.currentTarget.style.color = '#06b6d4'; e.currentTarget.style.background = 'rgba(6,182,212,0.1)' }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#f8fafc'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
+                aria-label="Scroll right"
+              >→</button>
+            </div>
           </div>
+          <p className="max-w-sm text-base leading-relaxed" style={{ color: '#64748b' }}>
+            COINsiglieri delivers turnkey support across strategy, product, legal, fundraising,
+            infrastructure, marketing, and real-world execution.
+          </p>
         </motion.div>
 
         {/* Horizontal drag scroll */}

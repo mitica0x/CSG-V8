@@ -1,12 +1,14 @@
 import { Link2, AtSign, Mail, ExternalLink } from 'lucide-react'
+import { Link } from '@tanstack/react-router'
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Crypto POS', href: '#crypto-pos' },
-  { label: 'Competition', href: '#competition' },
-  { label: 'Team', href: '#people' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About',       to: '/' },
+  { label: 'Services',    to: '/services' },
+  { label: 'Crypto POS',  to: '/crypto-pos' },
+  { label: 'Competition', to: '/competition' },
+  { label: 'Media',       to: '/media' },
+  { label: 'Team',        to: '/team' },
+  { label: 'Contact',     to: '/contact' },
 ]
 
 export default function Footer() {
@@ -31,7 +33,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Top row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
             <div className="mb-4">
@@ -97,22 +99,51 @@ export default function Footer() {
             </p>
             <div className="grid grid-cols-2 gap-2">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.to}
                   className="text-sm transition-colors duration-200"
                   style={{ color: '#475569', textDecoration: 'none' }}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    const el = document.querySelector(link.href)
-                    if (el) el.scrollIntoView({ behavior: 'smooth' })
-                  }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#94a3b8')}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#475569')}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
+            </div>
+          </div>
+
+          {/* Products */}
+          <div>
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
+              style={{ color: '#475569', letterSpacing: '0.18em' }}
+            >
+              Products
+            </p>
+            <div className="flex flex-col gap-2">
+              <a
+                href="https://horizon.coinsiglieri.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm transition-colors duration-200"
+                style={{ color: '#475569', textDecoration: 'none' }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#06b6d4')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#475569')}
+              >
+                Horiz<span style={{ color: '#06b6d4' }}>0</span>n
+              </a>
+              <a
+                href="https://ax0n.run"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm transition-colors duration-200"
+                style={{ color: '#475569', textDecoration: 'none' }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#D4A853')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#475569')}
+              >
+                Ax<span style={{ color: '#D4A853' }}>0</span>n
+              </a>
             </div>
           </div>
 
