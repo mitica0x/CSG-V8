@@ -152,7 +152,7 @@ export default function CryptoPOS() {
 
                 <h3
                   className="font-bold mb-3"
-                  style={{ fontSize: '1.6rem', color: '#f8fafc', fontFamily: 'Space Grotesk, sans-serif' }}
+                  style={{ fontSize: '1.6rem', color: '#f8fafc', fontFamily: 'Geist, sans-serif' }}
                 >
                   Beach, Please! 2024
                 </h3>
@@ -173,7 +173,7 @@ export default function CryptoPOS() {
                       className="p-4 rounded-xl"
                       style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}
                     >
-                      <p className="font-bold text-lg mb-0.5" style={{ color: '#22d3ee', fontFamily: 'Space Grotesk, sans-serif' }}>
+                      <p className="font-bold text-lg mb-0.5" style={{ color: '#22d3ee', fontFamily: 'Geist, sans-serif' }}>
                         {s.value}
                       </p>
                       <p className="text-xs" style={{ color: '#475569' }}>{s.label}</p>

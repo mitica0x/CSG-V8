@@ -63,7 +63,7 @@ export default function WhyUs() {
               <p
                 className="font-bold mb-2"
                 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontFamily: 'Geist, sans-serif',
                   fontSize: 'clamp(1.8rem, 4vw, 2.75rem)',
                   background: 'linear-gradient(135deg, #06b6d4, #22d3ee)',
                   WebkitBackgroundClip: 'text',

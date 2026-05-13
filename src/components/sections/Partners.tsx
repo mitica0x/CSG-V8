@@ -33,7 +33,7 @@ function LogoItem({ name }: { name: string }) {
     >
       <span
         className="text-sm font-semibold tracking-wide transition-colors duration-300"
-        style={{ color: '#2d3748', fontFamily: 'Space Grotesk, sans-serif', whiteSpace: 'nowrap' }}
+        style={{ color: '#2d3748', fontFamily: 'Geist, sans-serif', whiteSpace: 'nowrap' }}
       >
         {name}
       </span>

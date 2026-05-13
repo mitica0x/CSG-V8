@@ -112,6 +112,10 @@
   --cs-cyan-light: #22d3ee;
   --cs-purple:     #8b5cf6;
   --cs-amber:      #D4A853;
+
+  /* Typography tokens (Geist migration) */
+  --font-sans: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
 }
 
 .dark {
@@ -164,7 +168,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  h1, h2, h3, h4, h5 { font-family: 'Space Grotesk', sans-serif; }
+  h1, h2, h3, h4, h5 { font-family: 'Geist', sans-serif; }
 }
 
 body::after {
@@ -242,7 +246,7 @@ body::after {
 .logo-glow { animation: logo-glow 1.5s ease-in-out infinite; }
 
 .stat-number {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Geist', sans-serif;
   font-weight: 700;
   background: linear-gradient(135deg, #06b6d4, #22d3ee);
   -webkit-background-clip: text;

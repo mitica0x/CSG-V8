@@ -39,13 +39,13 @@ export default function Footer() {
             <div className="mb-4">
               <span
                 className="text-2xl font-bold"
-                style={{ fontFamily: 'Space Grotesk, sans-serif', color: '#f8fafc' }}
+                style={{ fontFamily: 'Geist, sans-serif', color: '#f8fafc' }}
               >
                 COIN
               </span>
               <span
                 className="text-2xl font-bold"
-                style={{ fontFamily: 'Space Grotesk, sans-serif', color: '#06b6d4' }}
+                style={{ fontFamily: 'Geist, sans-serif', color: '#06b6d4' }}
               >
                 siglieri
               </span>

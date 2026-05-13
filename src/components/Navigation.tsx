@@ -61,13 +61,13 @@ export default function Navigation() {
           >
             <span
               className="font-bold"
-              style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.45rem', letterSpacing: '0.06em', color: '#f8fafc' }}
+              style={{ fontFamily: 'Geist, sans-serif', fontSize: '1.45rem', letterSpacing: '0.06em', color: '#f8fafc' }}
             >
               COIN
             </span>
             <span
               className="font-bold"
-              style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.45rem', letterSpacing: '0.06em', color: '#22d3ee' }}
+              style={{ fontFamily: 'Geist, sans-serif', fontSize: '1.45rem', letterSpacing: '0.06em', color: '#22d3ee' }}
             >
               siglieri
             </span>
@@ -141,7 +141,7 @@ export default function Navigation() {
                   key={link.label}
                   onClick={() => handleNavClick(link)}
                   className="text-2xl font-semibold cursor-pointer"
-                  style={{ background: 'none', border: 'none', color: link.accent ? '#06b6d4' : '#f8fafc', fontFamily: 'Space Grotesk, sans-serif' }}
+                  style={{ background: 'none', border: 'none', color: link.accent ? '#06b6d4' : '#f8fafc', fontFamily: 'Geist, sans-serif' }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.06 }}

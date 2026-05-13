@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 import { ChevronRight } from 'lucide-react'
 
@@ -45,10 +45,23 @@ const services = [
   },
 ]
 
+const MASK_FADE_RIGHT = 'linear-gradient(to right, black 85%, transparent 100%)'
+
 export default function Services() {
   const scrollRef = useRef<HTMLDivElement>(null)
-  const scroll = (dir: 'left' | 'right') => {
-    scrollRef.current?.scrollBy({ left: dir === 'left' ? -320 : 320, behavior: 'smooth' })
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const [hintVisible, setHintVisible] = useState(true)
+
+  useEffect(() => {
+    const t = setTimeout(() => setHintVisible(false), 2000)
+    return () => clearTimeout(t)
+  }, [])
+
+  const onScroll = () => {
+    const el = scrollRef.current
+    if (!el) return
+    const max = el.scrollWidth - el.clientWidth
+    setScrollProgress(max > 0 ? (el.scrollLeft / max) * 100 : 0)
   }
 
   return (
@@ -58,7 +71,7 @@ export default function Services() {
       style={{ background: 'linear-gradient(180deg, #030712 0%, #07101f 100%)' }}
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
+        {/* Header — left-aligned, no arrows */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 24 }}
@@ -66,54 +79,42 @@ export default function Services() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 28 }}>
-            <div>
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
-                Capabilities
-              </p>
-              <h2
-                className="font-bold"
-                style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', color: '#f8fafc', letterSpacing: '-0.02em' }}
-              >
-                Services &{' '}
-                <span className="gradient-cyan">Deliverables</span>
-              </h2>
-            </div>
-            <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
-              <button
-                onClick={() => scroll('left')}
-                style={{ width: 36, height: 36, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)', color: '#f8fafc', cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#06b6d4'; e.currentTarget.style.color = '#06b6d4'; e.currentTarget.style.background = 'rgba(6,182,212,0.1)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#f8fafc'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
-                aria-label="Scroll left"
-              >←</button>
-              <button
-                onClick={() => scroll('right')}
-                style={{ width: 36, height: 36, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)', color: '#f8fafc', cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#06b6d4'; e.currentTarget.style.color = '#06b6d4'; e.currentTarget.style.background = 'rgba(6,182,212,0.1)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#f8fafc'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
-                aria-label="Scroll right"
-              >→</button>
-            </div>
-          </div>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
+            Capabilities
+          </p>
+          <h2
+            className="font-bold mb-5"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', color: '#f8fafc', letterSpacing: '-0.02em' }}
+          >
+            Services &{' '}
+            <span className="gradient-cyan">Deliverables</span>
+          </h2>
           <p className="max-w-sm text-base leading-relaxed" style={{ color: '#64748b' }}>
             COINsiglieri delivers turnkey support across strategy, product, legal, fundraising,
             infrastructure, marketing, and real-world execution.
           </p>
         </motion.div>
 
-        {/* Horizontal drag scroll */}
+        {/* Cards — drag scroll with right-edge mask fade */}
         <div className="relative">
           <div
             ref={scrollRef}
+            onScroll={onScroll}
             className="flex gap-6 pb-8 hide-scrollbar"
-            style={{ overflowX: 'auto', cursor: 'grab', scrollPadding: '0 24px', paddingLeft: '8px' }}
+            style={{
+              overflowX: 'auto',
+              cursor: 'grab',
+              scrollPadding: '0 24px',
+              paddingLeft: '8px',
+              maskImage: MASK_FADE_RIGHT,
+              WebkitMaskImage: MASK_FADE_RIGHT,
+            }}
             onMouseDown={(e) => {
               const el = scrollRef.current!
               const startX = e.pageX - el.offsetLeft
               const scrollLeft = el.scrollLeft
-              const onMove = (e: MouseEvent) => {
-                el.scrollLeft = scrollLeft - (e.pageX - el.offsetLeft - startX)
+              const onMove = (ev: MouseEvent) => {
+                el.scrollLeft = scrollLeft - (ev.pageX - el.offsetLeft - startX)
               }
               const onUp = () => {
                 el.style.cursor = 'grab'
@@ -148,7 +149,7 @@ export default function Services() {
               >
                 <p
                   className="text-5xl font-bold mb-5 opacity-15"
-                  style={{ fontFamily: 'Space Grotesk, sans-serif', color: svc.accent, lineHeight: 1 }}
+                  style={{ fontFamily: 'Geist, sans-serif', color: svc.accent, lineHeight: 1 }}
                 >
                   {svc.number}
                 </p>
@@ -177,15 +178,42 @@ export default function Services() {
             ))}
           </div>
 
-          {/* Fade edges */}
+          {/* Scrubber track */}
           <div
-            className="absolute top-0 bottom-8 left-0 w-4 pointer-events-none"
-            style={{ background: 'linear-gradient(90deg, #030712, transparent)' }}
-          />
-          <div
-            className="absolute top-0 bottom-8 right-0 w-20 pointer-events-none"
-            style={{ background: 'linear-gradient(270deg, #07101f, transparent)' }}
-          />
+            style={{
+              height: 2,
+              background: 'rgba(255,255,255,0.08)',
+              borderRadius: 2,
+              width: '100%',
+              overflow: 'hidden',
+            }}
+          >
+            <div
+              style={{
+                height: 2,
+                background: 'var(--cs-cyan, #06b6d4)',
+                borderRadius: 2,
+                width: `${scrollProgress}%`,
+                transition: 'width 80ms linear',
+              }}
+            />
+          </div>
+
+          {/* Hint — fades out after 2s */}
+          <span
+            style={{
+              fontSize: 9,
+              letterSpacing: '0.15em',
+              color: 'rgba(255,255,255,0.2)',
+              textTransform: 'uppercase',
+              marginTop: 6,
+              display: 'block',
+              opacity: hintVisible ? 0.4 : 0,
+              transition: 'opacity 600ms ease',
+            }}
+          >
+            drag to explore
+          </span>
         </div>
 
         {/* What we offer — turnkey keywords */}

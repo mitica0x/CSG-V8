@@ -16,6 +16,9 @@ dist-ssr
 .nitro
 *.local
 
+# TypeScript incremental build cache
+*.tsbuildinfo
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars

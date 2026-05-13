@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 
 const mono: CSSProperties = { fontFamily: 'JetBrains Mono, monospace' }
-const grotesk: CSSProperties = { fontFamily: 'Space Grotesk, sans-serif' }
+const grotesk: CSSProperties = { fontFamily: 'Geist, sans-serif' }
 const inter: CSSProperties = { fontFamily: 'Inter, sans-serif' }
 
 const btnBase: CSSProperties = {

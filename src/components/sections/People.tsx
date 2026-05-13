@@ -83,14 +83,14 @@ export default function People() {
                   border: '1px solid rgba(6,182,212,0.28)',
                 }}
               >
-                <span style={{ fontSize: '1.4rem', fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, color: '#22d3ee' }}>
+                <span style={{ fontSize: '1.4rem', fontFamily: 'Geist, sans-serif', fontWeight: 700, color: '#22d3ee' }}>
                   MM
                 </span>
               </div>
 
               <h3
                 className="font-bold mb-1.5"
-                style={{ fontSize: '1.4rem', color: '#f8fafc', fontFamily: 'Space Grotesk, sans-serif' }}
+                style={{ fontSize: '1.4rem', color: '#f8fafc', fontFamily: 'Geist, sans-serif' }}
               >
                 Madalin Muraretiu
               </h3>

@@ -41,7 +41,7 @@ export default function LoadingScreen({ isVisible, onComplete }: Props) {
               <span
                 className="text-5xl font-bold tracking-widest select-none"
                 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontFamily: 'Geist, sans-serif',
                   letterSpacing: '0.15em',
                 }}
               >
