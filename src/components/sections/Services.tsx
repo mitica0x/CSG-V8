@@ -92,7 +92,7 @@ export default function Services() {
             <span className="gradient-cyan">Deliverables</span>
           </h2>
           <p className="max-w-sm text-base leading-relaxed" style={{ color: '#64748b' }}>
-            COINsiglieri delivers turnkey support across strategy, product, legal, fundraising,
+            C<span style={{ color: '#06b6d4' }}>0</span>insiglieri delivers turnkey support across strategy, product, legal, fundraising,
             infrastructure, marketing, and real-world execution.
           </p>
         </motion.div>

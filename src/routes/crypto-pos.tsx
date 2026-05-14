@@ -6,7 +6,7 @@ import CryptoPOS from '@/components/sections/CryptoPOS'
 export const Route = createFileRoute('/crypto-pos')({
   head: () => ({
     meta: [
-      { title: 'Crypto POS Payments — COINsiglieri' },
+      { title: 'Crypto POS Payments — C0insiglieri' },
       { name: 'description', content: 'Real-world crypto payment infrastructure. First POS deployment in Romania at Beach, Please! 2024 — 120,000+ attendees.' },
     ],
   }),

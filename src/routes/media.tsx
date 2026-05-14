@@ -7,7 +7,7 @@ import Media from '@/components/sections/Media'
 export const Route = createFileRoute('/media')({
   head: () => ({
     meta: [
-      { title: 'Media & Partners — COINsiglieri' },
+      { title: 'Media & Partners — C0insiglieri' },
       { name: 'description', content: 'Featured in The Paypers, HackerNoon, Agerpres, Crypto.ro, NoCash.ro, Clutch.co. 60+ ecosystem partners.' },
     ],
   }),

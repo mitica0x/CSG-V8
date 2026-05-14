@@ -6,8 +6,8 @@ import ProductsPage from '@/components/pages/ProductsPage'
 export const Route = createFileRoute('/products')({
   head: () => ({
     meta: [
-      { title: 'Products — COINsiglieri' },
-      { name: 'description', content: 'Horiz0n and Ax0n — two products built by COINsiglieri.' },
+      { title: 'Products — C0insiglieri' },
+      { name: 'description', content: 'Horiz0n and Ax0n — two products built by C0insiglieri.' },
     ],
   }),
   component: () => (

@@ -8,7 +8,7 @@ import WhyUs from '@/components/sections/WhyUs'
 export const Route = createFileRoute('/services')({
   head: () => ({
     meta: [
-      { title: 'Services — COINsiglieri' },
+      { title: 'Services — C0insiglieri' },
       { name: 'description', content: 'Full-spectrum Web3 execution: legal, tokenomics, smart contracts, marketing, crypto payments, and more.' },
     ],
   }),

@@ -9,7 +9,7 @@ const inter: CSSProperties = { fontFamily: 'Inter, sans-serif' }
 function PulseDot() {
   return (
     <motion.span
-      style={{ width: 5, height: 5, borderRadius: '50%', background: '#06b6d4', display: 'inline-block' }}
+      style={{ width: 5, height: 5, borderRadius: '50%', background: '#E8FF3C', display: 'inline-block' }}
       animate={{ opacity: [1, 0.3, 1] }}
       transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
     />
@@ -27,8 +27,8 @@ function Badge({ children, accent, withDot }: { children: ReactNode; accent: str
         fontSize: 10,
         letterSpacing: '0.1em',
         color: accent,
-        background: `${accent === '#06b6d4' ? 'rgba(6,182,212,0.08)' : 'rgba(212,168,83,0.08)'}`,
-        border: `1px solid ${accent === '#06b6d4' ? 'rgba(6,182,212,0.2)' : 'rgba(212,168,83,0.2)'}`,
+        background: accent === '#06b6d4' ? 'rgba(6,182,212,0.08)' : accent === '#E8FF3C' ? 'rgba(232,255,60,0.08)' : 'rgba(212,168,83,0.08)',
+        border: `1px solid ${accent === '#06b6d4' ? 'rgba(6,182,212,0.2)' : accent === '#E8FF3C' ? 'rgba(232,255,60,0.2)' : 'rgba(212,168,83,0.2)'}`,
         borderRadius: 3,
         padding: '2px 8px',
         width: 'fit-content',
@@ -91,7 +91,7 @@ export default function ProductsTeaser() {
               Products
             </p>
             <h2 style={{ ...grotesk, fontSize: 42, fontWeight: 700, color: '#f8fafc', lineHeight: 1.1, marginBottom: 12 }}>
-              Built by COINsiglieri.
+              Built by C<span style={{ color: '#06b6d4' }}>0</span>insiglieri.
             </h2>
             <p style={{ ...inter, fontSize: 16, color: '#64748b', maxWidth: 480, lineHeight: 1.6 }}>
               Two products. Intelligence for exchanges. Execution protocol for AI agents.
@@ -109,13 +109,13 @@ export default function ProductsTeaser() {
         <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: 20 }}>
 
           {/* Card 1 — Horiz0n */}
-          <div style={{ ...cardBase, borderTop: '3px solid #06b6d4' }}>
-            <Badge accent="#06b6d4" withDot>LIVE</Badge>
+          <div style={{ ...cardBase, borderTop: '3px solid #E8FF3C' }}>
+            <Badge accent="#E8FF3C" withDot>LIVE</Badge>
 
             <h3 style={{ ...grotesk, fontSize: 26, fontWeight: 700, color: '#f8fafc', marginTop: 16, marginBottom: 2 }}>
-              Horiz<span style={{ color: '#06b6d4' }}>0</span>n
+              Horiz<span style={{ color: '#E8FF3C' }}>0</span>n
             </h3>
-            <p style={{ ...mono, fontSize: 10, color: '#06b6d4', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 14 }}>
+            <p style={{ ...mono, fontSize: 10, color: '#E8FF3C', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 14 }}>
               EU Market Intelligence
             </p>
 
@@ -125,10 +125,10 @@ export default function ProductsTeaser() {
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 20 }}>
-              <Feature accent="#06b6d4">Regulatory &amp; compliance signals</Feature>
-              <Feature accent="#06b6d4">Competitor activity tracking</Feature>
-              <Feature accent="#06b6d4">BD opportunity radar</Feature>
-              <Feature accent="#06b6d4">Weekly intelligence briefings</Feature>
+              <Feature accent="#E8FF3C">Regulatory &amp; compliance signals</Feature>
+              <Feature accent="#E8FF3C">Competitor activity tracking</Feature>
+              <Feature accent="#E8FF3C">BD opportunity radar</Feature>
+              <Feature accent="#E8FF3C">Weekly intelligence briefings</Feature>
             </div>
 
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, marginBottom: 16, marginTop: 'auto' }}>
@@ -149,7 +149,7 @@ export default function ProductsTeaser() {
                 ...grotesk,
                 fontWeight: 600,
                 fontSize: 13,
-                background: '#06b6d4',
+                background: '#E8FF3C',
                 color: '#030712',
                 borderRadius: 8,
                 padding: '11px 20px',

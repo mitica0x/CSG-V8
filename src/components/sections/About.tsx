@@ -102,7 +102,7 @@ export default function About() {
 
             <div className="space-y-6">
               <p className="text-lg leading-relaxed" style={{ color: '#94a3b8' }}>
-                COINsiglieri is a Web3 consulting and execution agency built to help founders, startups,
+                C<span style={{ color: '#06b6d4' }}>0</span>insiglieri is a Web3 consulting and execution agency built to help founders, startups,
                 and businesses move from concept to reality.
               </p>
               <p className="leading-relaxed" style={{ color: '#64748b' }}>

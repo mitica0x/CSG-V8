@@ -5,7 +5,7 @@ const media = [
   { outlet: 'The Paypers', headline: 'Interview on crypto payment adoption in Eastern Europe', year: '2024' },
   { outlet: 'HackerNoon', headline: 'The State of Web3 Startups in Emerging Markets', year: '2024' },
   { outlet: 'Agerpres', headline: 'First crypto payments deployed at Romanian music festival', year: '2024' },
-  { outlet: 'Crypto.ro', headline: 'COINsiglieri: Building Web3 infrastructure from Bucharest', year: '2023' },
+  { outlet: 'Crypto.ro', headline: 'C0insiglieri: Building Web3 infrastructure from Bucharest', year: '2023' },
   { outlet: 'NoCash.ro', headline: 'Crypto POS technology and the future of festival payments', year: '2024' },
   { outlet: 'OTcrypto', headline: 'Arena Finanțelor — Blockchain & DeFi deep dive', year: '2023' },
   { outlet: 'Clutch.co', headline: 'Top Web3 Development Companies — Featured Review', year: '2024' },

@@ -30,7 +30,7 @@ export default function WhyUs() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#a78bfa' }}>
-            Why COINsiglieri
+            Why C<span style={{ color: '#06b6d4' }}>0</span>insiglieri
           </p>
           <h2
             className="font-bold"

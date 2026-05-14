@@ -25,7 +25,7 @@ const criteria = [
 
 const editions = [
   {
-    year: '2025', event: 'Warsaw, Poland · Powered by COINsiglieri in partnership with NBX Warsaw', prize: 287855, startups: 30,
+    year: '2025', event: 'Warsaw, Poland · Powered by C0insiglieri in partnership with NBX Warsaw', prize: 287855, startups: 30,
     winners: ['Carbon X Tons', 'Galeon Care', 'QUDO'], accent: '#06b6d4',
   },
   {

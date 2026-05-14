@@ -8,7 +8,7 @@ const inter: CSSProperties = { fontFamily: 'Inter, sans-serif' }
 function PulseDot() {
   return (
     <motion.span
-      style={{ width: 5, height: 5, borderRadius: '50%', background: '#06b6d4', display: 'inline-block' }}
+      style={{ width: 5, height: 5, borderRadius: '50%', background: '#E8FF3C', display: 'inline-block' }}
       animate={{ opacity: [1, 0.3, 1] }}
       transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
     />
@@ -16,7 +16,6 @@ function PulseDot() {
 }
 
 function Badge({ children, accent, withDot }: { children: ReactNode; accent: string; withDot?: boolean }) {
-  const cyan = accent === '#06b6d4'
   return (
     <span
       style={{
@@ -27,8 +26,8 @@ function Badge({ children, accent, withDot }: { children: ReactNode; accent: str
         fontSize: 10,
         letterSpacing: '0.1em',
         color: accent,
-        background: cyan ? 'rgba(6,182,212,0.08)' : 'rgba(212,168,83,0.08)',
-        border: `1px solid ${cyan ? 'rgba(6,182,212,0.2)' : 'rgba(212,168,83,0.2)'}`,
+        background: accent === '#06b6d4' ? 'rgba(6,182,212,0.08)' : accent === '#E8FF3C' ? 'rgba(232,255,60,0.08)' : 'rgba(212,168,83,0.08)',
+        border: `1px solid ${accent === '#06b6d4' ? 'rgba(6,182,212,0.2)' : accent === '#E8FF3C' ? 'rgba(232,255,60,0.2)' : 'rgba(212,168,83,0.2)'}`,
         borderRadius: 3,
         padding: '2px 8px',
         width: 'fit-content',
@@ -97,7 +96,7 @@ export default function ProductsPage() {
           Products
         </p>
         <h1 style={{ ...grotesk, fontSize: 52, fontWeight: 700, color: '#f8fafc', marginBottom: 16, lineHeight: 1.1 }}>
-          Built by COINsiglieri.
+          Built by C<span style={{ color: '#06b6d4' }}>0</span>insiglieri.
         </h1>
         <p style={{ ...inter, fontSize: 18, color: '#64748b', maxWidth: 560, marginBottom: 56, lineHeight: 1.6 }}>
           Two products. One intelligence layer for exchanges. One protocol layer for AI agents.
@@ -107,13 +106,13 @@ export default function ProductsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: 24 }}>
 
           {/* Horiz0n */}
-          <div style={{ ...cardBase, borderTop: '3px solid #06b6d4' }}>
-            <Badge accent="#06b6d4" withDot>LIVE</Badge>
+          <div style={{ ...cardBase, borderTop: '3px solid #E8FF3C' }}>
+            <Badge accent="#E8FF3C" withDot>LIVE</Badge>
 
             <h2 style={{ ...grotesk, fontSize: 26, fontWeight: 700, color: '#f8fafc', marginTop: 16, marginBottom: 2 }}>
-              Horiz<span style={{ color: '#06b6d4' }}>0</span>n
+              Horiz<span style={{ color: '#E8FF3C' }}>0</span>n
             </h2>
-            <p style={{ ...mono, fontSize: 10, color: '#06b6d4', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 14 }}>
+            <p style={{ ...mono, fontSize: 10, color: '#E8FF3C', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 14 }}>
               EU Market Intelligence
             </p>
 
@@ -123,10 +122,10 @@ export default function ProductsPage() {
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 20 }}>
-              <Feature accent="#06b6d4">Regulatory &amp; compliance signals</Feature>
-              <Feature accent="#06b6d4">Competitor activity tracking</Feature>
-              <Feature accent="#06b6d4">BD opportunity radar</Feature>
-              <Feature accent="#06b6d4">Weekly intelligence briefings</Feature>
+              <Feature accent="#E8FF3C">Regulatory &amp; compliance signals</Feature>
+              <Feature accent="#E8FF3C">Competitor activity tracking</Feature>
+              <Feature accent="#E8FF3C">BD opportunity radar</Feature>
+              <Feature accent="#E8FF3C">Weekly intelligence briefings</Feature>
             </div>
 
             <div style={{ marginBottom: 20 }}>
@@ -134,7 +133,7 @@ export default function ProductsPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {howItWorks.map((s) => (
                   <div key={s.n} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-                    <span style={{ ...mono, fontSize: 12, color: '#06b6d4', flexShrink: 0 }}>{s.n}</span>
+                    <span style={{ ...mono, fontSize: 12, color: '#E8FF3C', flexShrink: 0 }}>{s.n}</span>
                     <span style={{ ...inter, fontSize: 13, color: '#94a3b8', lineHeight: 1.55 }}>{s.text}</span>
                   </div>
                 ))}
@@ -157,7 +156,7 @@ export default function ProductsPage() {
               rel="noopener noreferrer"
               style={{
                 ...grotesk, fontWeight: 600, fontSize: 13,
-                background: '#06b6d4', color: '#030712', borderRadius: 8, padding: '11px 20px',
+                background: '#E8FF3C', color: '#030712', borderRadius: 8, padding: '11px 20px',
                 textDecoration: 'none', textAlign: 'center', transition: 'filter 0.2s',
               }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.filter = 'brightness(1.1)')}
@@ -239,7 +238,7 @@ export default function ProductsPage() {
             marginTop: 64,
           }}
         >
-          COINsiglieri builds what the market needs next
+          C<span style={{ color: '#06b6d4' }}>0</span>insiglieri builds what the market needs next
         </p>
       </div>
     </motion.div>

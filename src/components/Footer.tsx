@@ -128,10 +128,10 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-sm transition-colors duration-200"
                 style={{ color: '#475569', textDecoration: 'none' }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#06b6d4')}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#E8FF3C')}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#475569')}
               >
-                Horiz<span style={{ color: '#06b6d4' }}>0</span>n
+                Horiz<span style={{ color: '#E8FF3C' }}>0</span>n
               </a>
               <a
                 href="https://ax0n.run"
@@ -193,7 +193,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}
         >
           <p className="text-xs" style={{ color: '#2d3748' }}>
-            COINsiglieri is a Registered Trademark brand name and logo. © {year} COINsiglieri. All rights reserved.
+            C<span style={{ color: '#06b6d4' }}>0</span>insiglieri is a Registered Trademark brand name and logo. © {year} C<span style={{ color: '#06b6d4' }}>0</span>insiglieri. All rights reserved.
           </p>
           <p className="text-xs" style={{ color: '#2d3748' }}>
             Bridging vision and execution in Web3

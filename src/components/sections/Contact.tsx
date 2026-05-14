@@ -221,7 +221,7 @@ export default function Contact() {
             <label className="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" required className="mt-0.5" style={{ accentColor: '#06b6d4' }} />
               <span className="text-xs leading-relaxed" style={{ color: '#475569' }}>
-                I agree to COINsiglieri handling my information with full confidentiality.
+                I agree to C<span style={{ color: '#06b6d4' }}>0</span>insiglieri handling my information with full confidentiality.
                 No spam. No sharing. Fast response guaranteed.
               </span>
             </label>

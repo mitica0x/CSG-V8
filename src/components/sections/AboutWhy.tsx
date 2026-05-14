@@ -73,7 +73,7 @@ export default function AboutWhy() {
           </h2>
 
           <p style={{ ...inter, fontSize: 14, color: '#64748b', lineHeight: 1.7, marginBottom: 16 }}>
-            COINsiglieri is a Web3 consulting and execution agency built to help founders,
+            C<span style={{ color: '#06b6d4' }}>0</span>insiglieri is a Web3 consulting and execution agency built to help founders,
             startups, and businesses move from concept to reality.
           </p>
           <p style={{ ...inter, fontSize: 14, color: '#64748b', lineHeight: 1.7 }}>
@@ -102,7 +102,7 @@ export default function AboutWhy() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <Eyebrow color="#8b5cf6">Why COINsiglieri</Eyebrow>
+          <Eyebrow color="#8b5cf6">Why C<span style={{ color: '#06b6d4' }}>0</span>insiglieri</Eyebrow>
 
           <h2 style={{ ...h2Style, marginBottom: 24 }}>
             Not consultants. <span className="gradient-purple">Operators</span> with skin in the game.

@@ -3,7 +3,7 @@ import { Bot, BookOpen, ArrowRight } from 'lucide-react'
 
 const cards = [
   {
-    icon: Bot, label: 'Coming Soon', title: 'COINsiglieri AI',
+    icon: Bot, label: 'Coming Soon', title: 'C0insiglieri AI',
     desc: 'An AI-powered strategist concept built to support Web3 startups, fintech innovators, and crypto entrepreneurs with strategy, compliance, market analysis, and project management.',
     tags: ['Strategy', 'Compliance', 'Market Analysis', 'Project Management'],
     accent: '#06b6d4', cta: 'Explore the Concept',

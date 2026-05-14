@@ -97,7 +97,7 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
-/* COINsiglieri design tokens (appended — does not modify the oklch system above).
+/* C0insiglieri design tokens (appended — does not modify the oklch system above).
    .gradient-cyan / .gradient-purple / .glass already exist further down in this file. */
 :root {
   --cs-bg:         #030712;

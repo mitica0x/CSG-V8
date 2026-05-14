@@ -5,13 +5,13 @@ const testimonials = [
   {
     name: 'Rachel',
     role: 'Bybit',
-    text: 'The team at COINsiglieri delivered an exceptional brand presence for Bybit in Romania. Their execution on events and affiliate programs exceeded expectations — professional, strategic, and deeply connected to the local ecosystem.',
+    text: 'The team at C0insiglieri delivered an exceptional brand presence for Bybit in Romania. Their execution on events and affiliate programs exceeded expectations — professional, strategic, and deeply connected to the local ecosystem.',
     stars: 5,
   },
   {
     name: 'Imperium Index Team',
     role: 'Web3 Startup',
-    text: 'Working with COINsiglieri was a turning point for our project. They didn\'t just advise — they got in the trenches with us. From tokenomics to fundraising strategy, every deliverable was done with precision and speed.',
+    text: 'Working with C0insiglieri was a turning point for our project. They didn\'t just advise — they got in the trenches with us. From tokenomics to fundraising strategy, every deliverable was done with precision and speed.',
     stars: 5,
   },
   {

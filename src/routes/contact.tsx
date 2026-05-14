@@ -6,7 +6,7 @@ import Contact from '@/components/sections/Contact'
 export const Route = createFileRoute('/contact')({
   head: () => ({
     meta: [
-      { title: 'Start a Project — COINsiglieri' },
+      { title: 'Start a Project — C0insiglieri' },
       { name: 'description', content: "Tell us about your project. We'll review your needs and come back with an initial assessment and budget." },
     ],
   }),
