@@ -25,15 +25,15 @@ const baseInput: React.CSSProperties = {
 
 const focusedInput: React.CSSProperties = {
   ...baseInput,
-  borderColor: 'rgba(6,182,212,0.45)',
-  boxShadow: '0 0 0 3px rgba(6,182,212,0.08)',
+  borderColor: 'rgba(91,168,181,0.45)',
+  boxShadow: '0 0 0 3px rgba(91,168,181,0.08)',
 }
 
 const labelStyle: React.CSSProperties = {
   display: 'block',
   fontSize: '0.75rem',
   fontWeight: 500,
-  color: '#475569',
+  color: '#8892a4',
   marginBottom: 7,
   letterSpacing: '0.02em',
 }
@@ -54,13 +54,13 @@ export default function Contact() {
     <section
       id="contact"
       className="py-32 relative overflow-hidden"
-      style={{ background: '#030712' }}
+      style={{ background: '#0a0e1a' }}
     >
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
         style={{
           width: 900, height: 400,
-          background: 'radial-gradient(ellipse, rgba(6,182,212,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(91,168,181,0.05) 0%, transparent 70%)',
           filter: 'blur(50px)',
         }}
       />
@@ -73,7 +73,7 @@ export default function Contact() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#5BA8B5' }}>
             Let's Build
           </p>
           <h2
@@ -82,7 +82,7 @@ export default function Contact() {
           >
             Start Your Project
           </h2>
-          <p className="text-base leading-relaxed" style={{ color: '#64748b' }}>
+          <p className="text-base leading-relaxed" style={{ color: '#8892a4' }}>
             We'll review your project, needs, and direction, then come back with an initial
             assessment and estimated budget.
           </p>
@@ -97,12 +97,12 @@ export default function Contact() {
           >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-              style={{ background: 'rgba(6,182,212,0.1)', border: '1px solid rgba(6,182,212,0.3)' }}
+              style={{ background: 'rgba(91,168,181,0.1)', border: '1px solid rgba(91,168,181,0.3)' }}
             >
-              <Send size={22} style={{ color: '#22d3ee' }} />
+              <Send size={22} style={{ color: '#5BA8B5' }} />
             </div>
             <h3 className="font-bold text-2xl mb-3" style={{ color: '#f8fafc' }}>Message Sent</h3>
-            <p style={{ color: '#64748b' }}>We'll be in touch shortly. Confidential handling guaranteed.</p>
+            <p style={{ color: '#8892a4' }}>We'll be in touch shortly. Confidential handling guaranteed.</p>
           </motion.div>
         ) : (
           <motion.form
@@ -172,9 +172,9 @@ export default function Contact() {
                       key={s} type="button" onClick={() => toggle(s)}
                       className="px-3 py-2 rounded-lg text-xs font-medium cursor-pointer transition-all duration-200"
                       style={{
-                        background: on ? 'rgba(6,182,212,0.1)' : 'rgba(255,255,255,0.03)',
-                        border: `1px solid ${on ? 'rgba(6,182,212,0.38)' : 'rgba(255,255,255,0.08)'}`,
-                        color: on ? '#22d3ee' : '#64748b',
+                        background: on ? 'rgba(91,168,181,0.1)' : 'rgba(255,255,255,0.03)',
+                        border: `1px solid ${on ? 'rgba(91,168,181,0.38)' : 'rgba(255,255,255,0.08)'}`,
+                        color: on ? '#5BA8B5' : '#8892a4',
                       }}
                     >
                       {s}
@@ -206,11 +206,11 @@ export default function Contact() {
                   background: 'rgba(255,255,255,0.02)',
                   border: '1px dashed rgba(255,255,255,0.09)',
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = 'rgba(6,182,212,0.28)')}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = 'rgba(91,168,181,0.28)')}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.09)')}
               >
-                <Upload size={15} style={{ color: '#64748b' }} />
-                <span className="text-sm" style={{ color: '#64748b' }}>
+                <Upload size={15} style={{ color: '#8892a4' }} />
+                <span className="text-sm" style={{ color: '#8892a4' }}>
                   {fileName || 'Pitch deck, whitepaper, or any relevant doc'}
                 </span>
                 <input type="file" className="hidden" accept=".pdf,.doc,.docx,.ppt,.pptx"
@@ -219,9 +219,9 @@ export default function Contact() {
             </div>
 
             <label className="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" required className="mt-0.5" style={{ accentColor: '#06b6d4' }} />
-              <span className="text-xs leading-relaxed" style={{ color: '#475569' }}>
-                I agree to C<span style={{ color: '#06b6d4' }}>0</span>insiglieri handling my information with full confidentiality.
+              <input type="checkbox" required className="mt-0.5" style={{ accentColor: '#5BA8B5' }} />
+              <span className="text-xs leading-relaxed" style={{ color: '#8892a4' }}>
+                I agree to C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri handling my information with full confidentiality.
                 No spam. No sharing. Fast response guaranteed.
               </span>
             </label>
@@ -230,13 +230,13 @@ export default function Contact() {
               type="submit"
               className="w-full flex items-center justify-center gap-3 py-4 rounded-xl font-bold text-sm cursor-pointer transition-all duration-300"
               style={{
-                background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)',
-                color: '#030712',
+                background: 'linear-gradient(135deg, #5BA8B5, #0ea5e9)',
+                color: '#0a0e1a',
                 border: 'none',
-                boxShadow: '0 0 28px rgba(6,182,212,0.38)',
+                boxShadow: '0 0 28px rgba(91,168,181,0.38)',
               }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 50px rgba(6,182,212,0.65)')}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 28px rgba(6,182,212,0.38)')}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 50px rgba(91,168,181,0.65)')}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 28px rgba(91,168,181,0.38)')}
             >
               <Send size={15} />
               Submit Project
@@ -247,7 +247,7 @@ export default function Contact() {
                 href="mailto:madalin@coinsiglieri.com"
                 className="flex items-center gap-2 text-xs transition-colors duration-200"
                 style={{ color: '#334155', textDecoration: 'none' }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#94a3b8')}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#334155')}
               >
                 <Mail size={12} />

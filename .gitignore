@@ -43,3 +43,4 @@ __pycache__/
 # Stray local databases (e.g. ruflo/ruvector)
 ruvector.db
 *.db
+.vercel

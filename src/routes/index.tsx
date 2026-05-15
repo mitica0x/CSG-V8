@@ -18,7 +18,7 @@ export const Route = createFileRoute('/')({
 function Index() {
   const [loading, setLoading] = useState(true)
   return (
-    <div className="relative min-h-screen" style={{ background: '#030712' }}>
+    <div className="relative min-h-screen" style={{ background: '#0a0e1a' }}>
       <LoadingScreen isVisible={loading} onComplete={() => setLoading(false)} />
       <Navigation />
       <main>

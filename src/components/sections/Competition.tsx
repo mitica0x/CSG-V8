@@ -26,11 +26,11 @@ const criteria = [
 const editions = [
   {
     year: '2025', event: 'Warsaw, Poland · Powered by C0insiglieri in partnership with NBX Warsaw', prize: 287855, startups: 30,
-    winners: ['Carbon X Tons', 'Galeon Care', 'QUDO'], accent: '#06b6d4',
+    winners: ['Carbon X Tons', 'Galeon Care', 'QUDO'], accent: '#5BA8B5',
   },
   {
     year: '2023', event: 'Bucharest, Romania · Banking 4.0 × Banca Transilvania at STUP BT', prize: 152900, startups: 30,
-    winners: ['ixfi.com', 'banksters.com', 'Hodlezz.com'], accent: '#8b5cf6',
+    winners: ['ixfi.com', 'banksters.com', 'Hodlezz.com'], accent: '#7B5EA7',
   },
 ]
 
@@ -60,13 +60,13 @@ export default function Competition() {
     <section
       id="competition"
       className="py-32 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #030712 0%, #07101a 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0a0e1a 0%, #07101a 100%)' }}
     >
       <div
         className="absolute top-0 right-0 pointer-events-none"
         style={{
           width: 600, height: 600,
-          background: 'radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(123,94,167,0.07) 0%, transparent 70%)',
           filter: 'blur(70px)',
           transform: 'translate(30%, -20%)',
         }}
@@ -80,7 +80,7 @@ export default function Competition() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#a78bfa' }}>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#7B5EA7' }}>
             Flagship Initiative
           </p>
           <h2
@@ -90,7 +90,7 @@ export default function Competition() {
             Web3 Startup{' '}
             <span className="gradient-purple">Competition</span>
           </h2>
-          <p className="text-lg leading-relaxed max-w-xl mx-auto" style={{ color: '#64748b' }}>
+          <p className="text-lg leading-relaxed max-w-xl mx-auto" style={{ color: '#8892a4' }}>
             Building the next generation of Web3 companies. Two editions. Real prize pools. Real founders.
           </p>
         </motion.div>
@@ -125,14 +125,14 @@ export default function Competition() {
                   <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1.5" style={{ color: ed.accent }}>
                     {ed.year} Edition
                   </p>
-                  <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>{ed.event}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#8892a4' }}>{ed.event}</p>
                 </div>
                 <Trophy size={20} style={{ color: ed.accent, opacity: 0.6 }} />
               </div>
 
               <div className="mb-6">
                 <PrizeCounter value={ed.prize} active={active} />
-                <p className="text-xs mt-1.5" style={{ color: '#475569' }}>
+                <p className="text-xs mt-1.5" style={{ color: '#8892a4' }}>
                   Total Prize Pool · {ed.startups} Startups
                 </p>
               </div>
@@ -180,7 +180,7 @@ export default function Competition() {
                 style={{
                   background: 'rgba(255,255,255,0.025)',
                   border: '1px solid rgba(255,255,255,0.06)',
-                  color: '#64748b',
+                  color: '#8892a4',
                 }}
               >
                 {c}

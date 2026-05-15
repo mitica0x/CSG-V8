@@ -15,13 +15,13 @@ export default function CryptoPOS() {
     <section
       id="crypto-pos"
       className="relative py-32 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #030712 0%, #080f1d 50%, #030712 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0a0e1a 0%, #080f1d 50%, #0a0e1a 100%)' }}
     >
       <div
         className="absolute top-0 right-0 pointer-events-none"
         style={{
           width: 700, height: 700,
-          background: 'radial-gradient(circle, rgba(6,182,212,0.07) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(91,168,181,0.07) 0%, transparent 65%)',
           filter: 'blur(90px)',
           transform: 'translate(25%, -25%)',
         }}
@@ -30,7 +30,7 @@ export default function CryptoPOS() {
         className="absolute bottom-0 left-0 pointer-events-none"
         style={{
           width: 500, height: 500,
-          background: 'radial-gradient(circle, rgba(139,92,246,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(123,94,167,0.05) 0%, transparent 70%)',
           filter: 'blur(70px)',
           transform: 'translate(-20%, 20%)',
         }}
@@ -46,7 +46,7 @@ export default function CryptoPOS() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#5BA8B5' }}>
               Crypto Payments
             </p>
             <h2
@@ -57,7 +57,7 @@ export default function CryptoPOS() {
               <span className="gradient-cyan">Crypto Payments</span>{' '}
               at Scale
             </h2>
-            <p className="text-lg leading-relaxed mb-10" style={{ color: '#64748b' }}>
+            <p className="text-lg leading-relaxed mb-10" style={{ color: '#8892a4' }}>
               Powered by LUNU — the leading crypto payment infrastructure. We deployed the first
               crypto POS in Romania at Beach, Please! 2024 with 120,000+ attendees.
               Not a pilot. An operation.
@@ -66,8 +66,8 @@ export default function CryptoPOS() {
             <div className="space-y-4 mb-12">
               {benefits.map((b) => (
                 <div key={b} className="flex items-start gap-3">
-                  <CheckCircle2 size={16} className="mt-0.5 flex-none" style={{ color: '#22d3ee' }} />
-                  <p className="text-sm leading-relaxed" style={{ color: '#94a3b8' }}>{b}</p>
+                  <CheckCircle2 size={16} className="mt-0.5 flex-none" style={{ color: '#5BA8B5' }} />
+                  <p className="text-sm leading-relaxed" style={{ color: '#8892a4' }}>{b}</p>
                 </div>
               ))}
             </div>
@@ -77,13 +77,13 @@ export default function CryptoPOS() {
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold cursor-pointer transition-all duration-300"
                 style={{
-                  background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)',
-                  color: '#030712',
+                  background: 'linear-gradient(135deg, #5BA8B5, #0ea5e9)',
+                  color: '#0a0e1a',
                   border: 'none',
-                  boxShadow: '0 0 22px rgba(6,182,212,0.38)',
+                  boxShadow: '0 0 22px rgba(91,168,181,0.38)',
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 42px rgba(6,182,212,0.65)')}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 22px rgba(6,182,212,0.38)')}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 42px rgba(91,168,181,0.65)')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 22px rgba(91,168,181,0.38)')}
               >
                 Integrate Crypto Payments
                 <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
@@ -94,17 +94,17 @@ export default function CryptoPOS() {
                 style={{
                   background: 'rgba(255,255,255,0.04)',
                   border: '1px solid rgba(255,255,255,0.1)',
-                  color: '#94a3b8',
+                  color: '#8892a4',
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.borderColor = 'rgba(6,182,212,0.3)'
+                  el.style.borderColor = 'rgba(91,168,181,0.3)'
                   el.style.color = '#f8fafc'
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement
                   el.style.borderColor = 'rgba(255,255,255,0.1)'
-                  el.style.color = '#94a3b8'
+                  el.style.color = '#8892a4'
                 }}
               >
                 Request POS Details
@@ -122,16 +122,16 @@ export default function CryptoPOS() {
             <div
               className="relative rounded-2xl p-10 overflow-hidden"
               style={{
-                background: 'rgba(6,182,212,0.035)',
-                border: '1px solid rgba(6,182,212,0.18)',
-                boxShadow: '0 0 60px rgba(6,182,212,0.06), inset 0 1px 0 rgba(6,182,212,0.08)',
+                background: 'rgba(91,168,181,0.035)',
+                border: '1px solid rgba(91,168,181,0.18)',
+                boxShadow: '0 0 60px rgba(91,168,181,0.06), inset 0 1px 0 rgba(91,168,181,0.08)',
               }}
             >
               <div
                 className="absolute top-0 right-0 pointer-events-none"
                 style={{
                   width: 250, height: 250,
-                  background: 'radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 70%)',
+                  background: 'radial-gradient(circle, rgba(91,168,181,0.1) 0%, transparent 70%)',
                 }}
               />
 
@@ -140,14 +140,14 @@ export default function CryptoPOS() {
                   <span
                     className="px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase"
                     style={{
-                      background: 'rgba(6,182,212,0.1)',
-                      border: '1px solid rgba(6,182,212,0.28)',
-                      color: '#22d3ee',
+                      background: 'rgba(91,168,181,0.1)',
+                      border: '1px solid rgba(91,168,181,0.28)',
+                      color: '#5BA8B5',
                     }}
                   >
                     Case Study
                   </span>
-                  <span className="text-xs" style={{ color: '#475569' }}>2024</span>
+                  <span className="text-xs" style={{ color: '#8892a4' }}>2024</span>
                 </div>
 
                 <h3
@@ -156,7 +156,7 @@ export default function CryptoPOS() {
                 >
                   Beach, Please! 2024
                 </h3>
-                <p className="text-sm leading-relaxed mb-8" style={{ color: '#64748b' }}>
+                <p className="text-sm leading-relaxed mb-8" style={{ color: '#8892a4' }}>
                   Romania's Black Sea Coast. In partnership with LUNU, Global Records, Bybit, and Nuba —
                   VIP guests purchased champagne and luxury experiences using crypto for the first time in Romania.
                 </p>
@@ -173,15 +173,15 @@ export default function CryptoPOS() {
                       className="p-4 rounded-xl"
                       style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}
                     >
-                      <p className="font-bold text-lg mb-0.5" style={{ color: '#22d3ee', fontFamily: 'Geist, sans-serif' }}>
+                      <p className="font-bold text-lg mb-0.5" style={{ color: '#5BA8B5', fontFamily: 'Geist, sans-serif' }}>
                         {s.value}
                       </p>
-                      <p className="text-xs" style={{ color: '#475569' }}>{s.label}</p>
+                      <p className="text-xs" style={{ color: '#8892a4' }}>{s.label}</p>
                     </div>
                   ))}
                 </div>
 
-                <p className="text-xs italic" style={{ color: '#475569' }}>
+                <p className="text-xs italic" style={{ color: '#8892a4' }}>
                   Partners: LUNU · Global Records · Bybit · Nuba
                 </p>
               </div>

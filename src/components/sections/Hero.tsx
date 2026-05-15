@@ -26,7 +26,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern"
-      style={{ background: 'linear-gradient(160deg, #030712 0%, #060d1c 60%, #030712 100%)' }}
+      style={{ background: 'linear-gradient(160deg, #0a0e1a 0%, #060d1c 60%, #0a0e1a 100%)' }}
     >
       {/* Three.js blob — right side, behind text */}
       <ThreeHero
@@ -41,7 +41,7 @@ export default function Hero() {
           style={{
             width: 700, height: 700,
             top: '-5%', left: '-15%',
-            background: 'radial-gradient(circle, rgba(6,182,212,0.08) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(91,168,181,0.08) 0%, transparent 65%)',
             filter: 'blur(80px)',
           }}
         />
@@ -50,7 +50,7 @@ export default function Hero() {
           style={{
             width: 800, height: 800,
             bottom: '-15%', right: '-15%',
-            background: 'radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(123,94,167,0.07) 0%, transparent 65%)',
             filter: 'blur(100px)',
           }}
         />
@@ -69,7 +69,7 @@ export default function Hero() {
             <span style={{ color: '#f8fafc' }}>COIN</span>
             <span
               className="gradient-cyan"
-              style={{ filter: 'drop-shadow(0 0 40px rgba(6,182,212,0.5))' }}
+              style={{ filter: 'drop-shadow(0 0 40px rgba(91,168,181,0.5))' }}
             >
               siglieri
             </span>
@@ -96,7 +96,7 @@ export default function Hero() {
           <motion.p
             variants={item}
             className="max-w-3xl mx-auto mb-10 leading-relaxed text-center"
-            style={{ color: '#94a3b8', fontSize: 'clamp(1rem, 1.4vw, 1.15rem)' }}
+            style={{ color: '#8892a4', fontSize: 'clamp(1rem, 1.4vw, 1.15rem)' }}
           >
             The one-stop-Web3-shop — from idea to execution across legal and licensing,
             strategy and fundraising, smart contract development, marketing and go-to-market.
@@ -132,15 +132,15 @@ export default function Hero() {
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="rounded-xl font-bold cursor-pointer transition-all duration-300"
               style={{
-                background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)',
-                color: '#030712',
+                background: 'linear-gradient(135deg, #5BA8B5, #0ea5e9)',
+                color: '#0a0e1a',
                 border: 'none',
-                boxShadow: '0 0 28px rgba(6,182,212,0.45)',
+                boxShadow: '0 0 28px rgba(91,168,181,0.45)',
                 padding: '1.05rem 2.4rem',
                 fontSize: '1rem',
               }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 50px rgba(6,182,212,0.7)')}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 28px rgba(6,182,212,0.45)')}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 50px rgba(91,168,181,0.7)')}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 28px rgba(91,168,181,0.45)')}
             >
               Start a Project
             </button>
@@ -155,7 +155,7 @@ export default function Hero() {
                 style={{
                   background: 'rgba(255,255,255,0.04)',
                   border: '1px solid rgba(255,255,255,0.1)',
-                  color: '#94a3b8',
+                  color: '#8892a4',
                 }}
               >
                 {pill}
@@ -169,7 +169,7 @@ export default function Hero() {
               <span
                 key={p}
                 className="text-sm font-semibold tracking-widest uppercase"
-                style={{ color: '#475569' }}
+                style={{ color: '#8892a4' }}
               >
                 {p}
               </span>
@@ -179,7 +179,7 @@ export default function Hero() {
           <motion.p
             variants={item}
             className="italic"
-            style={{ color: '#64748b', fontSize: '0.95rem', letterSpacing: '0.02em' }}
+            style={{ color: '#8892a4', fontSize: '0.95rem', letterSpacing: '0.02em' }}
           >
             Early movers · Ecosystem operators · Execution-driven since 2017
           </motion.p>

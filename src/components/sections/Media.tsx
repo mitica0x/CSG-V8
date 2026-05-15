@@ -16,7 +16,7 @@ export default function Media() {
     <section
       id="media"
       className="py-32 relative"
-      style={{ background: '#030712' }}
+      style={{ background: '#0a0e1a' }}
     >
       <div className="max-w-5xl mx-auto px-6">
         <motion.div
@@ -26,7 +26,7 @@ export default function Media() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#5BA8B5' }}>
             Press
           </p>
           <h2
@@ -51,20 +51,20 @@ export default function Media() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, delay: i * 0.06 }}
               whileHover={{
-                background: 'rgba(6,182,212,0.03)',
-                borderColor: 'rgba(6,182,212,0.14)',
+                background: 'rgba(91,168,181,0.03)',
+                borderColor: 'rgba(91,168,181,0.14)',
                 x: 4,
               }}
             >
               <span
                 className="flex-none text-xs font-bold tracking-widest uppercase"
-                style={{ color: '#22d3ee', minWidth: 120 }}
+                style={{ color: '#5BA8B5', minWidth: 120 }}
               >
                 {item.outlet}
               </span>
               <span
                 className="text-sm leading-relaxed flex-1 truncate"
-                style={{ color: '#64748b' }}
+                style={{ color: '#8892a4' }}
               >
                 {item.headline}
               </span>
@@ -73,7 +73,7 @@ export default function Media() {
                 <ExternalLink
                   size={13}
                   className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  style={{ color: '#22d3ee' }}
+                  style={{ color: '#5BA8B5' }}
                 />
               </div>
             </motion.div>

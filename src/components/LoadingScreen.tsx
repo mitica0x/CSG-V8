@@ -11,7 +11,7 @@ export default function LoadingScreen({ isVisible, onComplete }: Props) {
       {isVisible && (
         <motion.div
           className="fixed inset-0 z-[9999] flex items-center justify-center"
-          style={{ background: '#030712' }}
+          style={{ background: '#0a0e1a' }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
           onAnimationComplete={onComplete}
@@ -20,7 +20,7 @@ export default function LoadingScreen({ isVisible, onComplete }: Props) {
           <div
             className="absolute inset-0"
             style={{
-              background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(6,182,212,0.08) 0%, transparent 70%)',
+              background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(91,168,181,0.08) 0%, transparent 70%)',
             }}
           />
 
@@ -46,7 +46,7 @@ export default function LoadingScreen({ isVisible, onComplete }: Props) {
                 }}
               >
                 <span style={{ color: '#f8fafc' }}>COIN</span>
-                <span style={{ color: '#06b6d4' }}>siglieri</span>
+                <span style={{ color: '#5BA8B5' }}>siglieri</span>
               </span>
             </motion.div>
 
@@ -57,7 +57,7 @@ export default function LoadingScreen({ isVisible, onComplete }: Props) {
             >
               <motion.div
                 className="h-full rounded-full"
-                style={{ background: 'linear-gradient(90deg, #06b6d4, #8b5cf6)' }}
+                style={{ background: 'linear-gradient(90deg, #5BA8B5, #7B5EA7)' }}
                 initial={{ width: '0%' }}
                 animate={{ width: '100%' }}
                 transition={{ duration: 0.9, ease: 'easeInOut', delay: 0.2 }}
@@ -69,7 +69,7 @@ export default function LoadingScreen({ isVisible, onComplete }: Props) {
 
             <motion.p
               className="text-xs tracking-widest uppercase"
-              style={{ color: '#64748b', letterSpacing: '0.25em' }}
+              style={{ color: '#8892a4', letterSpacing: '0.25em' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}

@@ -18,10 +18,10 @@ function LogoItem({ name }: { name: string }) {
       }}
       onMouseEnter={(e) => {
         const el = e.currentTarget as HTMLElement
-        el.style.background = 'rgba(6,182,212,0.05)'
-        el.style.borderColor = 'rgba(6,182,212,0.18)'
+        el.style.background = 'rgba(91,168,181,0.05)'
+        el.style.borderColor = 'rgba(91,168,181,0.18)'
         const span = el.querySelector('span') as HTMLElement
-        if (span) span.style.color = '#94a3b8'
+        if (span) span.style.color = '#8892a4'
       }}
       onMouseLeave={(e) => {
         const el = e.currentTarget as HTMLElement
@@ -48,13 +48,13 @@ export default function Partners() {
     <section
       id="partners"
       className="py-24 overflow-hidden relative"
-      style={{ background: 'linear-gradient(180deg, #030712 0%, #06101c 50%, #030712 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0a0e1a 0%, #06101c 50%, #0a0e1a 100%)' }}
     >
       {/* Edge fades */}
       <div className="absolute top-0 bottom-0 left-0 w-28 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(90deg, #030712, transparent)' }} />
+        style={{ background: 'linear-gradient(90deg, #0a0e1a, transparent)' }} />
       <div className="absolute top-0 bottom-0 right-0 w-28 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(270deg, #030712, transparent)' }} />
+        style={{ background: 'linear-gradient(270deg, #0a0e1a, transparent)' }} />
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 mb-14">
@@ -65,7 +65,7 @@ export default function Partners() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#5BA8B5' }}>
             Partners & Media
           </p>
           <h2

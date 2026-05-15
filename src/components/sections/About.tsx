@@ -30,10 +30,10 @@ function StatCard({ stat, active }: { stat: typeof stats[0]; active: boolean }) 
     <motion.div
       className="flex flex-col items-center p-8 rounded-xl"
       style={{
-        background: 'rgba(6,182,212,0.04)',
-        border: '1px solid rgba(6,182,212,0.1)',
+        background: 'rgba(91,168,181,0.04)',
+        border: '1px solid rgba(91,168,181,0.1)',
       }}
-      whileHover={{ borderColor: 'rgba(6,182,212,0.3)', boxShadow: '0 0 25px rgba(6,182,212,0.08)' }}
+      whileHover={{ borderColor: 'rgba(91,168,181,0.3)', boxShadow: '0 0 25px rgba(91,168,181,0.08)' }}
       transition={{ duration: 0.3 }}
     >
       <p className="stat-number text-3xl md:text-4xl mb-2">
@@ -43,7 +43,7 @@ function StatCard({ stat, active }: { stat: typeof stats[0]; active: boolean }) 
       </p>
       <p
         className="text-xs font-semibold tracking-[0.15em] uppercase text-center"
-        style={{ color: '#475569' }}
+        style={{ color: '#8892a4' }}
       >
         {stat.label}
       </p>
@@ -68,13 +68,13 @@ export default function About() {
     <section
       id="about"
       className="relative py-32 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #06101d 0%, #080e1c 50%, #030712 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #06101d 0%, #080e1c 50%, #0a0e1a 100%)' }}
     >
       <div
         className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none"
         style={{
           width: 600, height: 600,
-          background: 'radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(123,94,167,0.06) 0%, transparent 70%)',
           filter: 'blur(70px)',
         }}
       />
@@ -89,7 +89,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#5BA8B5' }}>
               About Us
             </p>
             <h2
@@ -101,17 +101,17 @@ export default function About() {
             </h2>
 
             <div className="space-y-6">
-              <p className="text-lg leading-relaxed" style={{ color: '#94a3b8' }}>
-                C<span style={{ color: '#06b6d4' }}>0</span>insiglieri is a Web3 consulting and execution agency built to help founders, startups,
+              <p className="text-lg leading-relaxed" style={{ color: '#8892a4' }}>
+                C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri is a Web3 consulting and execution agency built to help founders, startups,
                 and businesses move from concept to reality.
               </p>
-              <p className="leading-relaxed" style={{ color: '#64748b' }}>
+              <p className="leading-relaxed" style={{ color: '#8892a4' }}>
                 We bring together curated experts in go-to-market strategy, legal, development, AI,
                 trading, networking, user acquisition, marketing, PR, crypto payments, tokenomics,
                 CEX &amp; DEX listing, ORM, smart contracts, and other critical functions — all under
                 one management with synced vision.
               </p>
-              <p className="leading-relaxed" style={{ color: '#64748b' }}>
+              <p className="leading-relaxed" style={{ color: '#8892a4' }}>
                 We operate as a practical one-stop-shop for ambitious Web3 projects and traditional
                 businesses looking to make the leap into Web2.5 or Web3.
               </p>
@@ -136,19 +136,19 @@ export default function About() {
             <motion.div
               className="p-6 rounded-xl"
               style={{
-                background: 'rgba(6,182,212,0.03)',
-                border: '1px solid rgba(6,182,212,0.09)',
+                background: 'rgba(91,168,181,0.03)',
+                border: '1px solid rgba(91,168,181,0.09)',
               }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: 0.25 }}
             >
-              <p className="text-sm leading-relaxed" style={{ color: '#94a3b8' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#8892a4' }}>
                 <span className="gradient-cyan font-semibold">One management. Full spectrum.</span>
                 {' '}From the whitepaper to the token launch, from legal to marketing,
                 from smart contract to the POS terminal at a 120k-person festival.
-                <span style={{ color: '#475569' }}> Curated experts. Synced vision.</span>
+                <span style={{ color: '#8892a4' }}> Curated experts. Synced vision.</span>
               </p>
             </motion.div>
           </div>

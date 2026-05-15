@@ -11,7 +11,7 @@ export default function WhoWeServe() {
     <section
       id="who-we-serve"
       className="py-32 relative"
-      style={{ background: '#030712' }}
+      style={{ background: '#0a0e1a' }}
     >
       <div className="max-w-5xl mx-auto px-6 text-center">
         <motion.div
@@ -20,7 +20,7 @@ export default function WhoWeServe() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#a78bfa' }}>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#7B5EA7' }}>
             Who We Work With
           </p>
           <h2
@@ -29,7 +29,7 @@ export default function WhoWeServe() {
           >
             Built for operators, founders, and visionaries
           </h2>
-          <p className="text-lg leading-relaxed max-w-2xl mx-auto mb-14" style={{ color: '#64748b' }}>
+          <p className="text-lg leading-relaxed max-w-2xl mx-auto mb-14" style={{ color: '#8892a4' }}>
             From crypto-native founders to established traditional businesses —
             we operate across industries where execution matters.
           </p>
@@ -49,16 +49,16 @@ export default function WhoWeServe() {
               style={{
                 background: 'rgba(255,255,255,0.03)',
                 border: '1px solid rgba(255,255,255,0.08)',
-                color: '#94a3b8',
+                color: '#8892a4',
               }}
               variants={{
                 hidden: { opacity: 0, scale: 0.88 },
                 visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
               }}
               whileHover={{
-                background: 'rgba(6,182,212,0.07)',
-                borderColor: 'rgba(6,182,212,0.28)',
-                color: '#22d3ee',
+                background: 'rgba(91,168,181,0.07)',
+                borderColor: 'rgba(91,168,181,0.28)',
+                color: '#5BA8B5',
                 scale: 1.03,
               }}
             >

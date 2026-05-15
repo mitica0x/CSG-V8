@@ -6,19 +6,19 @@ const cards = [
     category: 'Flagship',
     title: 'Web3 Startup Competition',
     body: 'Banking 4.0 × Banca Transilvania (2023) — €152,000+. NBX Warsaw (2025) — €287,000+. 30+ startups shaped.',
-    accent: '#06b6d4',
+    accent: '#5BA8B5',
   },
   {
     category: 'Real-World Execution',
     title: 'Crypto Payments at Scale',
     body: 'Beach, Please! 2024 — 120,000+ attendees. First crypto POS deployment in Romania. LUNU · Global Records · Bybit · Nuba.',
-    accent: '#8b5cf6',
+    accent: '#7B5EA7',
   },
   {
     category: 'Network',
     title: '60+ Partners & 4,000+ VCs',
     body: 'Curated ecosystem built over 7+ years. Capital access, strategic introductions, and market presence that compounds.',
-    accent: '#06b6d4',
+    accent: '#5BA8B5',
   },
 ]
 
@@ -27,13 +27,13 @@ export default function Ecosystem() {
     <section
       id="ecosystem"
       className="relative py-24 overflow-hidden section-divide"
-      style={{ background: 'linear-gradient(180deg, #030712 0%, #06101d 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0a0e1a 0%, #06101d 100%)' }}
     >
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
         style={{
           width: 900, height: 500,
-          background: 'radial-gradient(ellipse, rgba(6,182,212,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(91,168,181,0.05) 0%, transparent 70%)',
           filter: 'blur(50px)',
         }}
       />
@@ -46,7 +46,7 @@ export default function Ecosystem() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-sm font-semibold tracking-[0.22em] uppercase mb-4" style={{ color: '#22d3ee' }}>
+          <p className="text-sm font-semibold tracking-[0.22em] uppercase mb-4" style={{ color: '#5BA8B5' }}>
             Track Record
           </p>
           <h2
@@ -55,7 +55,7 @@ export default function Ecosystem() {
           >
             In the Ecosystem
           </h2>
-          <p style={{ color: '#64748b', fontSize: '1.125rem' }}>
+          <p style={{ color: '#8892a4', fontSize: '1.125rem' }}>
             Where we've been. What we've built.
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ export default function Ecosystem() {
                 {card.title}
               </h3>
 
-              <p style={{ color: '#64748b', fontSize: '1rem', lineHeight: 1.75 }}>
+              <p style={{ color: '#8892a4', fontSize: '1rem', lineHeight: 1.75 }}>
                 {card.body}
               </p>
             </motion.div>
@@ -113,7 +113,7 @@ export default function Ecosystem() {
             style={{
               fontFamily: 'JetBrains Mono, monospace',
               fontSize: 11,
-              color: '#64748b',
+              color: '#8892a4',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
               textDecoration: 'none',

@@ -9,7 +9,7 @@ const inter: CSSProperties = { fontFamily: 'Inter, sans-serif' }
 function PulseDot() {
   return (
     <motion.span
-      style={{ width: 5, height: 5, borderRadius: '50%', background: '#E8FF3C', display: 'inline-block' }}
+      style={{ width: 5, height: 5, borderRadius: '50%', background: '#94c864', display: 'inline-block' }}
       animate={{ opacity: [1, 0.3, 1] }}
       transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
     />
@@ -27,8 +27,8 @@ function Badge({ children, accent, withDot }: { children: ReactNode; accent: str
         fontSize: 10,
         letterSpacing: '0.1em',
         color: accent,
-        background: accent === '#06b6d4' ? 'rgba(6,182,212,0.08)' : accent === '#E8FF3C' ? 'rgba(232,255,60,0.08)' : 'rgba(212,168,83,0.08)',
-        border: `1px solid ${accent === '#06b6d4' ? 'rgba(6,182,212,0.2)' : accent === '#E8FF3C' ? 'rgba(232,255,60,0.2)' : 'rgba(212,168,83,0.2)'}`,
+        background: accent === '#5BA8B5' ? 'rgba(91,168,181,0.08)' : accent === '#94c864' ? 'rgba(148,200,100,0.08)' : 'rgba(212,168,83,0.08)',
+        border: `1px solid ${accent === '#5BA8B5' ? 'rgba(91,168,181,0.2)' : accent === '#94c864' ? 'rgba(148,200,100,0.2)' : 'rgba(212,168,83,0.2)'}`,
         borderRadius: 3,
         padding: '2px 8px',
         width: 'fit-content',
@@ -45,7 +45,7 @@ function Feature({ children, accent }: { children: ReactNode; accent: string }) 
   return (
     <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
       <span style={{ color: accent, fontSize: 13, lineHeight: 1.65, flexShrink: 0 }}>✓</span>
-      <span style={{ ...inter, fontSize: 13, color: '#94a3b8', lineHeight: 1.65 }}>{children}</span>
+      <span style={{ ...inter, fontSize: 13, color: '#8892a4', lineHeight: 1.65 }}>{children}</span>
     </div>
   )
 }
@@ -68,7 +68,7 @@ export default function ProductsTeaser() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       style={{
-        background: 'rgba(6,182,212,0.02)',
+        background: 'rgba(91,168,181,0.02)',
         borderTop: '1px solid rgba(255,255,255,0.04)',
         borderBottom: '1px solid rgba(255,255,255,0.04)',
         padding: '64px 40px',
@@ -87,19 +87,19 @@ export default function ProductsTeaser() {
           }}
         >
           <div>
-            <p style={{ ...mono, fontSize: 11, color: '#06b6d4', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: 14 }}>
+            <p style={{ ...mono, fontSize: 11, color: '#5BA8B5', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: 14 }}>
               Products
             </p>
             <h2 style={{ ...grotesk, fontSize: 42, fontWeight: 700, color: '#f8fafc', lineHeight: 1.1, marginBottom: 12 }}>
-              Built by C<span style={{ color: '#06b6d4' }}>0</span>insiglieri.
+              Built by C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri.
             </h2>
-            <p style={{ ...inter, fontSize: 16, color: '#64748b', maxWidth: 480, lineHeight: 1.6 }}>
+            <p style={{ ...inter, fontSize: 16, color: '#8892a4', maxWidth: 480, lineHeight: 1.6 }}>
               Two products. Intelligence for exchanges. Execution protocol for AI agents.
             </p>
           </div>
           <Link
             to="/products"
-            style={{ ...mono, fontSize: 11, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em', textDecoration: 'none', whiteSpace: 'nowrap' }}
+            style={{ ...mono, fontSize: 11, color: '#8892a4', textTransform: 'uppercase', letterSpacing: '0.1em', textDecoration: 'none', whiteSpace: 'nowrap' }}
           >
             View all products →
           </Link>
@@ -109,34 +109,34 @@ export default function ProductsTeaser() {
         <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: 20 }}>
 
           {/* Card 1 — Horiz0n */}
-          <div style={{ ...cardBase, borderTop: '3px solid #E8FF3C' }}>
-            <Badge accent="#E8FF3C" withDot>LIVE</Badge>
+          <div style={{ ...cardBase, borderTop: '3px solid #94c864' }}>
+            <Badge accent="#94c864" withDot>LIVE</Badge>
 
             <h3 style={{ ...grotesk, fontSize: 26, fontWeight: 700, color: '#f8fafc', marginTop: 16, marginBottom: 2 }}>
-              Horiz<span style={{ color: '#E8FF3C' }}>0</span>n
+              Horiz<span style={{ color: '#94c864' }}>0</span>n
             </h3>
-            <p style={{ ...mono, fontSize: 10, color: '#E8FF3C', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 14 }}>
+            <p style={{ ...mono, fontSize: 10, color: '#94c864', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 14 }}>
               EU Market Intelligence
             </p>
 
-            <p style={{ ...inter, fontSize: 13, color: '#64748b', lineHeight: 1.65, marginBottom: 20 }}>
+            <p style={{ ...inter, fontSize: 13, color: '#8892a4', lineHeight: 1.65, marginBottom: 20 }}>
               Real-time intelligence for crypto exchanges entering or operating in the EU market.
               Regulatory signals, competitor moves, and BD opportunities — in one war room.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 20 }}>
-              <Feature accent="#E8FF3C">Regulatory &amp; compliance signals</Feature>
-              <Feature accent="#E8FF3C">Competitor activity tracking</Feature>
-              <Feature accent="#E8FF3C">BD opportunity radar</Feature>
-              <Feature accent="#E8FF3C">Weekly intelligence briefings</Feature>
+              <Feature accent="#94c864">Regulatory &amp; compliance signals</Feature>
+              <Feature accent="#94c864">Competitor activity tracking</Feature>
+              <Feature accent="#94c864">BD opportunity radar</Feature>
+              <Feature accent="#94c864">Weekly intelligence briefings</Feature>
             </div>
 
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, marginBottom: 16, marginTop: 'auto' }}>
               <div>
                 <span style={{ ...grotesk, fontSize: 28, fontWeight: 700, color: '#f8fafc' }}>$500</span>
-                <span style={{ ...inter, fontSize: 13, color: '#64748b' }}> / month</span>
+                <span style={{ ...inter, fontSize: 13, color: '#8892a4' }}> / month</span>
               </div>
-              <p style={{ ...mono, fontSize: 10, color: '#64748b', textTransform: 'uppercase', marginTop: 4 }}>
+              <p style={{ ...mono, fontSize: 10, color: '#8892a4', textTransform: 'uppercase', marginTop: 4 }}>
                 B2B · Exchange-facing · Active clients
               </p>
             </div>
@@ -149,8 +149,9 @@ export default function ProductsTeaser() {
                 ...grotesk,
                 fontWeight: 600,
                 fontSize: 13,
-                background: '#E8FF3C',
-                color: '#030712',
+                background: 'transparent',
+                border: '1.5px solid #94c864',
+                color: '#94c864',
                 borderRadius: 8,
                 padding: '11px 20px',
                 textDecoration: 'none',
@@ -175,7 +176,7 @@ export default function ProductsTeaser() {
               AI Agent Execution Protocol
             </p>
 
-            <p style={{ ...inter, fontSize: 13, color: '#64748b', lineHeight: 1.65, marginBottom: 20 }}>
+            <p style={{ ...inter, fontSize: 13, color: '#8892a4', lineHeight: 1.65, marginBottom: 20 }}>
               The routing layer AI agents need to trade. Ax0n connects financial intent to execution —
               across protocols, across markets, without humans in the loop.
             </p>
@@ -189,7 +190,7 @@ export default function ProductsTeaser() {
 
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, marginBottom: 16, marginTop: 'auto' }}>
               <p style={{ ...mono, fontSize: 12, color: '#D4A853', textTransform: 'uppercase' }}>Early Access</p>
-              <p style={{ ...mono, fontSize: 10, color: '#64748b', marginTop: 4 }}>
+              <p style={{ ...mono, fontSize: 10, color: '#8892a4', marginTop: 4 }}>
                 Base tier free · Protocol tier $499/month
               </p>
             </div>

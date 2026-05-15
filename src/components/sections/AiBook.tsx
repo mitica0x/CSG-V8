@@ -6,13 +6,13 @@ const cards = [
     icon: Bot, label: 'Coming Soon', title: 'C0insiglieri AI',
     desc: 'An AI-powered strategist concept built to support Web3 startups, fintech innovators, and crypto entrepreneurs with strategy, compliance, market analysis, and project management.',
     tags: ['Strategy', 'Compliance', 'Market Analysis', 'Project Management'],
-    accent: '#06b6d4', cta: 'Explore the Concept',
+    accent: '#5BA8B5', cta: 'Explore the Concept',
   },
   {
     icon: BookOpen, label: 'Published', title: 'How to Start-up: From Idea to ICO',
     desc: 'A practical guide through the entire journey of building a Web3 company — from ideation and whitepaper to token launch and exchange listing. Written from the trenches.',
     tags: ['Web3 Startups', 'ICO', 'Token Launch', 'GTM'],
-    accent: '#8b5cf6', cta: 'Get the Book',
+    accent: '#7B5EA7', cta: 'Get the Book',
   },
 ]
 
@@ -21,7 +21,7 @@ export default function AiBook() {
     <section
       id="resources"
       className="py-32 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #030712 0%, #070d1a 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0a0e1a 0%, #070d1a 100%)' }}
     >
       <div className="max-w-5xl mx-auto px-6">
         <motion.div
@@ -31,7 +31,7 @@ export default function AiBook() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#a78bfa' }}>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#7B5EA7' }}>
             Ecosystem Resources
           </p>
           <h2
@@ -91,7 +91,7 @@ export default function AiBook() {
                   </div>
                 </div>
 
-                <p className="text-sm leading-relaxed mb-6" style={{ color: '#64748b' }}>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: '#8892a4' }}>
                   {card.desc}
                 </p>
 

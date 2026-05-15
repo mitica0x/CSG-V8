@@ -12,12 +12,12 @@ export default function WhyUs() {
     <section
       id="why-us"
       className="py-32 relative overflow-hidden"
-      style={{ background: '#030712' }}
+      style={{ background: '#0a0e1a' }}
     >
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(6,182,212,0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(91,168,181,0.04) 0%, transparent 70%)',
         }}
       />
 
@@ -29,8 +29,8 @@ export default function WhyUs() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#a78bfa' }}>
-            Why C<span style={{ color: '#06b6d4' }}>0</span>insiglieri
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#7B5EA7' }}>
+            Why C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri
           </p>
           <h2
             className="font-bold"
@@ -55,8 +55,8 @@ export default function WhyUs() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.55, delay: i * 0.08 }}
               whileHover={{
-                borderColor: 'rgba(6,182,212,0.28)',
-                boxShadow: '0 0 30px rgba(6,182,212,0.08)',
+                borderColor: 'rgba(91,168,181,0.28)',
+                boxShadow: '0 0 30px rgba(91,168,181,0.08)',
                 y: -4,
               }}
             >
@@ -65,17 +65,17 @@ export default function WhyUs() {
                 style={{
                   fontFamily: 'Geist, sans-serif',
                   fontSize: 'clamp(1.8rem, 4vw, 2.75rem)',
-                  background: 'linear-gradient(135deg, #06b6d4, #22d3ee)',
+                  background: 'linear-gradient(135deg, #5BA8B5, #5BA8B5)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                  filter: 'drop-shadow(0 0 12px rgba(6,182,212,0.35))',
+                  filter: 'drop-shadow(0 0 12px rgba(91,168,181,0.35))',
                 }}
               >
                 {tile.value}
               </p>
               <p className="font-bold text-sm mb-2" style={{ color: '#f8fafc' }}>{tile.label}</p>
-              <p className="text-xs leading-relaxed" style={{ color: '#475569' }}>{tile.desc}</p>
+              <p className="text-xs leading-relaxed" style={{ color: '#8892a4' }}>{tile.desc}</p>
             </motion.div>
           ))}
         </div>

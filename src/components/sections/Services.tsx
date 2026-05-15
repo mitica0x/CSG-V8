@@ -6,42 +6,42 @@ const services = [
   {
     number: '01', title: 'Blockchain & Web3',
     description: 'EVM/non-EVM chains, L0/L1/L2 architecture, smart contract development and audits. Full-stack blockchain infrastructure.',
-    tags: ['EVM', 'L1/L2', 'Smart Contracts', 'Audits'], accent: '#06b6d4',
+    tags: ['EVM', 'L1/L2', 'Smart Contracts', 'Audits'], accent: '#5BA8B5',
   },
   {
     number: '02', title: 'Products',
     description: 'Whitepaper design, DeFi protocols, NFT systems, token engineering, MVPs, wallets, and exchange platforms.',
-    tags: ['Whitepaper', 'DeFi', 'NFT', 'MVP', 'Wallet'], accent: '#8b5cf6',
+    tags: ['Whitepaper', 'DeFi', 'NFT', 'MVP', 'Wallet'], accent: '#7B5EA7',
   },
   {
     number: '03', title: 'Strategic Advisory & Ops',
     description: 'Proof of concept, project management, go-to-market strategy, investor relations and ecosystem positioning.',
-    tags: ['PoC', 'GTM', 'Investor Relations', 'Strategy'], accent: '#06b6d4',
+    tags: ['PoC', 'GTM', 'Investor Relations', 'Strategy'], accent: '#5BA8B5',
   },
   {
     number: '04', title: 'Business & Legal',
     description: 'VASP/EMI/PSP frameworks, SAFT agreements, KYC/AML strategy, GDPR compliance, and licensing across jurisdictions.',
-    tags: ['VASP', 'KYC/AML', 'GDPR', 'SAFT', 'EMI'], accent: '#8b5cf6',
+    tags: ['VASP', 'KYC/AML', 'GDPR', 'SAFT', 'EMI'], accent: '#7B5EA7',
   },
   {
     number: '05', title: 'Marketing & PR',
     description: 'Branding, storytelling, video explainers, social media, ORM, press releases, influencer campaigns, and advertising.',
-    tags: ['Branding', 'Social', 'ORM', 'Influencer', 'Ads'], accent: '#06b6d4',
+    tags: ['Branding', 'Social', 'ORM', 'Influencer', 'Ads'], accent: '#5BA8B5',
   },
   {
     number: '06', title: 'Fundraising',
     description: 'ICO/STO/IEO/IDO structuring, seed/OTC/public rounds, pitch to 2,200+ VCs, and agreement documentation.',
-    tags: ['ICO', 'STO', 'IDO', 'VCs', 'Seed'], accent: '#8b5cf6',
+    tags: ['ICO', 'STO', 'IDO', 'VCs', 'Seed'], accent: '#7B5EA7',
   },
   {
     number: '07', title: 'Brand Awareness',
     description: 'Summit presence, AMAs, interviews, live events, supercharged networking, and organic traffic strategies.',
-    tags: ['Summits', 'AMAs', 'Events', 'Networking'], accent: '#06b6d4',
+    tags: ['Summits', 'AMAs', 'Events', 'Networking'], accent: '#5BA8B5',
   },
   {
     number: '08', title: 'Digitalization',
     description: 'Full-stack websites, dApps, cloud infrastructure, cybersecurity, AI-powered tools, and ERP integration.',
-    tags: ['dApps', 'Cloud', 'AI', 'Cybersecurity', 'ERP'], accent: '#8b5cf6',
+    tags: ['dApps', 'Cloud', 'AI', 'Cybersecurity', 'ERP'], accent: '#7B5EA7',
   },
 ]
 
@@ -70,7 +70,7 @@ export default function Services() {
     <section
       id="services"
       className="py-32 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #030712 0%, #07101f 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0a0e1a 0%, #07101f 100%)' }}
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header — left-aligned, no arrows */}
@@ -81,7 +81,7 @@ export default function Services() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#22d3ee' }}>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#5BA8B5' }}>
             Capabilities
           </p>
           <h2
@@ -91,8 +91,8 @@ export default function Services() {
             Services &{' '}
             <span className="gradient-cyan">Deliverables</span>
           </h2>
-          <p className="max-w-sm text-base leading-relaxed" style={{ color: '#64748b' }}>
-            C<span style={{ color: '#06b6d4' }}>0</span>insiglieri delivers turnkey support across strategy, product, legal, fundraising,
+          <p className="max-w-sm text-base leading-relaxed" style={{ color: '#8892a4' }}>
+            C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri delivers turnkey support across strategy, product, legal, fundraising,
             infrastructure, marketing, and real-world execution.
           </p>
         </motion.div>
@@ -109,7 +109,7 @@ export default function Services() {
                 left: 10,
                 top: '50%',
                 transform: 'translateY(-50%)',
-                color: 'var(--cs-cyan, #06b6d4)',
+                color: 'var(--cs-cyan, #5BA8B5)',
                 opacity: 0.35,
                 pointerEvents: 'auto',
                 zIndex: 3,
@@ -186,7 +186,7 @@ export default function Services() {
                 <h3 className="font-bold mb-4" style={{ fontSize: '1rem', color: '#f8fafc', lineHeight: 1.35 }}>
                   {svc.title}
                 </h3>
-                <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: '#64748b' }}>
+                <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: '#8892a4' }}>
                   {svc.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -218,7 +218,7 @@ export default function Services() {
                 right: 10,
                 top: '50%',
                 transform: 'translateY(-50%)',
-                color: 'var(--cs-cyan, #06b6d4)',
+                color: 'var(--cs-cyan, #5BA8B5)',
                 opacity: 0.35,
                 pointerEvents: 'auto',
                 zIndex: 3,
@@ -250,7 +250,7 @@ export default function Services() {
             <div
               style={{
                 height: 2,
-                background: 'var(--cs-cyan, #06b6d4)',
+                background: 'var(--cs-cyan, #5BA8B5)',
                 borderRadius: 2,
                 width: `${scrollProgress}%`,
                 transition: 'width 80ms linear',
@@ -300,14 +300,14 @@ export default function Services() {
                 style={{
                   background: 'rgba(255,255,255,0.025)',
                   border: '1px solid rgba(255,255,255,0.07)',
-                  color: '#64748b',
+                  color: '#8892a4',
                 }}
               >
                 {item}
               </span>
             ))}
           </div>
-          <p className="text-center text-sm font-medium" style={{ color: '#475569' }}>
+          <p className="text-center text-sm font-medium" style={{ color: '#8892a4' }}>
             From structure to scale — clarity, compliance, and execution.
           </p>
         </motion.div>
@@ -322,9 +322,9 @@ export default function Services() {
           <button
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="group inline-flex items-center gap-2 text-sm font-semibold cursor-pointer transition-colors duration-200"
-            style={{ color: '#22d3ee', background: 'none', border: 'none' }}
+            style={{ color: '#5BA8B5', background: 'none', border: 'none' }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#67e8f9')}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#22d3ee')}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#5BA8B5')}
           >
             Interested? Let's talk
             <ChevronRight size={15} className="transition-transform group-hover:translate-x-1" />

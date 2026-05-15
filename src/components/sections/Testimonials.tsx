@@ -27,12 +27,12 @@ export default function Testimonials() {
     <section
       id="testimonials"
       className="py-32 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #030712 0%, #070d1a 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0a0e1a 0%, #070d1a 100%)' }}
     >
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(139,92,246,0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(123,94,167,0.04) 0%, transparent 70%)',
         }}
       />
 
@@ -44,7 +44,7 @@ export default function Testimonials() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#a78bfa' }}>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#7B5EA7' }}>
             Social Proof
           </p>
           <h2
@@ -69,24 +69,24 @@ export default function Testimonials() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.55, delay: i * 0.08 }}
               whileHover={{
-                borderColor: 'rgba(139,92,246,0.28)',
-                boxShadow: '0 0 35px rgba(139,92,246,0.1)',
+                borderColor: 'rgba(123,94,167,0.28)',
+                boxShadow: '0 0 35px rgba(123,94,167,0.1)',
                 y: -4,
               }}
             >
               <div className="flex gap-1 mb-5">
                 {Array(t.stars).fill(0).map((_, j) => (
-                  <Star key={j} size={13} fill="#8b5cf6" style={{ color: '#8b5cf6' }} />
+                  <Star key={j} size={13} fill="#7B5EA7" style={{ color: '#7B5EA7' }} />
                 ))}
               </div>
 
-              <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: '#94a3b8' }}>
+              <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: '#8892a4' }}>
                 "{t.text}"
               </p>
 
               <div>
                 <p className="font-bold text-sm" style={{ color: '#f8fafc' }}>{t.name}</p>
-                <p className="text-xs mt-0.5" style={{ color: '#475569' }}>{t.role}</p>
+                <p className="text-xs mt-0.5" style={{ color: '#8892a4' }}>{t.role}</p>
               </div>
             </motion.div>
           ))}
@@ -104,9 +104,9 @@ export default function Testimonials() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200"
-            style={{ color: '#64748b', textDecoration: 'none' }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#22d3ee')}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#64748b')}
+            style={{ color: '#8892a4', textDecoration: 'none' }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#5BA8B5')}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
           >
             Read all 13 reviews on Trustpilot
             <ExternalLink size={13} />

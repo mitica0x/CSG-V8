@@ -66,17 +66,17 @@ export default function AboutWhy() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <Eyebrow color="#06b6d4">About Us</Eyebrow>
+          <Eyebrow color="#5BA8B5">About Us</Eyebrow>
 
           <h2 style={{ ...h2Style, marginBottom: 20 }}>
             We transform <span className="gradient-cyan">ZERO</span> into <span className="gradient-cyan">ONE</span>
           </h2>
 
-          <p style={{ ...inter, fontSize: 14, color: '#64748b', lineHeight: 1.7, marginBottom: 16 }}>
-            C<span style={{ color: '#06b6d4' }}>0</span>insiglieri is a Web3 consulting and execution agency built to help founders,
+          <p style={{ ...inter, fontSize: 14, color: '#8892a4', lineHeight: 1.7, marginBottom: 16 }}>
+            C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri is a Web3 consulting and execution agency built to help founders,
             startups, and businesses move from concept to reality.
           </p>
-          <p style={{ ...inter, fontSize: 14, color: '#64748b', lineHeight: 1.7 }}>
+          <p style={{ ...inter, fontSize: 14, color: '#8892a4', lineHeight: 1.7 }}>
             We bring together curated experts in go-to-market strategy, legal, development,
             AI, trading, networking, crypto payments, tokenomics, CEX &amp; DEX listing, ORM,
             and smart contracts — all under one management with synced vision.
@@ -86,8 +86,8 @@ export default function AboutWhy() {
           <div className="grid grid-cols-2 gap-3" style={{ marginTop: 28 }}>
             {stats.map((s) => (
               <div key={s.label} style={cardStyle}>
-                <p style={{ ...grotesk, fontSize: 30, fontWeight: 700, color: '#06b6d4', lineHeight: 1 }}>{s.value}</p>
-                <p style={{ ...mono, fontSize: 10, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: 8 }}>
+                <p style={{ ...grotesk, fontSize: 30, fontWeight: 700, color: '#5BA8B5', lineHeight: 1 }}>{s.value}</p>
+                <p style={{ ...mono, fontSize: 10, color: '#8892a4', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: 8 }}>
                   {s.label}
                 </p>
               </div>
@@ -102,7 +102,7 @@ export default function AboutWhy() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <Eyebrow color="#8b5cf6">Why C<span style={{ color: '#06b6d4' }}>0</span>insiglieri</Eyebrow>
+          <Eyebrow color="#7B5EA7">Why C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri</Eyebrow>
 
           <h2 style={{ ...h2Style, marginBottom: 24 }}>
             Not consultants. <span className="gradient-purple">Operators</span> with skin in the game.
@@ -112,7 +112,7 @@ export default function AboutWhy() {
             {points.map((p) => (
               <div key={p.title} style={{ ...cardStyle, background: 'rgba(255,255,255,0.025)' }}>
                 <p style={{ ...grotesk, fontSize: 15, fontWeight: 600, color: '#f8fafc', marginBottom: 4 }}>{p.title}</p>
-                <p style={{ ...inter, fontSize: 13, color: '#64748b', lineHeight: 1.55 }}>{p.desc}</p>
+                <p style={{ ...inter, fontSize: 13, color: '#8892a4', lineHeight: 1.55 }}>{p.desc}</p>
               </div>
             ))}
           </div>

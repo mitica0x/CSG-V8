@@ -67,7 +67,7 @@ export default function Navigation() {
             </span>
             <span
               className="font-bold"
-              style={{ fontFamily: 'Geist, sans-serif', fontSize: '1.45rem', letterSpacing: '0.06em', color: '#22d3ee' }}
+              style={{ fontFamily: 'Geist, sans-serif', fontSize: '1.45rem', letterSpacing: '0.06em', color: '#5BA8B5' }}
             >
               siglieri
             </span>
@@ -81,13 +81,13 @@ export default function Navigation() {
                 onClick={() => handleNavClick(link)}
                 style={{
                   fontSize: '0.875rem',
-                  color: link.accent ? '#06b6d4' : '#94a3b8',
+                  color: link.accent ? '#5BA8B5' : '#8892a4',
                   background: 'none',
                   border: 'none',
                   padding: '4px 0',
                 }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = link.accent ? '#22d3ee' : '#f8fafc')}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = link.accent ? '#06b6d4' : '#94a3b8')}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = link.accent ? '#5BA8B5' : '#f8fafc')}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = link.accent ? '#5BA8B5' : '#8892a4')}
                 className="font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap"
               >
                 {link.label}
@@ -100,13 +100,13 @@ export default function Navigation() {
                 fontSize: '0.875rem',
                 padding: '9px 20px',
                 borderRadius: 10,
-                background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)',
-                color: '#030712',
-                boxShadow: '0 0 20px rgba(6,182,212,0.3)',
+                background: 'linear-gradient(135deg, #5BA8B5, #0ea5e9)',
+                color: '#0a0e1a',
+                boxShadow: '0 0 20px rgba(91,168,181,0.3)',
                 border: 'none',
               }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 35px rgba(6,182,212,0.6)')}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 20px rgba(6,182,212,0.3)')}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 35px rgba(91,168,181,0.6)')}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.boxShadow = '0 0 20px rgba(91,168,181,0.3)')}
             >
               Start a Project
             </button>
@@ -141,7 +141,7 @@ export default function Navigation() {
                   key={link.label}
                   onClick={() => handleNavClick(link)}
                   className="text-2xl font-semibold cursor-pointer"
-                  style={{ background: 'none', border: 'none', color: link.accent ? '#06b6d4' : '#f8fafc', fontFamily: 'Geist, sans-serif' }}
+                  style={{ background: 'none', border: 'none', color: link.accent ? '#5BA8B5' : '#f8fafc', fontFamily: 'Geist, sans-serif' }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.06 }}
@@ -154,8 +154,8 @@ export default function Navigation() {
                 onClick={() => { setMobileOpen(false); navigate({ to: '/contact' }) }}
                 className="mt-4 px-8 py-3 rounded-lg text-base font-semibold cursor-pointer"
                 style={{
-                  background: 'linear-gradient(135deg, #06b6d4, #0ea5e9)',
-                  color: '#030712',
+                  background: 'linear-gradient(135deg, #5BA8B5, #0ea5e9)',
+                  color: '#0a0e1a',
                   border: 'none',
                 }}
                 initial={{ opacity: 0, y: 20 }}

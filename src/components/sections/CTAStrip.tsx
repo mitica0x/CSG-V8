@@ -22,8 +22,8 @@ export default function CTAStrip() {
     <section
       id="lets-build"
       style={{
-        background: 'rgba(6,182,212,0.04)',
-        borderTop: '1px solid rgba(6,182,212,0.1)',
+        background: 'rgba(91,168,181,0.04)',
+        borderTop: '1px solid rgba(91,168,181,0.1)',
         padding: '72px 40px',
         textAlign: 'center',
       }}
@@ -35,7 +35,7 @@ export default function CTAStrip() {
         transition={{ duration: 0.6 }}
         style={{ maxWidth: 640, margin: '0 auto' }}
       >
-        <p style={{ ...mono, fontSize: 11, color: '#06b6d4', textTransform: 'uppercase', letterSpacing: '0.22em', marginBottom: 14 }}>
+        <p style={{ ...mono, fontSize: 11, color: '#5BA8B5', textTransform: 'uppercase', letterSpacing: '0.22em', marginBottom: 14 }}>
           Let&apos;s Build
         </p>
 
@@ -43,7 +43,7 @@ export default function CTAStrip() {
           Start Your <span className="gradient-cyan">Project</span>
         </h2>
 
-        <p style={{ ...inter, fontSize: 15, color: '#64748b', maxWidth: 480, margin: '0 auto 28px', lineHeight: 1.6 }}>
+        <p style={{ ...inter, fontSize: 15, color: '#8892a4', maxWidth: 480, margin: '0 auto 28px', lineHeight: 1.6 }}>
           We&apos;ll review your project, needs, and direction, then come back with
           an initial assessment and estimated budget.
         </p>
@@ -51,7 +51,7 @@ export default function CTAStrip() {
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link
             to="/contact"
-            style={{ ...btnBase, background: '#06b6d4', color: '#030712' }}
+            style={{ ...btnBase, background: 'transparent', border: '1.5px solid #5BA8B5', color: '#5BA8B5' }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.filter = 'brightness(1.1)')}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.filter = 'none')}
           >

@@ -18,7 +18,7 @@ export default function Footer() {
     <footer
       className="relative pt-16 pb-8 overflow-hidden"
       style={{
-        background: '#030712',
+        background: '#0a0e1a',
         borderTop: '1px solid rgba(255,255,255,0.05)',
       }}
     >
@@ -26,7 +26,7 @@ export default function Footer() {
         className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none"
         style={{
           width: 600, height: 200,
-          background: 'radial-gradient(ellipse, rgba(6,182,212,0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(91,168,181,0.04) 0%, transparent 70%)',
           filter: 'blur(30px)',
         }}
       />
@@ -45,12 +45,12 @@ export default function Footer() {
               </span>
               <span
                 className="text-2xl font-bold"
-                style={{ fontFamily: 'Geist, sans-serif', color: '#06b6d4' }}
+                style={{ fontFamily: 'Geist, sans-serif', color: '#5BA8B5' }}
               >
                 siglieri
               </span>
             </div>
-            <p className="text-sm mb-5" style={{ color: '#475569', lineHeight: 1.65 }}>
+            <p className="text-sm mb-5" style={{ color: '#8892a4', lineHeight: 1.65 }}>
               Bridging the gap between vision and execution in Web3.
             </p>
             <div className="flex gap-3">
@@ -69,18 +69,18 @@ export default function Footer() {
                   style={{
                     background: 'rgba(255,255,255,0.04)',
                     border: '1px solid rgba(255,255,255,0.08)',
-                    color: '#64748b',
+                    color: '#8892a4',
                     textDecoration: 'none',
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLElement
-                    el.style.borderColor = 'rgba(6,182,212,0.3)'
-                    el.style.color = '#06b6d4'
+                    el.style.borderColor = 'rgba(91,168,181,0.3)'
+                    el.style.color = '#5BA8B5'
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement
                     el.style.borderColor = 'rgba(255,255,255,0.08)'
-                    el.style.color = '#64748b'
+                    el.style.color = '#8892a4'
                   }}
                 >
                   <Icon size={15} />
@@ -93,7 +93,7 @@ export default function Footer() {
           <div>
             <p
               className="text-xs font-semibold uppercase tracking-widest mb-5"
-              style={{ color: '#475569', letterSpacing: '0.18em' }}
+              style={{ color: '#8892a4', letterSpacing: '0.18em' }}
             >
               Navigation
             </p>
@@ -103,9 +103,9 @@ export default function Footer() {
                   key={link.label}
                   to={link.to}
                   className="text-sm transition-colors duration-200"
-                  style={{ color: '#475569', textDecoration: 'none' }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#94a3b8')}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#475569')}
+                  style={{ color: '#8892a4', textDecoration: 'none' }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
                 >
                   {link.label}
                 </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
           <div>
             <p
               className="text-xs font-semibold uppercase tracking-widest mb-5"
-              style={{ color: '#475569', letterSpacing: '0.18em' }}
+              style={{ color: '#8892a4', letterSpacing: '0.18em' }}
             >
               Products
             </p>
@@ -127,20 +127,20 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm transition-colors duration-200"
-                style={{ color: '#475569', textDecoration: 'none' }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#E8FF3C')}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#475569')}
+                style={{ color: '#8892a4', textDecoration: 'none' }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#94c864')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
               >
-                Horiz<span style={{ color: '#E8FF3C' }}>0</span>n
+                Horiz<span style={{ color: '#94c864' }}>0</span>n
               </a>
               <a
                 href="https://ax0n.run"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm transition-colors duration-200"
-                style={{ color: '#475569', textDecoration: 'none' }}
+                style={{ color: '#8892a4', textDecoration: 'none' }}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#D4A853')}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#475569')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
               >
                 Ax<span style={{ color: '#D4A853' }}>0</span>n
               </a>
@@ -151,16 +151,16 @@ export default function Footer() {
           <div>
             <p
               className="text-xs font-semibold uppercase tracking-widest mb-5"
-              style={{ color: '#475569', letterSpacing: '0.18em' }}
+              style={{ color: '#8892a4', letterSpacing: '0.18em' }}
             >
               Contact
             </p>
             <a
               href="mailto:madalin@coinsiglieri.com"
               className="flex items-center gap-2 text-sm mb-3 transition-colors duration-200"
-              style={{ color: '#64748b', textDecoration: 'none' }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#06b6d4')}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#64748b')}
+              style={{ color: '#8892a4', textDecoration: 'none' }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#5BA8B5')}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
             >
               <Mail size={13} />
               madalin@coinsiglieri.com
@@ -168,19 +168,19 @@ export default function Footer() {
             <a
               href="https://coinsiglieri.com"
               className="flex items-center gap-2 text-sm transition-colors duration-200"
-              style={{ color: '#64748b', textDecoration: 'none' }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#06b6d4')}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#64748b')}
+              style={{ color: '#8892a4', textDecoration: 'none' }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#5BA8B5')}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
             >
               <ExternalLink size={13} />
               coinsiglieri.com
             </a>
 
             <div className="mt-6 p-4 rounded-xl" style={{
-              background: 'rgba(6,182,212,0.04)',
-              border: '1px solid rgba(6,182,212,0.1)',
+              background: 'rgba(91,168,181,0.04)',
+              border: '1px solid rgba(91,168,181,0.1)',
             }}>
-              <p className="text-xs" style={{ color: '#475569', lineHeight: 1.6 }}>
+              <p className="text-xs" style={{ color: '#8892a4', lineHeight: 1.6 }}>
                 Fast response · Confidential handling · No spam
               </p>
             </div>
@@ -193,7 +193,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}
         >
           <p className="text-xs" style={{ color: '#2d3748' }}>
-            C<span style={{ color: '#06b6d4' }}>0</span>insiglieri is a Registered Trademark brand name and logo. © {year} C<span style={{ color: '#06b6d4' }}>0</span>insiglieri. All rights reserved.
+            C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri is a Registered Trademark brand name and logo. © {year} C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri. All rights reserved.
           </p>
           <p className="text-xs" style={{ color: '#2d3748' }}>
             Bridging vision and execution in Web3

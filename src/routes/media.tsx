@@ -12,7 +12,7 @@ export const Route = createFileRoute('/media')({
     ],
   }),
   component: () => (
-    <div style={{ background: '#030712', minHeight: '100vh' }}>
+    <div style={{ background: '#0a0e1a', minHeight: '100vh' }}>
       <Navigation />
       <main>
         <Partners />
