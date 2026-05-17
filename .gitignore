@@ -44,3 +44,7 @@ __pycache__/
 ruvector.db
 *.db
 .vercel
+
+# Third-party agent skills (taste-skill bundle) — runs with full agent permissions, do not commit
+.agents/
+skills-lock.json
