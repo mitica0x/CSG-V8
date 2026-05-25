@@ -86,10 +86,7 @@ export default function Hero() {
               letterSpacing: '-0.015em',
             }}
           >
-            Bridging the Gap between{' '}
-            <span style={{ color: '#f8fafc' }}>Vision</span>{' '}
-            and{' '}
-            <span className="gradient-cyan">Execution</span>
+            AI-native financial infrastructure.
           </motion.p>
 
           {/* Description — centered under motto */}
@@ -98,8 +95,7 @@ export default function Hero() {
             className="max-w-3xl mx-auto mb-10 leading-relaxed text-center"
             style={{ color: '#8892a4', fontSize: 'clamp(1rem, 1.4vw, 1.15rem)' }}
           >
-            The one-stop-Web3-shop — from idea to execution across legal and licensing,
-            strategy and fundraising, smart contract development, marketing and go-to-market.
+            Building AI-native financial infrastructure since 2017.
           </motion.p>
 
           {/* CTAs — bigger, more readable */}

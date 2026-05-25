@@ -73,7 +73,7 @@ export default function AboutWhy() {
           </h2>
 
           <p style={{ ...inter, fontSize: 14, color: '#8892a4', lineHeight: 1.7, marginBottom: 16 }}>
-            C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri is a Web3 consulting and execution agency built to help founders,
+            C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri is a AI-native financial infrastructure builder built to help founders,
             startups, and businesses move from concept to reality.
           </p>
           <p style={{ ...inter, fontSize: 14, color: '#8892a4', lineHeight: 1.7 }}>

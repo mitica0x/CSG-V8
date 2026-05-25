@@ -51,7 +51,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm mb-5" style={{ color: '#8892a4', lineHeight: 1.65 }}>
-              Bridging the gap between vision and execution in Web3.
+              AI-native financial infrastructure.
             </p>
             <div className="flex gap-3">
               {[
@@ -196,7 +196,7 @@ export default function Footer() {
             C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri is a Registered Trademark brand name and logo. © {year} C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri. All rights reserved.
           </p>
           <p className="text-xs" style={{ color: '#2d3748' }}>
-            Bridging vision and execution in Web3
+            AI-native financial infrastructure.
           </p>
         </div>
       </div>
