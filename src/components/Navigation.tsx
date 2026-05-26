@@ -12,6 +12,8 @@ const navLinks: NavLink[] = [
   { label: 'Contact',      href: '#contact' },
 ]
 
+const COMPARE_PATH = '/compare'
+
 const DASHBOARD_URL = 'https://app.coinsiglieri.com'
 
 export default function Navigation() {
@@ -84,6 +86,24 @@ export default function Navigation() {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center" style={{ gap: 32 }}>
+            <Link
+              to={COMPARE_PATH}
+              className="press"
+              style={{
+                fontFamily: 'Geist, sans-serif',
+                fontSize: 14,
+                fontWeight: 600,
+                letterSpacing: '0.01em',
+                color: '#18b4d4',
+                textDecoration: 'none',
+                padding: '12px 0',
+                whiteSpace: 'nowrap',
+              }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#22c4e5')}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#18b4d4')}
+            >
+              Compare
+            </Link>
             {navLinks.map((link) => (
               <button
                 key={link.label}
@@ -171,6 +191,27 @@ export default function Navigation() {
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <nav className="flex flex-col items-center gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Link
+                  to={COMPARE_PATH}
+                  onClick={() => setMobileOpen(false)}
+                  className="press"
+                  style={{
+                    color: '#18b4d4',
+                    fontFamily: 'Geist, sans-serif',
+                    fontSize: 22,
+                    fontWeight: 600,
+                    letterSpacing: '-0.01em',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Compare
+                </Link>
+              </motion.div>
               {navLinks.map((link, i) => (
                 <motion.button
                   key={link.label}
@@ -188,7 +229,7 @@ export default function Navigation() {
                   }}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ delay: (i + 1) * 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {link.label}
                 </motion.button>

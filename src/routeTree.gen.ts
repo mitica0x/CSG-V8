@@ -16,6 +16,7 @@ import { Route as MediaRouteImport } from './routes/media'
 import { Route as CryptoPosRouteImport } from './routes/crypto-pos'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CompetitionRouteImport } from './routes/competition'
+import { Route as CompareRouteImport } from './routes/compare'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TeamRoute = TeamRouteImport.update({
@@ -53,6 +54,11 @@ const CompetitionRoute = CompetitionRouteImport.update({
   path: '/competition',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CompareRoute = CompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -61,6 +67,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/compare': typeof CompareRoute
   '/competition': typeof CompetitionRoute
   '/contact': typeof ContactRoute
   '/crypto-pos': typeof CryptoPosRoute
@@ -71,6 +78,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/compare': typeof CompareRoute
   '/competition': typeof CompetitionRoute
   '/contact': typeof ContactRoute
   '/crypto-pos': typeof CryptoPosRoute
@@ -82,6 +90,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/compare': typeof CompareRoute
   '/competition': typeof CompetitionRoute
   '/contact': typeof ContactRoute
   '/crypto-pos': typeof CryptoPosRoute
@@ -94,6 +103,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/compare'
     | '/competition'
     | '/contact'
     | '/crypto-pos'
@@ -104,6 +114,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/compare'
     | '/competition'
     | '/contact'
     | '/crypto-pos'
@@ -114,6 +125,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/compare'
     | '/competition'
     | '/contact'
     | '/crypto-pos'
@@ -125,6 +137,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CompareRoute: typeof CompareRoute
   CompetitionRoute: typeof CompetitionRoute
   ContactRoute: typeof ContactRoute
   CryptoPosRoute: typeof CryptoPosRoute
@@ -185,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CompetitionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compare': {
+      id: '/compare'
+      path: '/compare'
+      fullPath: '/compare'
+      preLoaderRoute: typeof CompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -197,6 +217,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CompareRoute: CompareRoute,
   CompetitionRoute: CompetitionRoute,
   ContactRoute: ContactRoute,
   CryptoPosRoute: CryptoPosRoute,
