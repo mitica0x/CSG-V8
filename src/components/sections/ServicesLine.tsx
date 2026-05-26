@@ -1,47 +1,83 @@
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 
 export default function ServicesLine() {
+  const reduce = useReducedMotion()
+
   return (
     <section
       id="contact"
-      className="relative py-20"
-      style={{ background: '#09090b', borderTop: '1px solid rgba(255,255,255,0.07)' }}
+      className="relative"
+      style={{
+        background: '#09090b',
+        borderTop: '1px solid rgba(255,255,255,0.07)',
+        borderBottom: '1px solid rgba(255,255,255,0.07)',
+        padding: '48px clamp(24px, 4vw, 64px)',
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: reduce ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col md:flex-row md:items-start md:justify-between"
+          style={{ gap: 24 }}
         >
-          <p
-            style={{
-              fontFamily: 'Geist, sans-serif',
-              fontSize: 'clamp(1.05rem, 1.6vw, 1.35rem)',
-              color: '#e4e4e7',
-              lineHeight: 1.5,
-              letterSpacing: '-0.01em',
-              maxWidth: '52rem',
-            }}
-          >
-            Some teams need someone in the room. We do that too — selectively.
-          </p>
+          {/* Left — two lines */}
+          <div style={{ maxWidth: '52rem' }}>
+            <p
+              style={{
+                fontFamily: 'Geist, sans-serif',
+                fontSize: 17,
+                color: '#71717a',
+                lineHeight: 1.55,
+              }}
+            >
+              Some teams need someone in the room.
+            </p>
+            <p
+              style={{
+                fontFamily: 'Geist, sans-serif',
+                fontSize: 17,
+                fontStyle: 'italic',
+                color: '#a1a1aa',
+                lineHeight: 1.55,
+              }}
+            >
+              We do that too — selectively.
+            </p>
+          </div>
 
-          <a
-            href="mailto:hello@coinsiglieri.com"
-            className="font-semibold transition-colors duration-200 whitespace-nowrap self-start md:self-auto"
-            style={{
-              fontFamily: 'Geist, sans-serif',
-              fontSize: '1rem',
-              color: '#18b4d4',
-              textDecoration: 'none',
-            }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#22c4e5')}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#18b4d4')}
-          >
-            → Talk to us
-          </a>
+          {/* Right — CTA + mono tag */}
+          <div className="flex flex-col md:items-end" style={{ gap: 8 }}>
+            <a
+              href="mailto:hello@coinsiglieri.com"
+              className="press"
+              style={{
+                fontFamily: 'Geist Mono, monospace',
+                fontSize: 12,
+                color: '#18b4d4',
+                letterSpacing: '0.06em',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                fontWeight: 600,
+              }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
+            >
+              → Talk to us
+            </a>
+            <p
+              style={{
+                fontFamily: 'Geist Mono, monospace',
+                fontSize: 10,
+                color: '#3f3f46',
+                letterSpacing: '0.06em',
+              }}
+            >
+              Strategy · BD · Execution
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

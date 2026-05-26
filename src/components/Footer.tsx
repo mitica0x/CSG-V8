@@ -1,41 +1,118 @@
+import ProductMark from './ProductMark'
+
 export default function Footer() {
   return (
     <footer
-      className="relative py-10"
+      className="relative"
       style={{
         background: '#09090b',
         borderTop: '1px solid rgba(255,255,255,0.07)',
+        padding: '56px clamp(24px, 4vw, 64px)',
+        minHeight: 160,
       }}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          {/* Left */}
-          <div
-            style={{
-              fontFamily: 'Geist Mono, monospace',
-              fontSize: '0.78rem',
-              color: '#a1a1aa',
-              letterSpacing: '0.04em',
-              lineHeight: 1.7,
-            }}
-          >
-            <p>AI-native financial infrastructure.</p>
-            <p>In the market since 2017.</p>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row items-start md:items-start justify-between" style={{ gap: 32 }}>
+          {/* Left — logo + mono lines */}
+          <div>
+            <div style={{ marginBottom: 16 }}>
+              <span
+                style={{
+                  fontFamily: 'Geist, sans-serif',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  letterSpacing: '-0.01em',
+                  color: '#e4e4e7',
+                }}
+              >
+                Coin
+              </span>
+              <span
+                style={{
+                  fontFamily: 'Geist, sans-serif',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  letterSpacing: '-0.01em',
+                  color: '#18b4d4',
+                }}
+              >
+                Siglieri
+              </span>
+            </div>
+            <div
+              style={{
+                fontFamily: 'Geist Mono, monospace',
+                fontSize: 11,
+                color: '#3f3f46',
+                lineHeight: 2,
+                letterSpacing: '0.06em',
+              }}
+            >
+              <p>AI-native financial infrastructure.</p>
+              <p>In the market since 2017.</p>
+            </div>
           </div>
 
-          {/* Right */}
-          <div
-            className="md:text-right"
-            style={{
-              fontFamily: 'Geist Mono, monospace',
-              fontSize: '0.78rem',
-              color: '#71717a',
-              letterSpacing: '0.04em',
-              lineHeight: 1.7,
-            }}
-          >
-            <p>coinsiglieri.com</p>
-            <p>© 2026 CoinSiglieri</p>
+          {/* Right — locked copy + product links */}
+          <div className="md:text-right" style={{ display: 'flex', flexDirection: 'column' }}>
+            <div
+              style={{
+                fontFamily: 'Geist Mono, monospace',
+                fontSize: 11,
+                color: '#3f3f46',
+                lineHeight: 2,
+                letterSpacing: '0.06em',
+              }}
+            >
+              <p>coinsiglieri.com</p>
+              <p>© 2026 CoinSiglieri</p>
+            </div>
+
+            <div
+              className="md:justify-end"
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                gap: 10,
+                marginTop: 12,
+                fontFamily: 'Geist Mono, monospace',
+                fontSize: 10,
+                letterSpacing: '0.04em',
+              }}
+            >
+              <a
+                href="https://app.coinsiglieri.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#18b4d4', textDecoration: 'none' }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
+              >
+                <ProductMark product="c0insiglieri" />
+              </a>
+              <span style={{ color: '#3f3f46' }} aria-hidden>·</span>
+              <a
+                href="https://ax0n.run"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#D4A853', textDecoration: 'none' }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
+              >
+                <ProductMark product="ax0n" />
+              </a>
+              <span style={{ color: '#3f3f46' }} aria-hidden>·</span>
+              <a
+                href="https://sc0rx.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#6366f1', textDecoration: 'none' }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
+              >
+                <ProductMark product="sc0rx" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

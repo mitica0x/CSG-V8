@@ -19,7 +19,7 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => setScrolled(window.scrollY > 24)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -33,55 +33,76 @@ export default function Navigation() {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 right-0 z-[100] transition-all duration-500"
+        className="fixed top-0 left-0 right-0 z-[100]"
         style={{
-          background: scrolled ? 'rgba(9,9,11,0.85)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(20px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : 'none',
+          background: 'rgba(9,9,11,0.85)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          borderBottom: `1px solid ${scrolled ? 'rgba(255,255,255,0.07)' : 'transparent'}`,
+          transitionProperty: 'border-color',
+          transitionDuration: '300ms',
         }}
-        initial={{ y: -80, opacity: 0 }}
+        initial={{ y: -64, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Brand */}
+        <div
+          className="max-w-7xl mx-auto px-6 flex items-center justify-between"
+          style={{ minHeight: 64 }}
+        >
+          {/* Brand — hard left */}
           <Link
             to="/"
             onClick={() => setMobileOpen(false)}
-            className="flex items-center cursor-pointer select-none flex-none"
-            style={{ textDecoration: 'none' }}
+            className="press inline-flex items-center select-none"
+            style={{ textDecoration: 'none', padding: '8px 0' }}
+            aria-label="CoinSiglieri home"
           >
             <span
-              className="font-semibold"
-              style={{ fontFamily: 'Geist, sans-serif', fontSize: '1.25rem', letterSpacing: '-0.01em', color: '#e4e4e7' }}
+              style={{
+                fontFamily: 'Geist, sans-serif',
+                fontSize: 16,
+                fontWeight: 600,
+                letterSpacing: '-0.01em',
+                color: '#e4e4e7',
+              }}
             >
               Coin
             </span>
             <span
-              className="font-semibold"
-              style={{ fontFamily: 'Geist, sans-serif', fontSize: '1.25rem', letterSpacing: '-0.01em', color: '#18b4d4' }}
+              style={{
+                fontFamily: 'Geist, sans-serif',
+                fontSize: 16,
+                fontWeight: 600,
+                letterSpacing: '-0.01em',
+                color: '#18b4d4',
+              }}
             >
               Siglieri
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center" style={{ gap: 32 }}>
             {navLinks.map((link) => (
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link)}
+                className="press"
                 style={{
                   fontFamily: 'Geist, sans-serif',
-                  fontSize: '0.875rem',
-                  color: '#a1a1aa',
+                  fontSize: 14,
+                  fontWeight: 500,
+                  letterSpacing: '0.01em',
+                  color: '#71717a',
                   background: 'none',
                   border: 'none',
-                  padding: '4px 0',
+                  padding: '12px 0',
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap',
                 }}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#e4e4e7')}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#a1a1aa')}
-                className="font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap"
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#71717a')}
               >
                 {link.label}
               </button>
@@ -90,46 +111,56 @@ export default function Navigation() {
               href={DASHBOARD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap"
+              className="press"
               style={{
                 fontFamily: 'Geist, sans-serif',
-                fontSize: '0.875rem',
-                padding: '9px 18px',
-                borderRadius: 8,
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: '0.02em',
+                padding: '8px 20px',
+                borderRadius: 2,
                 background: '#18b4d4',
                 color: '#09090b',
                 textDecoration: 'none',
-                boxShadow: '0 0 20px rgba(24,180,212,0.25)',
+                whiteSpace: 'nowrap',
+                boxShadow: '0 0 0 0 rgba(24,180,212,0)',
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement
                 el.style.background = '#22c4e5'
-                el.style.boxShadow = '0 0 32px rgba(24,180,212,0.55)'
+                el.style.boxShadow = '0 0 24px 0 rgba(24,180,212,0.45)'
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLElement
                 el.style.background = '#18b4d4'
-                el.style.boxShadow = '0 0 20px rgba(24,180,212,0.25)'
+                el.style.boxShadow = '0 0 0 0 rgba(24,180,212,0)'
               }}
             >
               Open Dashboard →
             </a>
           </nav>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger — 40×40 hit area */}
           <button
-            className="lg:hidden p-2 cursor-pointer"
-            style={{ background: 'none', border: 'none', color: '#e4e4e7' }}
+            className="lg:hidden inline-flex items-center justify-center"
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#e4e4e7',
+              width: 40,
+              height: 40,
+              cursor: 'pointer',
+            }}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </motion.header>
 
-      {/* Mobile overlay */}
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {mobileOpen && (
           <motion.div
             className="fixed inset-0 z-[99] flex flex-col items-center justify-center"
@@ -137,19 +168,27 @@ export default function Navigation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <nav className="flex flex-col items-center gap-6">
               {navLinks.map((link, i) => (
                 <motion.button
                   key={link.label}
                   onClick={() => handleNavClick(link)}
-                  className="text-2xl font-semibold cursor-pointer"
-                  style={{ background: 'none', border: 'none', color: '#e4e4e7', fontFamily: 'Geist, sans-serif' }}
-                  initial={{ opacity: 0, y: 20 }}
+                  className="press"
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#e4e4e7',
+                    fontFamily: 'Geist, sans-serif',
+                    fontSize: 22,
+                    fontWeight: 600,
+                    letterSpacing: '-0.01em',
+                    cursor: 'pointer',
+                  }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.06 }}
-                  whileTap={{ scale: 0.95 }}
+                  transition={{ delay: i * 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {link.label}
                 </motion.button>
@@ -159,17 +198,21 @@ export default function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 px-8 py-3 rounded-lg text-base font-semibold cursor-pointer"
+                className="press mt-4"
                 style={{
                   background: '#18b4d4',
                   color: '#09090b',
-                  border: 'none',
-                  textDecoration: 'none',
                   fontFamily: 'Geist, sans-serif',
+                  fontSize: 14,
+                  fontWeight: 700,
+                  letterSpacing: '0.02em',
+                  padding: '12px 28px',
+                  borderRadius: 2,
+                  textDecoration: 'none',
                 }}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.06 }}
+                transition={{ delay: navLinks.length * 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               >
                 Open Dashboard →
               </motion.a>

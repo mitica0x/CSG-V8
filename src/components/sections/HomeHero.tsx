@@ -1,59 +1,75 @@
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import ThreeHero from '../ThreeHero'
 
 const DASHBOARD_URL = 'https://app.coinsiglieri.com'
 
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
-}
-const item = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
-}
-
 export default function HomeHero() {
+  const reduce = useReducedMotion()
+
+  const fade = (delay: number) => ({
+    initial: reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: reduce ? 0 : 0.6, delay: reduce ? 0 : delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  })
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern"
-      style={{ background: '#09090b' }}
+      className="relative flex items-center justify-center overflow-hidden grid-pattern"
+      style={{ background: '#09090b', minHeight: '100vh' }}
     >
-      <ThreeHero className="absolute inset-0 w-full h-full" style={{ opacity: 0.7 }} />
+      {/* Globe — full-bleed behind text, deliberately not covered */}
+      <ThreeHero className="absolute inset-0 w-full h-full" style={{ opacity: 0.75 }} />
 
-      {/* Ambient orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="orb-1 absolute rounded-full"
-          style={{
-            width: 700, height: 700,
-            top: '-10%', left: '-15%',
-            background: 'radial-gradient(circle, rgba(24,180,212,0.08) 0%, transparent 65%)',
-            filter: 'blur(80px)',
-          }}
-        />
-        <div
-          className="orb-2 absolute rounded-full"
-          style={{
-            width: 800, height: 800,
-            bottom: '-20%', right: '-15%',
-            background: 'radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 65%)',
-            filter: 'blur(100px)',
-          }}
-        />
-      </div>
+      {/* Top + bottom vignettes so the text block reads cleanly without occluding the globe sides */}
+      <div
+        className="absolute inset-x-0 top-0 pointer-events-none"
+        style={{
+          height: '38%',
+          background: 'linear-gradient(180deg, rgba(9,9,11,0.85) 0%, rgba(9,9,11,0) 100%)',
+        }}
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 pointer-events-none"
+        style={{
+          height: '20%',
+          background: 'linear-gradient(0deg, rgba(9,9,11,0.85) 0%, rgba(9,9,11,0) 100%)',
+        }}
+      />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center py-32 pt-40">
-        <motion.div variants={container} initial="hidden" animate="visible">
+      {/* Soft center spotlight that fades the globe behind the headline only */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: '38%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: 880,
+          height: 360,
+          background: 'radial-gradient(ellipse at center, rgba(9,9,11,0.65) 0%, rgba(9,9,11,0) 70%)',
+          filter: 'blur(4px)',
+        }}
+      />
+
+      {/* Content — positioned slightly above center (~45%) */}
+      <div
+        className="relative z-10 w-full px-6"
+        style={{
+          paddingTop: 'clamp(140px, 22vh, 220px)',
+          paddingBottom: 'clamp(120px, 18vh, 200px)',
+        }}
+      >
+        <div className="max-w-3xl mx-auto text-center">
           {/* Eyebrow */}
           <motion.p
-            variants={item}
-            className="mb-10 uppercase"
+            {...fade(0)}
+            className="uppercase"
             style={{
               fontFamily: 'Geist Mono, monospace',
-              fontSize: '0.78rem',
-              letterSpacing: '0.22em',
+              fontSize: 11,
+              letterSpacing: '0.16em',
               color: '#71717a',
+              marginBottom: 32,
             }}
           >
             AI-Native Financial Infrastructure
@@ -61,83 +77,89 @@ export default function HomeHero() {
 
           {/* H1 */}
           <motion.h1
-            variants={item}
-            className="font-semibold mb-8"
+            {...fade(0.12)}
+            className="balance"
             style={{
               fontFamily: 'Geist, sans-serif',
-              fontSize: 'clamp(2.4rem, 6.4vw, 5rem)',
-              lineHeight: 1.05,
-              letterSpacing: '-0.035em',
+              fontSize: 'clamp(36px, 6.4vw, 52px)',
+              fontWeight: 700,
+              lineHeight: 1.08,
+              letterSpacing: '-0.03em',
               color: '#e4e4e7',
+              maxWidth: 640,
+              margin: '0 auto',
             }}
           >
-            Everything in financial markets
-            <br />
-            was built for humans.
+            Building for what comes next.
           </motion.h1>
 
-          {/* Body */}
+          {/* Subline */}
           <motion.p
-            variants={item}
-            className="max-w-2xl mx-auto mb-10"
+            {...fade(0.24)}
+            className="pretty"
             style={{
               fontFamily: 'Geist, sans-serif',
-              fontSize: 'clamp(1.1rem, 1.6vw, 1.4rem)',
-              color: '#a1a1aa',
+              fontSize: 18,
+              fontWeight: 400,
               lineHeight: 1.5,
+              color: '#71717a',
+              marginTop: 16,
+              maxWidth: 560,
+              marginLeft: 'auto',
+              marginRight: 'auto',
             }}
           >
-            We&rsquo;re building for what comes next.
+            Everything in financial markets was built for humans.
           </motion.p>
 
-          {/* Mono line */}
+          {/* Mono tag */}
           <motion.p
-            variants={item}
-            className="mb-12"
+            {...fade(0.36)}
             style={{
               fontFamily: 'Geist Mono, monospace',
-              fontSize: '0.82rem',
+              fontSize: 12,
               color: '#71717a',
-              letterSpacing: '0.02em',
+              letterSpacing: '0.08em',
+              marginTop: 24,
             }}
           >
-            In the market since 2017. · Crypto. Web3. Now AI.
+            Crypto · Web3 · Now AI · In the market since 2017
           </motion.p>
 
           {/* CTA */}
-          <motion.div variants={item} className="flex justify-center">
+          <motion.div {...fade(0.48)} style={{ marginTop: 40 }}>
             <a
               href={DASHBOARD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold transition-all duration-300 cursor-pointer"
+              className="press inline-block"
               style={{
                 fontFamily: 'Geist, sans-serif',
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: '0.05em',
                 background: '#18b4d4',
                 color: '#09090b',
-                border: 'none',
-                padding: '1.1rem 2.4rem',
-                fontSize: '1rem',
-                borderRadius: 10,
+                padding: '14px 28px',
+                borderRadius: 2,
                 textDecoration: 'none',
-                boxShadow: '0 0 32px rgba(24,180,212,0.35)',
-                display: 'inline-block',
+                boxShadow: '0 0 0 0 rgba(24,180,212,0)',
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement
                 el.style.background = '#22c4e5'
-                el.style.boxShadow = '0 0 48px rgba(24,180,212,0.6)'
+                el.style.boxShadow = '0 0 36px 0 rgba(24,180,212,0.55)'
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLElement
                 el.style.background = '#18b4d4'
-                el.style.boxShadow = '0 0 32px rgba(24,180,212,0.35)'
+                el.style.boxShadow = '0 0 0 0 rgba(24,180,212,0)'
               }}
             >
               Open the dashboard →
             </a>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -127,27 +127,40 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
-/* CoinSiglieri holding-site design tokens (locked palette). */
+/* CoinSiglieri holding-site design tokens — three-layer (primitive → semantic → component). */
 :root {
-  --cs-bg:         #09090b;
-  --cs-text:       #e4e4e7;
-  --cs-muted:      #71717a;
-  --cs-dim:        #a1a1aa;
+  /* Primitive */
+  --c-zinc-950:    #09090b;
+  --c-zinc-900:    #0f0f12;
+  --c-zinc-700:    #3f3f46;
+  --c-zinc-500:    #71717a;
+  --c-zinc-400:    #a1a1aa;
+  --c-zinc-200:    #e4e4e7;
+  --c-cyan:        #18b4d4;
+  --c-cyan-bright: #22c4e5;
+  --c-amber:       #D4A853;
+  --c-indigo:      #6366f1;
+  --c-emerald:     #0dbe82;
+
+  /* Semantic */
+  --cs-bg:         var(--c-zinc-950);
+  --cs-surface:    var(--c-zinc-900);
+  --cs-text:       var(--c-zinc-200);
+  --cs-muted:      var(--c-zinc-500);
+  --cs-dim:        var(--c-zinc-700);
+  --cs-soft:       var(--c-zinc-400);
   --cs-border:     rgba(255,255,255,0.07);
-  --cs-border-mid: rgba(255,255,255,0.12);
+  --cs-border-mid: rgba(255,255,255,0.14);
 
   /* Product accents */
-  --cs-cyan:       #18b4d4;  /* C0insiglieri */
-  --cs-amber:      #D4A853;  /* Ax0n */
-  --cs-indigo:     #4f46e5;  /* Sc0rx */
-  --cs-emerald:    #0dbe82;  /* LIVE dot only */
+  --cs-cyan:       var(--c-cyan);
+  --cs-amber:      var(--c-amber);
+  --cs-indigo:     var(--c-indigo);
+  --cs-emerald:    var(--c-emerald);
 
-  /* Legacy aliases (kept so older sections that haven't been replaced still render) */
-  --cs-surface:    #09090b;
-  --cs-surface-2:  #09090b;
-  --cs-secondary:  #71717a;
-  --cs-cyan-light: #18b4d4;
-  --cs-purple:     #4f46e5;
+  /* Component motion tokens */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-snap: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Typography */
   --font-sans: 'Geist', system-ui, sans-serif;
@@ -297,6 +310,28 @@ body::after {
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 canvas { display: block; }
+
+/* Tabular numbers — for any data display that should not shift width. */
+.tabular-nums { font-variant-numeric: tabular-nums; }
+
+/* Balanced wrapping for headlines, pretty for body. */
+.balance { text-wrap: balance; }
+.pretty  { text-wrap: pretty; }
+
+/* Press scale — applied as a class so we keep `transition: all` away. */
+.press {
+  transition-property: transform, box-shadow, background-color, border-color, color;
+  transition-duration: 180ms;
+  transition-timing-function: var(--ease-out-soft);
+}
+.press:active { transform: scale(0.96); }
+
+/* Card hover lift — only transform/opacity, GPU-cheap. */
+.card-lift {
+  transition-property: border-color, box-shadow, transform;
+  transition-duration: 220ms;
+  transition-timing-function: var(--ease-out-soft);
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
