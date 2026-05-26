@@ -33,15 +33,15 @@ export default function ThreeHero({ className = '', style }: Props) {
     const ambient = new THREE.AmbientLight(0xffffff, 0.4)
     scene.add(ambient)
 
-    const cyanLight = new THREE.PointLight(0x06b6d4, isMobile ? 3 : 4, 8)
+    const cyanLight = new THREE.PointLight(0x18b4d4, isMobile ? 3 : 4, 8)
     cyanLight.position.set(2, 1, 2)
     scene.add(cyanLight)
 
-    const purpleLight = new THREE.PointLight(0x8b5cf6, 2, 8)
+    const purpleLight = new THREE.PointLight(0x4f46e5, 2, 8)
     purpleLight.position.set(-2, -1, 1)
     scene.add(purpleLight)
 
-    const rimLight = new THREE.DirectionalLight(0x22d3ee, 0.6)
+    const rimLight = new THREE.DirectionalLight(0x18b4d4, 0.6)
     rimLight.position.set(0, 2, -2)
     scene.add(rimLight)
 
@@ -68,7 +68,7 @@ export default function ThreeHero({ className = '', style }: Props) {
 
     // Wireframe overlay — very subtle
     const wireMat = new THREE.MeshBasicMaterial({
-      color: 0x06b6d4,
+      color: 0x18b4d4,
       wireframe: true,
       transparent: true,
       opacity: 0.06,
