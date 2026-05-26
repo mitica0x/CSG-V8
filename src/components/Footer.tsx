@@ -1,5 +1,10 @@
 import ProductMark from './ProductMark'
 
+const PRODUCT_LINKS = [
+  { product: 'c0insiglieri' as const, href: 'https://app.coinsiglieri.com', color: '#18b4d4' },
+  { product: 'ax0n'         as const, href: 'https://ax0n.run',             color: '#D4A853' },
+]
+
 export default function Footer() {
   return (
     <footer
@@ -80,38 +85,21 @@ export default function Footer() {
                 letterSpacing: '0.04em',
               }}
             >
-              <a
-                href="https://app.coinsiglieri.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: '#18b4d4', textDecoration: 'none' }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
-              >
-                <ProductMark product="c0insiglieri" />
-              </a>
-              <span style={{ color: '#3f3f46' }} aria-hidden>·</span>
-              <a
-                href="https://ax0n.run"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: '#D4A853', textDecoration: 'none' }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
-              >
-                <ProductMark product="ax0n" />
-              </a>
-              <span style={{ color: '#3f3f46' }} aria-hidden>·</span>
-              <a
-                href="https://sc0rx.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: '#6366f1', textDecoration: 'none' }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
-              >
-                <ProductMark product="sc0rx" />
-              </a>
+              {PRODUCT_LINKS.map((link, i) => (
+                <span key={link.product} style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
+                  {i > 0 && <span style={{ color: '#3f3f46' }} aria-hidden>·</span>}
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: link.color, textDecoration: 'none' }}
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
+                  >
+                    <ProductMark product={link.product} />
+                  </a>
+                </span>
+              ))}
             </div>
           </div>
         </div>

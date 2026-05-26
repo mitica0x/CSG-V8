@@ -29,6 +29,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        httpEquiv: 'Content-Security-Policy',
+        content:
+          "img-src 'self' data: blob: https://logo.clearbit.com https://www.google.com https://t0.gstatic.com https://t1.gstatic.com https://t2.gstatic.com https://t3.gstatic.com https://icons.duckduckgo.com https://icon.horse https:;",
+      },
       { title: 'CoinSiglieri — AI-native financial infrastructure' },
       { name: 'description', content: "Everything in financial markets was built for humans. We're building for what comes next. In the market since 2017." },
       { name: 'author', content: 'CoinSiglieri' },

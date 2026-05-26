@@ -35,14 +35,18 @@ export default function ExchangeLogo({ name, domain, size = 24, accent = '#71717
     )
   }
 
+  // Google s2 favicon service — free, no key, works for any registered domain.
+  // sz must be a power of 2 (16/32/64/128/256). 64 is sharp on retina up to ~32px display.
+  const fetchSize = size > 32 ? 128 : 64
   return (
     <img
-      src={`https://logo.clearbit.com/${domain}`}
+      src={`https://www.google.com/s2/favicons?domain=${domain}&sz=${fetchSize}`}
       alt={`${name} logo`}
       width={size}
       height={size}
       onError={() => setErrored(true)}
       loading="lazy"
+      referrerPolicy="no-referrer"
       style={{
         borderRadius: 4,
         objectFit: 'contain',
