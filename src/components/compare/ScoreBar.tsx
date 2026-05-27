@@ -1,32 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 interface Props {
-  value: number
-  color: string
-  height?: number
-  width?: string
-  delay?: number
-  animate?: boolean
+  value: number;
+  color: string;
+  height?: number;
+  width?: string;
+  delay?: number;
+  animate?: boolean;
 }
 
 export default function ScoreBar({
   value,
   color,
   height = 4,
-  width = '100%',
+  width = "100%",
   delay = 0,
   animate = true,
 }: Props) {
-  const [filled, setFilled] = useState(animate ? 0 : value)
+  const [filled, setFilled] = useState(animate ? 0 : value);
 
   useEffect(() => {
     if (!animate) {
-      setFilled(value)
-      return
+      setFilled(value);
+      return;
     }
-    const id = setTimeout(() => setFilled(value), 30)
-    return () => clearTimeout(id)
-  }, [value, animate])
+    const id = setTimeout(() => setFilled(value), 30);
+    return () => clearTimeout(id);
+  }, [value, animate]);
 
   return (
     <div
@@ -37,23 +37,23 @@ export default function ScoreBar({
       style={{
         width,
         height,
-        background: 'rgba(255,255,255,0.06)',
+        background: "rgba(255,255,255,0.06)",
         borderRadius: 2,
-        overflow: 'hidden',
+        overflow: "hidden",
       }}
     >
       <div
         style={{
           width: `${filled}%`,
-          height: '100%',
+          height: "100%",
           background: color,
           borderRadius: 2,
-          transitionProperty: 'width',
-          transitionDuration: animate ? '800ms' : '0ms',
-          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          transitionProperty: "width",
+          transitionDuration: animate ? "800ms" : "0ms",
+          transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
           transitionDelay: `${delay}ms`,
         }}
       />
     </div>
-  )
+  );
 }

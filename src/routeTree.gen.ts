@@ -12,12 +12,17 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProductsRouteImport } from './routes/products'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as MediaRouteImport } from './routes/media'
+import { Route as FindMyExchangeRouteImport } from './routes/find-my-exchange'
 import { Route as CryptoPosRouteImport } from './routes/crypto-pos'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CompetitionRouteImport } from './routes/competition'
 import { Route as CompareRouteImport } from './routes/compare'
+import { Route as AdvertiseRouteImport } from './routes/advertise'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as BlogBestMicarLicensedCryptoExchangesEu2026RouteImport } from './routes/blog/best-micar-licensed-crypto-exchanges-eu-2026'
 
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
@@ -34,9 +39,19 @@ const ProductsRoute = ProductsRouteImport.update({
   path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MediaRoute = MediaRouteImport.update({
   id: '/media',
   path: '/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FindMyExchangeRoute = FindMyExchangeRouteImport.update({
+  id: '/find-my-exchange',
+  path: '/find-my-exchange',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CryptoPosRoute = CryptoPosRouteImport.update({
@@ -59,92 +74,143 @@ const CompareRoute = CompareRouteImport.update({
   path: '/compare',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvertiseRoute = AdvertiseRouteImport.update({
+  id: '/advertise',
+  path: '/advertise',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogBestMicarLicensedCryptoExchangesEu2026Route =
+  BlogBestMicarLicensedCryptoExchangesEu2026RouteImport.update({
+    id: '/blog/best-micar-licensed-crypto-exchanges-eu-2026',
+    path: '/blog/best-micar-licensed-crypto-exchanges-eu-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/advertise': typeof AdvertiseRoute
   '/compare': typeof CompareRoute
   '/competition': typeof CompetitionRoute
   '/contact': typeof ContactRoute
   '/crypto-pos': typeof CryptoPosRoute
+  '/find-my-exchange': typeof FindMyExchangeRoute
   '/media': typeof MediaRoute
+  '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
+  '/blog/best-micar-licensed-crypto-exchanges-eu-2026': typeof BlogBestMicarLicensedCryptoExchangesEu2026Route
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/advertise': typeof AdvertiseRoute
   '/compare': typeof CompareRoute
   '/competition': typeof CompetitionRoute
   '/contact': typeof ContactRoute
   '/crypto-pos': typeof CryptoPosRoute
+  '/find-my-exchange': typeof FindMyExchangeRoute
   '/media': typeof MediaRoute
+  '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
+  '/blog/best-micar-licensed-crypto-exchanges-eu-2026': typeof BlogBestMicarLicensedCryptoExchangesEu2026Route
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/advertise': typeof AdvertiseRoute
   '/compare': typeof CompareRoute
   '/competition': typeof CompetitionRoute
   '/contact': typeof ContactRoute
   '/crypto-pos': typeof CryptoPosRoute
+  '/find-my-exchange': typeof FindMyExchangeRoute
   '/media': typeof MediaRoute
+  '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
+  '/blog/best-micar-licensed-crypto-exchanges-eu-2026': typeof BlogBestMicarLicensedCryptoExchangesEu2026Route
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/advertise'
     | '/compare'
     | '/competition'
     | '/contact'
     | '/crypto-pos'
+    | '/find-my-exchange'
     | '/media'
+    | '/pricing'
     | '/products'
     | '/services'
     | '/team'
+    | '/blog/best-micar-licensed-crypto-exchanges-eu-2026'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/advertise'
     | '/compare'
     | '/competition'
     | '/contact'
     | '/crypto-pos'
+    | '/find-my-exchange'
     | '/media'
+    | '/pricing'
     | '/products'
     | '/services'
     | '/team'
+    | '/blog/best-micar-licensed-crypto-exchanges-eu-2026'
+    | '/blog'
   id:
     | '__root__'
     | '/'
+    | '/advertise'
     | '/compare'
     | '/competition'
     | '/contact'
     | '/crypto-pos'
+    | '/find-my-exchange'
     | '/media'
+    | '/pricing'
     | '/products'
     | '/services'
     | '/team'
+    | '/blog/best-micar-licensed-crypto-exchanges-eu-2026'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdvertiseRoute: typeof AdvertiseRoute
   CompareRoute: typeof CompareRoute
   CompetitionRoute: typeof CompetitionRoute
   ContactRoute: typeof ContactRoute
   CryptoPosRoute: typeof CryptoPosRoute
+  FindMyExchangeRoute: typeof FindMyExchangeRoute
   MediaRoute: typeof MediaRoute
+  PricingRoute: typeof PricingRoute
   ProductsRoute: typeof ProductsRoute
   ServicesRoute: typeof ServicesRoute
   TeamRoute: typeof TeamRoute
+  BlogBestMicarLicensedCryptoExchangesEu2026Route: typeof BlogBestMicarLicensedCryptoExchangesEu2026Route
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -170,11 +236,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/media': {
       id: '/media'
       path: '/media'
       fullPath: '/media'
       preLoaderRoute: typeof MediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/find-my-exchange': {
+      id: '/find-my-exchange'
+      path: '/find-my-exchange'
+      fullPath: '/find-my-exchange'
+      preLoaderRoute: typeof FindMyExchangeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/crypto-pos': {
@@ -205,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CompareRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advertise': {
+      id: '/advertise'
+      path: '/advertise'
+      fullPath: '/advertise'
+      preLoaderRoute: typeof AdvertiseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -212,19 +299,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/best-micar-licensed-crypto-exchanges-eu-2026': {
+      id: '/blog/best-micar-licensed-crypto-exchanges-eu-2026'
+      path: '/blog/best-micar-licensed-crypto-exchanges-eu-2026'
+      fullPath: '/blog/best-micar-licensed-crypto-exchanges-eu-2026'
+      preLoaderRoute: typeof BlogBestMicarLicensedCryptoExchangesEu2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdvertiseRoute: AdvertiseRoute,
   CompareRoute: CompareRoute,
   CompetitionRoute: CompetitionRoute,
   ContactRoute: ContactRoute,
   CryptoPosRoute: CryptoPosRoute,
+  FindMyExchangeRoute: FindMyExchangeRoute,
   MediaRoute: MediaRoute,
+  PricingRoute: PricingRoute,
   ProductsRoute: ProductsRoute,
   ServicesRoute: ServicesRoute,
   TeamRoute: TeamRoute,
+  BlogBestMicarLicensedCryptoExchangesEu2026Route:
+    BlogBestMicarLicensedCryptoExchangesEu2026Route,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

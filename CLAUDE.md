@@ -1,16 +1,17 @@
 # CLAUDE.md — Madalin / Mitica0x
+
 # Applies to: ProjectHorizonV4 · horizon-backend · Ax0n · Sc0rx · CSG-V8 · any new project
 
 ---
 
 ## NAMING — LOCKED
 
-| Brand | Scriere corectă | NU |
-|-------|----------------|-----|
-| Brandul/holding | **CoinSiglieri** | COINsiglieri |
-| Platforma | **C0insiglieri** | C0INSIGLIERI |
-| Protocolul | **Ax0n** | ax0n, AX0N |
-| Scoring platform | **Sc0rx** | SC0RX, SC0REX |
+| Brand            | Scriere corectă  | NU            |
+| ---------------- | ---------------- | ------------- |
+| Brandul/holding  | **CoinSiglieri** | COINsiglieri  |
+| Platforma        | **C0insiglieri** | C0INSIGLIERI  |
+| Protocolul       | **Ax0n**         | ax0n, AX0N    |
+| Scoring platform | **Sc0rx**        | SC0RX, SC0REX |
 
 Peste tot — cod, comentarii, commit messages, docs, UI copy.
 
@@ -21,6 +22,7 @@ Peste tot — cod, comentarii, commit messages, docs, UI copy.
 Arhitect, designer, advisor, executant. Nu asistent.
 
 Proiecte active:
+
 - **C0insiglieri** — market intelligence platform live (project-horizon-beta.vercel.app)
 - **Ax0n** — AI agent financial infrastructure (ax0n.run)
 - **Sc0rx** — crypto exchange scoring platform (sc0rx.com)
@@ -62,6 +64,7 @@ La startul sesiunii: revizuiești lessons relevante.
 Problema: "Claude is incredibly agreeable. Same product, different framing, opposite answers."
 
 Reguli active:
+
 - Primul paragraf al oricărui review = CRITIC
 - "Nu există nimeni în piată cu asta" → contest dacă nu are dovadă
 - Număr prea bun → contest
@@ -98,7 +101,9 @@ Link rule (global): orice link/URL/text subliniat în app = clickable + tab nou.
 Niciodată amestecat. "Your AI apps look cheap because you're making Claude do two jobs at once."
 
 ### UI/UX Pro Max Skill
+
 Bază de date structurată de design pe care Claude Code o interogează în timp real:
+
 - 57 UI Styles (Glassmorphism, Neumorphism, Brutalism, Aurora UI etc.)
 - 95 Color Palettes — include Fintech/Crypto cu dark mode OLED + glassmorphism
 - 56 Font Pairings — Space Grotesk și Geist în DB
@@ -112,6 +117,7 @@ Site: ui-ux-pro-max-skill.nextlevelbuilder.io
 Flow: prompt → intent detection → design DB query → cod cu culori/fonturi/structură corecte → quality checklist auto.
 
 ### Pre-commit UI checklist
+
 - [ ] Componente prin 21st.dev sau UI/UX Pro Max?
 - [ ] Animații prin Motion?
 - [ ] Toate linkurile deschid tab nou?
@@ -151,7 +157,9 @@ Flow: prompt → intent detection → design DB query → cod cu culori/fonturi/
 - Monetizare: sponsorizări B2B de la exchangeuri
 
 ### Signal Layer — Pre-Incident Score (separat de Sc0RE)
+
 Semnale urmărite pe care nimeni nu le publică:
+
 - **Mișcări de oameni**: angajări masive legal/compliance = pregătire regulatorie sau probleme. Pleacă CTO brusc = flag instant.
 - **Parteneriate**: calitatea market maker-ului, custodianului spune direcția.
 - **On-chain patterns**: outflow-uri bruște din cold wallets, volum anormal pe perechi specifice, liquidity care dispare.
@@ -199,11 +207,11 @@ Română/engleză mixing = normal.
 
 ## LESSONS LOG
 
-| Data | Greșeală | Pattern învățat |
-|------|----------|-----------------|
-| Mai 2026 | Am prezentat plan fără să execut | Execută înainte de a descrie |
-| Mai 2026 | Am validat afirmații fără dovadă | Contest primul, validez după |
-| Mai 2026 | Am ignorat 70% din vault (116 posturi) | Citesc tot înainte de a concluziona |
-| Mai 2026 | Am pus CLAUDE.md doar în ProjectHorizonV4 | Îl pun în toate proiectele active |
+| Data     | Greșeală                                  | Pattern învățat                     |
+| -------- | ----------------------------------------- | ----------------------------------- |
+| Mai 2026 | Am prezentat plan fără să execut          | Execută înainte de a descrie        |
+| Mai 2026 | Am validat afirmații fără dovadă          | Contest primul, validez după        |
+| Mai 2026 | Am ignorat 70% din vault (116 posturi)    | Citesc tot înainte de a concluziona |
+| Mai 2026 | Am pus CLAUDE.md doar în ProjectHorizonV4 | Îl pun în toate proiectele active   |
 
-*Actualizat după fiecare corecție de la Madalin.*
+_Actualizat după fiecare corecție de la Madalin._

@@ -1,17 +1,21 @@
-import { createFileRoute } from '@tanstack/react-router'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
-import Competition from '@/components/sections/Competition'
+import { createFileRoute } from "@tanstack/react-router";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Competition from "@/components/sections/Competition";
 
-export const Route = createFileRoute('/competition')({
+export const Route = createFileRoute("/competition")({
   head: () => ({
     meta: [
-      { title: 'Web3 Startup Competition — C0insiglieri' },
-      { name: 'description', content: 'Two editions. €439,755+ in prize pools. Banking 4.0 × Banca Transilvania (2023). NBX Warsaw (2025).' },
+      { title: "Web3 Startup Competition — C0insiglieri" },
+      {
+        name: "description",
+        content:
+          "Two editions. €439,755+ in prize pools. Banking 4.0 × Banca Transilvania (2023). NBX Warsaw (2025).",
+      },
     ],
   }),
   component: () => (
-    <div style={{ background: '#0a0e1a', minHeight: '100vh' }}>
+    <div style={{ background: "#0a0e1a", minHeight: "100vh" }}>
       <Navigation />
       <main>
         <Competition />
@@ -19,4 +23,4 @@ export const Route = createFileRoute('/competition')({
       <Footer />
     </div>
   ),
-})
+});

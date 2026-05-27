@@ -6,32 +6,36 @@
 
 /* Geist (from `geist` npm package — variable woff2 files served via Vite) */
 @font-face {
-  font-family: 'Geist';
+  font-family: "Geist";
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2-variations');
+  src: url("../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2")
+    format("woff2-variations");
 }
 @font-face {
-  font-family: 'Geist';
+  font-family: "Geist";
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url('../node_modules/geist/dist/fonts/geist-sans/Geist-Italic[wght].woff2') format('woff2-variations');
+  src: url("../node_modules/geist/dist/fonts/geist-sans/Geist-Italic[wght].woff2")
+    format("woff2-variations");
 }
 @font-face {
-  font-family: 'Geist Mono';
+  font-family: "Geist Mono";
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('../node_modules/geist/dist/fonts/geist-mono/GeistMono-Variable.woff2') format('woff2-variations');
+  src: url("../node_modules/geist/dist/fonts/geist-mono/GeistMono-Variable.woff2")
+    format("woff2-variations");
 }
 @font-face {
-  font-family: 'Geist Mono';
+  font-family: "Geist Mono";
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url('../node_modules/geist/dist/fonts/geist-mono/GeistMono-Italic[wght].woff2') format('woff2-variations');
+  src: url("../node_modules/geist/dist/fonts/geist-mono/GeistMono-Italic[wght].woff2")
+    format("woff2-variations");
 }
 
 /*
@@ -130,41 +134,41 @@
 /* CoinSiglieri holding-site design tokens — three-layer (primitive → semantic → component). */
 :root {
   /* Primitive */
-  --c-zinc-950:    #09090b;
-  --c-zinc-900:    #0f0f12;
-  --c-zinc-700:    #3f3f46;
-  --c-zinc-500:    #71717a;
-  --c-zinc-400:    #a1a1aa;
-  --c-zinc-200:    #e4e4e7;
-  --c-cyan:        #18b4d4;
+  --c-zinc-950: #09090b;
+  --c-zinc-900: #0f0f12;
+  --c-zinc-700: #3f3f46;
+  --c-zinc-500: #71717a;
+  --c-zinc-400: #a1a1aa;
+  --c-zinc-200: #e4e4e7;
+  --c-cyan: #18b4d4;
   --c-cyan-bright: #22c4e5;
-  --c-amber:       #D4A853;
-  --c-indigo:      #6366f1;
-  --c-emerald:     #0dbe82;
+  --c-amber: #d4a853;
+  --c-indigo: #6366f1;
+  --c-emerald: #0dbe82;
 
   /* Semantic */
-  --cs-bg:         var(--c-zinc-950);
-  --cs-surface:    var(--c-zinc-900);
-  --cs-text:       var(--c-zinc-200);
-  --cs-muted:      var(--c-zinc-500);
-  --cs-dim:        var(--c-zinc-700);
-  --cs-soft:       var(--c-zinc-400);
-  --cs-border:     rgba(255,255,255,0.07);
-  --cs-border-mid: rgba(255,255,255,0.14);
+  --cs-bg: var(--c-zinc-950);
+  --cs-surface: var(--c-zinc-900);
+  --cs-text: var(--c-zinc-200);
+  --cs-muted: var(--c-zinc-500);
+  --cs-dim: var(--c-zinc-700);
+  --cs-soft: var(--c-zinc-400);
+  --cs-border: rgba(255, 255, 255, 0.07);
+  --cs-border-mid: rgba(255, 255, 255, 0.14);
 
   /* Product accents */
-  --cs-cyan:       var(--c-cyan);
-  --cs-amber:      var(--c-amber);
-  --cs-indigo:     var(--c-indigo);
-  --cs-emerald:    var(--c-emerald);
+  --cs-cyan: var(--c-cyan);
+  --cs-amber: var(--c-amber);
+  --cs-indigo: var(--c-indigo);
+  --cs-emerald: var(--c-emerald);
 
   /* Component motion tokens */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out-snap: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Typography */
-  --font-sans: 'Geist', system-ui, sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
 }
 
 .dark {
@@ -202,28 +206,43 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-
 @layer base {
   * {
     border-color: var(--color-border);
     box-sizing: border-box;
   }
-  html { scroll-behavior: smooth; background-color: #09090b; }
+  html {
+    scroll-behavior: smooth;
+    background-color: #09090b;
+  }
   body {
-    font-family: 'Geist', system-ui, sans-serif;
+    font-family: "Geist", system-ui, sans-serif;
     background-color: #09090b;
     color: #e4e4e7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'ss01', 'cv11';
+    font-feature-settings: "ss01", "cv11";
   }
-  h1, h2, h3, h4, h5, h6 { font-family: 'Geist', system-ui, sans-serif; letter-spacing: -0.02em; }
-  .font-mono, code, kbd, samp { font-family: 'Geist Mono', ui-monospace, monospace; }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Geist", system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+  .font-mono,
+  code,
+  kbd,
+  samp {
+    font-family: "Geist Mono", ui-monospace, monospace;
+  }
 }
 
 body::after {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
@@ -232,91 +251,156 @@ body::after {
   opacity: 0.3;
 }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #09090b; }
-::-webkit-scrollbar-thumb { background: rgba(24,180,212,0.3); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(24,180,212,0.55); }
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(24, 180, 212, 0.3);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(24, 180, 212, 0.55);
+}
 
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 .glass {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .gradient-cyan {
-  background: linear-gradient(135deg, #5BA8B5, #5BA8B5);
+  background: linear-gradient(135deg, #5ba8b5, #5ba8b5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .gradient-purple {
-  background: linear-gradient(135deg, #7B5EA7, #7B5EA7);
+  background: linear-gradient(135deg, #7b5ea7, #7b5ea7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .gradient-cyan-purple {
-  background: linear-gradient(135deg, #5BA8B5 0%, #7B5EA7 100%);
+  background: linear-gradient(135deg, #5ba8b5 0%, #7b5ea7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-.animate-marquee { animation: marquee 80s linear infinite; will-change: transform; }
-.animate-marquee-slow { animation: marquee 120s linear infinite; will-change: transform; }
-.animate-marquee-reverse { animation: marquee 100s linear infinite reverse; will-change: transform; }
+.animate-marquee {
+  animation: marquee 80s linear infinite;
+  will-change: transform;
+}
+.animate-marquee-slow {
+  animation: marquee 120s linear infinite;
+  will-change: transform;
+}
+.animate-marquee-reverse {
+  animation: marquee 100s linear infinite reverse;
+  will-change: transform;
+}
 
 @keyframes float-orb {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-  33%  { transform: translate(40px, -30px) scale(1.05); opacity: 0.7; }
-  66%  { transform: translate(-30px, 20px) scale(0.96); opacity: 0.5; }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.05);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(-30px, 20px) scale(0.96);
+    opacity: 0.5;
+  }
 }
 @keyframes float-orb2 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-  50%  { transform: translate(-40px, -25px) scale(1.08); opacity: 0.55; }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-40px, -25px) scale(1.08);
+    opacity: 0.55;
+  }
 }
-.orb-1 { animation: float-orb  18s ease-in-out infinite; }
-.orb-2 { animation: float-orb2 22s ease-in-out infinite; }
+.orb-1 {
+  animation: float-orb 18s ease-in-out infinite;
+}
+.orb-2 {
+  animation: float-orb2 22s ease-in-out infinite;
+}
 
 @keyframes logo-glow {
-  0%, 100% { filter: drop-shadow(0 0 14px rgba(24,180,212,0.45)) drop-shadow(0 0 36px rgba(24,180,212,0.18)); }
-  50%       { filter: drop-shadow(0 0 28px rgba(24,180,212,0.85)) drop-shadow(0 0 70px rgba(24,180,212,0.32)); }
+  0%,
+  100% {
+    filter: drop-shadow(0 0 14px rgba(24, 180, 212, 0.45))
+      drop-shadow(0 0 36px rgba(24, 180, 212, 0.18));
+  }
+  50% {
+    filter: drop-shadow(0 0 28px rgba(24, 180, 212, 0.85))
+      drop-shadow(0 0 70px rgba(24, 180, 212, 0.32));
+  }
 }
-.logo-glow { animation: logo-glow 1.5s ease-in-out infinite; }
+.logo-glow {
+  animation: logo-glow 1.5s ease-in-out infinite;
+}
 
 .stat-number {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-weight: 700;
-  background: linear-gradient(135deg, #5BA8B5, #5BA8B5);
+  background: linear-gradient(135deg, #5ba8b5, #5ba8b5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 12px rgba(91,168,181,0.38));
+  filter: drop-shadow(0 0 12px rgba(91, 168, 181, 0.38));
 }
 
-.hide-scrollbar::-webkit-scrollbar { display: none; }
-.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
-canvas { display: block; }
+canvas {
+  display: block;
+}
 
 /* Tabular numbers — for any data display that should not shift width. */
-.tabular-nums { font-variant-numeric: tabular-nums; }
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
 
 /* Balanced wrapping for headlines, pretty for body. */
-.balance { text-wrap: balance; }
-.pretty  { text-wrap: pretty; }
+.balance {
+  text-wrap: balance;
+}
+.pretty {
+  text-wrap: pretty;
+}
 
 /* Press scale — applied as a class so we keep `transition: all` away. */
 .press {
@@ -324,7 +408,9 @@ canvas { display: block; }
   transition-duration: 180ms;
   transition-timing-function: var(--ease-out-soft);
 }
-.press:active { transform: scale(0.96); }
+.press:active {
+  transform: scale(0.96);
+}
 
 /* Card hover lift — only transform/opacity, GPU-cheap. */
 .card-lift {
@@ -333,8 +419,30 @@ canvas { display: block; }
   transition-timing-function: var(--ease-out-soft);
 }
 
+/* === CSG-V8 platform additions (pulse-dot for LIVE indicators) === */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.55;
+  }
+}
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }

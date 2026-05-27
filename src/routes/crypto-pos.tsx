@@ -1,17 +1,21 @@
-import { createFileRoute } from '@tanstack/react-router'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
-import CryptoPOS from '@/components/sections/CryptoPOS'
+import { createFileRoute } from "@tanstack/react-router";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import CryptoPOS from "@/components/sections/CryptoPOS";
 
-export const Route = createFileRoute('/crypto-pos')({
+export const Route = createFileRoute("/crypto-pos")({
   head: () => ({
     meta: [
-      { title: 'Crypto POS Payments — C0insiglieri' },
-      { name: 'description', content: 'Real-world crypto payment infrastructure. First POS deployment in Romania at Beach, Please! 2024 — 120,000+ attendees.' },
+      { title: "Crypto POS Payments — C0insiglieri" },
+      {
+        name: "description",
+        content:
+          "Real-world crypto payment infrastructure. First POS deployment in Romania at Beach, Please! 2024 — 120,000+ attendees.",
+      },
     ],
   }),
   component: () => (
-    <div style={{ background: '#0a0e1a', minHeight: '100vh' }}>
+    <div style={{ background: "#0a0e1a", minHeight: "100vh" }}>
       <Navigation />
       <main>
         <CryptoPOS />
@@ -19,4 +23,4 @@ export const Route = createFileRoute('/crypto-pos')({
       <Footer />
     </div>
   ),
-})
+});

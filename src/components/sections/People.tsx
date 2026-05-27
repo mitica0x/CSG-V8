@@ -1,35 +1,36 @@
-import { motion } from 'motion/react'
-import { ExternalLink, Link2, AtSign } from 'lucide-react'
+import { motion } from "motion/react";
+import { ExternalLink, Link2, AtSign } from "lucide-react";
 
 const mediaAppearances = [
-  { label: 'Arena Finanțelor — OTcrypto', href: '#' },
-  { label: 'The Paypers Interview', href: '#' },
-  { label: 'NBX Warsaw 2025 — Speaker', href: '#' },
-  { label: 'NFT Show Europe — Panel', href: '#' },
-  { label: 'HackerNoon — Op-ed', href: '#' },
-  { label: 'European Blockchain Convention Barcelona', href: '#' },
-]
+  { label: "Arena Finanțelor — OTcrypto", href: "#" },
+  { label: "The Paypers Interview", href: "#" },
+  { label: "NBX Warsaw 2025 — Speaker", href: "#" },
+  { label: "NFT Show Europe — Panel", href: "#" },
+  { label: "HackerNoon — Op-ed", href: "#" },
+  { label: "European Blockchain Convention Barcelona", href: "#" },
+];
 
 const team = [
-  { name: 'Oana', role: 'Finance & Operations' },
-  { name: 'Mihai', role: 'Engineering' },
-  { name: 'Iulia', role: 'Operations' },
-]
+  { name: "Oana", role: "Finance & Operations" },
+  { name: "Mihai", role: "Engineering" },
+  { name: "Iulia", role: "Operations" },
+];
 
 export default function People() {
   return (
     <section
       id="people"
       className="py-32 relative overflow-hidden"
-      style={{ background: '#0a0e1a' }}
+      style={{ background: "#0a0e1a" }}
     >
       <div
         className="absolute left-0 top-0 pointer-events-none"
         style={{
-          width: 700, height: 700,
-          background: 'radial-gradient(circle, rgba(91,168,181,0.05) 0%, transparent 70%)',
-          filter: 'blur(70px)',
-          transform: 'translate(-35%, -20%)',
+          width: 700,
+          height: 700,
+          background: "radial-gradient(circle, rgba(91,168,181,0.05) 0%, transparent 70%)",
+          filter: "blur(70px)",
+          transform: "translate(-35%, -20%)",
         }}
       />
 
@@ -41,25 +42,31 @@ export default function People() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: '#5BA8B5' }}>
+          <p
+            className="text-xs font-semibold tracking-[0.2em] uppercase mb-5"
+            style={{ color: "#5BA8B5" }}
+          >
             The Team
           </p>
           <h2
             className="font-bold"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#f8fafc', letterSpacing: '-0.02em' }}
+            style={{
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              color: "#f8fafc",
+              letterSpacing: "-0.02em",
+            }}
           >
             People & Presence
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
           {/* Founder card */}
           <motion.div
             className="rounded-2xl p-10 relative overflow-hidden"
             style={{
-              background: 'rgba(91,168,181,0.025)',
-              border: '1px solid rgba(91,168,181,0.14)',
+              background: "rgba(91,168,181,0.025)",
+              border: "1px solid rgba(91,168,181,0.14)",
             }}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -69,8 +76,9 @@ export default function People() {
             <div
               className="absolute top-0 right-0 pointer-events-none"
               style={{
-                width: 300, height: 300,
-                background: 'radial-gradient(circle, rgba(91,168,181,0.08) 0%, transparent 70%)',
+                width: 300,
+                height: 300,
+                background: "radial-gradient(circle, rgba(91,168,181,0.08) 0%, transparent 70%)",
               }}
             />
 
@@ -79,40 +87,48 @@ export default function People() {
               <div
                 className="w-16 h-16 rounded-2xl mb-7 flex items-center justify-center"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(91,168,181,0.18), rgba(123,94,167,0.18))',
-                  border: '1px solid rgba(91,168,181,0.28)',
+                  background:
+                    "linear-gradient(135deg, rgba(91,168,181,0.18), rgba(123,94,167,0.18))",
+                  border: "1px solid rgba(91,168,181,0.28)",
                 }}
               >
-                <span style={{ fontSize: '1.4rem', fontFamily: 'Geist, sans-serif', fontWeight: 700, color: '#5BA8B5' }}>
+                <span
+                  style={{
+                    fontSize: "1.4rem",
+                    fontFamily: "Geist, sans-serif",
+                    fontWeight: 700,
+                    color: "#5BA8B5",
+                  }}
+                >
                   MM
                 </span>
               </div>
 
               <h3
                 className="font-bold mb-1.5"
-                style={{ fontSize: '1.4rem', color: '#f8fafc', fontFamily: 'Geist, sans-serif' }}
+                style={{ fontSize: "1.4rem", color: "#f8fafc", fontFamily: "Geist, sans-serif" }}
               >
                 Madalin Muraretiu
               </h3>
-              <p className="text-sm font-medium mb-1" style={{ color: '#5BA8B5' }}>
+              <p className="text-sm font-medium mb-1" style={{ color: "#5BA8B5" }}>
                 Co-Founder · Blockchain Alchemist
               </p>
-              <p className="text-xs mb-7" style={{ color: '#8892a4' }}>
+              <p className="text-xs mb-7" style={{ color: "#8892a4" }}>
                 Operating in Web3 since 2017 · Bucharest, Romania
               </p>
 
-              <p className="text-sm leading-relaxed mb-8" style={{ color: '#8892a4' }}>
+              <p className="text-sm leading-relaxed mb-8" style={{ color: "#8892a4" }}>
                 Seven years building at the intersection of blockchain, strategy, and real-world
-                execution. From whitepaper to live POS terminal at a 120k-person festival.
-                Ecosystem connector, strategic operator, and builder of bridges between Web3
-                vision and market reality.
+                execution. From whitepaper to live POS terminal at a 120k-person festival. Ecosystem
+                connector, strategic operator, and builder of bridges between Web3 vision and market
+                reality.
               </p>
 
               {/* Media appearances */}
               <div className="mb-8">
                 <p
                   className="text-xs uppercase tracking-[0.18em] mb-4"
-                  style={{ color: '#334155' }}
+                  style={{ color: "#334155" }}
                 >
                   Media Appearances
                 </p>
@@ -122,13 +138,20 @@ export default function People() {
                       key={m.label}
                       href={m.href}
                       className="group/link flex items-center gap-2.5 text-xs transition-colors duration-200"
-                      style={{ color: '#8892a4', textDecoration: 'none' }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
-                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
+                      style={{ color: "#8892a4", textDecoration: "none" }}
+                      onMouseEnter={(e) =>
+                        ((e.currentTarget as HTMLElement).style.color = "#8892a4")
+                      }
+                      onMouseLeave={(e) =>
+                        ((e.currentTarget as HTMLElement).style.color = "#8892a4")
+                      }
                     >
-                      <span style={{ color: '#5BA8B5', fontSize: '0.45rem' }}>●</span>
+                      <span style={{ color: "#5BA8B5", fontSize: "0.45rem" }}>●</span>
                       {m.label}
-                      <ExternalLink size={10} className="ml-auto opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                      <ExternalLink
+                        size={10}
+                        className="ml-auto opacity-0 group-hover/link:opacity-100 transition-opacity"
+                      />
                     </a>
                   ))}
                 </div>
@@ -142,20 +165,20 @@ export default function People() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200"
                   style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    color: '#8892a4',
-                    textDecoration: 'none',
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    color: "#8892a4",
+                    textDecoration: "none",
                   }}
                   onMouseEnter={(e) => {
-                    const el = e.currentTarget as HTMLElement
-                    el.style.borderColor = 'rgba(91,168,181,0.3)'
-                    el.style.color = '#f8fafc'
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = "rgba(91,168,181,0.3)";
+                    el.style.color = "#f8fafc";
                   }}
                   onMouseLeave={(e) => {
-                    const el = e.currentTarget as HTMLElement
-                    el.style.borderColor = 'rgba(255,255,255,0.08)'
-                    el.style.color = '#8892a4'
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = "rgba(255,255,255,0.08)";
+                    el.style.color = "#8892a4";
                   }}
                 >
                   <Link2 size={12} />
@@ -167,20 +190,20 @@ export default function People() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium transition-all duration-200"
                   style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    color: '#8892a4',
-                    textDecoration: 'none',
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    color: "#8892a4",
+                    textDecoration: "none",
                   }}
                   onMouseEnter={(e) => {
-                    const el = e.currentTarget as HTMLElement
-                    el.style.borderColor = 'rgba(91,168,181,0.3)'
-                    el.style.color = '#f8fafc'
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = "rgba(91,168,181,0.3)";
+                    el.style.color = "#f8fafc";
                   }}
                   onMouseLeave={(e) => {
-                    const el = e.currentTarget as HTMLElement
-                    el.style.borderColor = 'rgba(255,255,255,0.08)'
-                    el.style.color = '#8892a4'
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = "rgba(255,255,255,0.08)";
+                    el.style.color = "#8892a4";
                   }}
                 >
                   <AtSign size={12} />
@@ -196,15 +219,15 @@ export default function People() {
             <motion.div
               className="rounded-xl p-8"
               style={{
-                background: 'rgba(255,255,255,0.025)',
-                border: '1px solid rgba(255,255,255,0.06)',
+                background: "rgba(255,255,255,0.025)",
+                border: "1px solid rgba(255,255,255,0.06)",
               }}
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: 0.08 }}
             >
-              <p className="text-xs uppercase tracking-[0.18em] mb-6" style={{ color: '#334155' }}>
+              <p className="text-xs uppercase tracking-[0.18em] mb-6" style={{ color: "#334155" }}>
                 Core Team
               </p>
               <div className="space-y-4">
@@ -212,10 +235,14 @@ export default function People() {
                   <div
                     key={m.name}
                     className="flex items-center justify-between py-3 border-b"
-                    style={{ borderColor: 'rgba(255,255,255,0.05)' }}
+                    style={{ borderColor: "rgba(255,255,255,0.05)" }}
                   >
-                    <span className="font-semibold text-sm" style={{ color: '#f8fafc' }}>{m.name}</span>
-                    <span className="text-xs" style={{ color: '#8892a4' }}>{m.role}</span>
+                    <span className="font-semibold text-sm" style={{ color: "#f8fafc" }}>
+                      {m.name}
+                    </span>
+                    <span className="text-xs" style={{ color: "#8892a4" }}>
+                      {m.role}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -225,25 +252,25 @@ export default function People() {
             <motion.div
               className="rounded-xl p-7"
               style={{
-                background: 'rgba(123,94,167,0.03)',
-                border: '1px solid rgba(123,94,167,0.1)',
+                background: "rgba(123,94,167,0.03)",
+                border: "1px solid rgba(123,94,167,0.1)",
               }}
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: 0.14 }}
             >
-              <p className="text-sm leading-relaxed" style={{ color: '#8892a4' }}>
-                <span style={{ color: '#7B5EA7', fontWeight: 600 }}>Co-founded</span> by{' '}
-                <span style={{ color: '#8892a4' }}>Ionuț Vîlceanu</span>, who led operations
-                and international initiatives and is currently Lead Marketing Manager at Bybit EU.{' '}
+              <p className="text-sm leading-relaxed" style={{ color: "#8892a4" }}>
+                <span style={{ color: "#7B5EA7", fontWeight: 600 }}>Co-founded</span> by{" "}
+                <span style={{ color: "#8892a4" }}>Ionuț Vîlceanu</span>, who led operations and
+                international initiatives and is currently Lead Marketing Manager at Bybit EU.{" "}
                 <a
                   href="https://www.ionutvilceanu.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: '#8892a4', textDecoration: 'none' }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#8892a4')}
+                  style={{ color: "#8892a4", textDecoration: "none" }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#8892a4")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#8892a4")}
                 >
                   www.ionutvilceanu.com
                 </a>
@@ -254,26 +281,34 @@ export default function People() {
             <motion.div
               className="rounded-xl p-7"
               style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.06)',
+                background: "rgba(255,255,255,0.02)",
+                border: "1px solid rgba(255,255,255,0.06)",
               }}
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <p className="text-xs uppercase tracking-[0.18em] mb-5" style={{ color: '#334155' }}>
+              <p className="text-xs uppercase tracking-[0.18em] mb-5" style={{ color: "#334155" }}>
                 Global Footprint
               </p>
               <div className="flex flex-wrap gap-2.5">
-                {['Singapore', 'Warsaw', 'Barcelona', 'Valencia', 'Bucharest', 'Gibraltar', 'Dubai'].map((city) => (
+                {[
+                  "Singapore",
+                  "Warsaw",
+                  "Barcelona",
+                  "Valencia",
+                  "Bucharest",
+                  "Gibraltar",
+                  "Dubai",
+                ].map((city) => (
                   <span
                     key={city}
                     className="px-3 py-1.5 rounded-full text-xs font-medium"
                     style={{
-                      background: 'rgba(255,255,255,0.03)',
-                      border: '1px solid rgba(255,255,255,0.07)',
-                      color: '#8892a4',
+                      background: "rgba(255,255,255,0.03)",
+                      border: "1px solid rgba(255,255,255,0.07)",
+                      color: "#8892a4",
                     }}
                   >
                     {city}
@@ -282,9 +317,8 @@ export default function People() {
               </div>
             </motion.div>
           </div>
-
         </div>
       </div>
     </section>
-  )
+  );
 }

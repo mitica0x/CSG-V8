@@ -1,63 +1,82 @@
-import type { CSSProperties, ReactNode } from 'react'
-import { Link } from '@tanstack/react-router'
-import { motion } from 'motion/react'
+import type { CSSProperties, ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
+import { motion } from "motion/react";
 
-const mono: CSSProperties = { fontFamily: 'JetBrains Mono, monospace' }
-const grotesk: CSSProperties = { fontFamily: 'Geist, sans-serif' }
-const inter: CSSProperties = { fontFamily: 'Inter, sans-serif' }
+const mono: CSSProperties = { fontFamily: "JetBrains Mono, monospace" };
+const grotesk: CSSProperties = { fontFamily: "Geist, sans-serif" };
+const inter: CSSProperties = { fontFamily: "Inter, sans-serif" };
 
 function PulseDot() {
   return (
     <motion.span
-      style={{ width: 5, height: 5, borderRadius: '50%', background: '#94c864', display: 'inline-block' }}
+      style={{
+        width: 5,
+        height: 5,
+        borderRadius: "50%",
+        background: "#94c864",
+        display: "inline-block",
+      }}
       animate={{ opacity: [1, 0.3, 1] }}
-      transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+      transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
     />
-  )
+  );
 }
 
-function Badge({ children, accent, withDot }: { children: ReactNode; accent: string; withDot?: boolean }) {
+function Badge({
+  children,
+  accent,
+  withDot,
+}: {
+  children: ReactNode;
+  accent: string;
+  withDot?: boolean;
+}) {
   return (
     <span
       style={{
         ...mono,
-        display: 'inline-flex',
-        alignItems: 'center',
+        display: "inline-flex",
+        alignItems: "center",
         gap: 6,
         fontSize: 10,
-        letterSpacing: '0.1em',
+        letterSpacing: "0.1em",
         color: accent,
-        background: accent === '#5BA8B5' ? 'rgba(91,168,181,0.08)' : accent === '#94c864' ? 'rgba(148,200,100,0.08)' : 'rgba(212,168,83,0.08)',
-        border: `1px solid ${accent === '#5BA8B5' ? 'rgba(91,168,181,0.2)' : accent === '#94c864' ? 'rgba(148,200,100,0.2)' : 'rgba(212,168,83,0.2)'}`,
+        background:
+          accent === "#5BA8B5"
+            ? "rgba(91,168,181,0.08)"
+            : accent === "#94c864"
+              ? "rgba(148,200,100,0.08)"
+              : "rgba(212,168,83,0.08)",
+        border: `1px solid ${accent === "#5BA8B5" ? "rgba(91,168,181,0.2)" : accent === "#94c864" ? "rgba(148,200,100,0.2)" : "rgba(212,168,83,0.2)"}`,
         borderRadius: 3,
-        padding: '2px 8px',
-        width: 'fit-content',
-        textTransform: 'uppercase',
+        padding: "2px 8px",
+        width: "fit-content",
+        textTransform: "uppercase",
       }}
     >
       {withDot && <PulseDot />}
       {children}
     </span>
-  )
+  );
 }
 
 function Feature({ children, accent }: { children: ReactNode; accent: string }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
+    <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
       <span style={{ color: accent, fontSize: 13, lineHeight: 1.65, flexShrink: 0 }}>✓</span>
-      <span style={{ ...inter, fontSize: 13, color: '#8892a4', lineHeight: 1.65 }}>{children}</span>
+      <span style={{ ...inter, fontSize: 13, color: "#8892a4", lineHeight: 1.65 }}>{children}</span>
     </div>
-  )
+  );
 }
 
 const cardBase: CSSProperties = {
-  background: 'rgba(255,255,255,0.025)',
-  border: '1px solid rgba(255,255,255,0.07)',
+  background: "rgba(255,255,255,0.025)",
+  border: "1px solid rgba(255,255,255,0.07)",
   borderRadius: 14,
   padding: 32,
-  display: 'flex',
-  flexDirection: 'column',
-}
+  display: "flex",
+  flexDirection: "column",
+};
 
 export default function ProductsTeaser() {
   return (
@@ -68,38 +87,64 @@ export default function ProductsTeaser() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       style={{
-        background: 'rgba(91,168,181,0.02)',
-        borderTop: '1px solid rgba(255,255,255,0.04)',
-        borderBottom: '1px solid rgba(255,255,255,0.04)',
-        padding: '64px 40px',
+        background: "rgba(91,168,181,0.02)",
+        borderTop: "1px solid rgba(255,255,255,0.04)",
+        borderBottom: "1px solid rgba(255,255,255,0.04)",
+        padding: "64px 40px",
       }}
     >
-      <div style={{ maxWidth: 1152, margin: '0 auto' }}>
+      <div style={{ maxWidth: 1152, margin: "0 auto" }}>
         {/* Header row */}
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-            flexWrap: 'wrap',
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            flexWrap: "wrap",
             gap: 20,
             marginBottom: 36,
           }}
         >
           <div>
-            <p style={{ ...mono, fontSize: 11, color: '#5BA8B5', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: 14 }}>
+            <p
+              style={{
+                ...mono,
+                fontSize: 11,
+                color: "#5BA8B5",
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                marginBottom: 14,
+              }}
+            >
               Products
             </p>
-            <h2 style={{ ...grotesk, fontSize: 42, fontWeight: 700, color: '#f8fafc', lineHeight: 1.1, marginBottom: 12 }}>
-              Built by C<span style={{ color: '#5BA8B5' }}>0</span>insiglieri.
+            <h2
+              style={{
+                ...grotesk,
+                fontSize: 42,
+                fontWeight: 700,
+                color: "#f8fafc",
+                lineHeight: 1.1,
+                marginBottom: 12,
+              }}
+            >
+              Built by C<span style={{ color: "#5BA8B5" }}>0</span>insiglieri.
             </h2>
-            <p style={{ ...inter, fontSize: 16, color: '#8892a4', maxWidth: 480, lineHeight: 1.6 }}>
+            <p style={{ ...inter, fontSize: 16, color: "#8892a4", maxWidth: 480, lineHeight: 1.6 }}>
               Two products. Intelligence for exchanges. Execution protocol for AI agents.
             </p>
           </div>
           <Link
             to="/products"
-            style={{ ...mono, fontSize: 11, color: '#8892a4', textTransform: 'uppercase', letterSpacing: '0.1em', textDecoration: 'none', whiteSpace: 'nowrap' }}
+            style={{
+              ...mono,
+              fontSize: 11,
+              color: "#8892a4",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+            }}
           >
             View all products →
           </Link>
@@ -107,36 +152,80 @@ export default function ProductsTeaser() {
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: 20 }}>
-
           {/* Card 1 — Horiz0n */}
-          <div style={{ ...cardBase, borderTop: '3px solid #94c864' }}>
-            <Badge accent="#94c864" withDot>LIVE</Badge>
+          <div style={{ ...cardBase, borderTop: "3px solid #94c864" }}>
+            <Badge accent="#94c864" withDot>
+              LIVE
+            </Badge>
 
-            <h3 style={{ ...grotesk, fontSize: 26, fontWeight: 700, color: '#f8fafc', marginTop: 16, marginBottom: 2 }}>
-              Horiz<span style={{ color: '#94c864' }}>0</span>n
+            <h3
+              style={{
+                ...grotesk,
+                fontSize: 26,
+                fontWeight: 700,
+                color: "#f8fafc",
+                marginTop: 16,
+                marginBottom: 2,
+              }}
+            >
+              Horiz<span style={{ color: "#94c864" }}>0</span>n
             </h3>
-            <p style={{ ...mono, fontSize: 10, color: '#94c864', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 14 }}>
+            <p
+              style={{
+                ...mono,
+                fontSize: 10,
+                color: "#94c864",
+                textTransform: "uppercase",
+                letterSpacing: "0.15em",
+                marginBottom: 14,
+              }}
+            >
               EU Market Intelligence
             </p>
 
-            <p style={{ ...inter, fontSize: 13, color: '#8892a4', lineHeight: 1.65, marginBottom: 20 }}>
+            <p
+              style={{
+                ...inter,
+                fontSize: 13,
+                color: "#8892a4",
+                lineHeight: 1.65,
+                marginBottom: 20,
+              }}
+            >
               Real-time intelligence for crypto exchanges entering or operating in the EU market.
               Regulatory signals, competitor moves, and BD opportunities — in one war room.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 20 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 20 }}>
               <Feature accent="#94c864">Regulatory &amp; compliance signals</Feature>
               <Feature accent="#94c864">Competitor activity tracking</Feature>
               <Feature accent="#94c864">BD opportunity radar</Feature>
               <Feature accent="#94c864">Weekly intelligence briefings</Feature>
             </div>
 
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, marginBottom: 16, marginTop: 'auto' }}>
+            <div
+              style={{
+                borderTop: "1px solid rgba(255,255,255,0.06)",
+                paddingTop: 16,
+                marginBottom: 16,
+                marginTop: "auto",
+              }}
+            >
               <div>
-                <span style={{ ...grotesk, fontSize: 28, fontWeight: 700, color: '#f8fafc' }}>$500</span>
-                <span style={{ ...inter, fontSize: 13, color: '#8892a4' }}> / month</span>
+                <span style={{ ...grotesk, fontSize: 28, fontWeight: 700, color: "#f8fafc" }}>
+                  $500
+                </span>
+                <span style={{ ...inter, fontSize: 13, color: "#8892a4" }}> / month</span>
               </div>
-              <p style={{ ...mono, fontSize: 10, color: '#8892a4', textTransform: 'uppercase', marginTop: 4 }}>
+              <p
+                style={{
+                  ...mono,
+                  fontSize: 10,
+                  color: "#8892a4",
+                  textTransform: "uppercase",
+                  marginTop: 4,
+                }}
+              >
                 B2B · Exchange-facing · Active clients
               </p>
             </div>
@@ -149,48 +238,85 @@ export default function ProductsTeaser() {
                 ...grotesk,
                 fontWeight: 600,
                 fontSize: 13,
-                background: 'transparent',
-                border: '1.5px solid #94c864',
-                color: '#94c864',
+                background: "transparent",
+                border: "1.5px solid #94c864",
+                color: "#94c864",
                 borderRadius: 8,
-                padding: '11px 20px',
-                textDecoration: 'none',
-                textAlign: 'center',
-                transition: 'filter 0.2s',
+                padding: "11px 20px",
+                textDecoration: "none",
+                textAlign: "center",
+                transition: "filter 0.2s",
               }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.filter = 'brightness(1.1)')}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.filter = 'none')}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.filter = "brightness(1.1)")
+              }
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.filter = "none")}
             >
               Access Dashboard →
             </a>
           </div>
 
           {/* Card 2 — Ax0n */}
-          <div style={{ ...cardBase, borderTop: '3px solid #D4A853' }}>
+          <div style={{ ...cardBase, borderTop: "3px solid #D4A853" }}>
             <Badge accent="#D4A853">COMING SOON</Badge>
 
-            <h3 style={{ ...grotesk, fontSize: 26, fontWeight: 700, color: '#f8fafc', marginTop: 16, marginBottom: 2 }}>
-              Ax<span style={{ color: '#D4A853' }}>0</span>n
+            <h3
+              style={{
+                ...grotesk,
+                fontSize: 26,
+                fontWeight: 700,
+                color: "#f8fafc",
+                marginTop: 16,
+                marginBottom: 2,
+              }}
+            >
+              Ax<span style={{ color: "#D4A853" }}>0</span>n
             </h3>
-            <p style={{ ...mono, fontSize: 10, color: '#D4A853', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 14 }}>
+            <p
+              style={{
+                ...mono,
+                fontSize: 10,
+                color: "#D4A853",
+                textTransform: "uppercase",
+                letterSpacing: "0.15em",
+                marginBottom: 14,
+              }}
+            >
               AI Agent Execution Protocol
             </p>
 
-            <p style={{ ...inter, fontSize: 13, color: '#8892a4', lineHeight: 1.65, marginBottom: 20 }}>
-              The routing layer AI agents need to trade. Ax0n connects financial intent to execution —
-              across protocols, across markets, without humans in the loop.
+            <p
+              style={{
+                ...inter,
+                fontSize: 13,
+                color: "#8892a4",
+                lineHeight: 1.65,
+                marginBottom: 20,
+              }}
+            >
+              The routing layer AI agents need to trade. Ax0n connects financial intent to execution
+              — across protocols, across markets, without humans in the loop.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 20 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 20 }}>
               <Feature accent="#D4A853">Cross-protocol routing standard</Feature>
               <Feature accent="#D4A853">EIP-4337 compliant execution</Feature>
               <Feature accent="#D4A853">Risk manager + veto layer</Feature>
               <Feature accent="#D4A853">Bybit API integrated (testnet)</Feature>
             </div>
 
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, marginBottom: 16, marginTop: 'auto' }}>
-              <p style={{ ...mono, fontSize: 12, color: '#D4A853', textTransform: 'uppercase' }}>Early Access</p>
-              <p style={{ ...mono, fontSize: 10, color: '#8892a4', marginTop: 4 }}>
+            <div
+              style={{
+                borderTop: "1px solid rgba(255,255,255,0.06)",
+                paddingTop: 16,
+                marginBottom: 16,
+                marginTop: "auto",
+              }}
+            >
+              <p style={{ ...mono, fontSize: 12, color: "#D4A853", textTransform: "uppercase" }}>
+                Early Access
+              </p>
+              <p style={{ ...mono, fontSize: 10, color: "#8892a4", marginTop: 4 }}>
                 Base tier free · Protocol tier $499/month
               </p>
             </div>
@@ -203,24 +329,27 @@ export default function ProductsTeaser() {
                 ...grotesk,
                 fontWeight: 600,
                 fontSize: 13,
-                background: 'transparent',
-                border: '1px solid #D4A853',
-                color: '#D4A853',
+                background: "transparent",
+                border: "1px solid #D4A853",
+                color: "#D4A853",
                 borderRadius: 8,
-                padding: '11px 20px',
-                textDecoration: 'none',
-                textAlign: 'center',
-                transition: 'background 0.2s',
+                padding: "11px 20px",
+                textDecoration: "none",
+                textAlign: "center",
+                transition: "background 0.2s",
               }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = 'rgba(212,168,83,0.08)')}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = 'transparent')}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.background = "rgba(212,168,83,0.08)")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLElement).style.background = "transparent")
+              }
             >
               Join the Waitlist →
             </a>
           </div>
-
         </div>
       </div>
     </motion.section>
-  )
+  );
 }

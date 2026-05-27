@@ -1,18 +1,22 @@
-import { createFileRoute } from '@tanstack/react-router'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
-import Partners from '@/components/sections/Partners'
-import Media from '@/components/sections/Media'
+import { createFileRoute } from "@tanstack/react-router";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Partners from "@/components/sections/Partners";
+import Media from "@/components/sections/Media";
 
-export const Route = createFileRoute('/media')({
+export const Route = createFileRoute("/media")({
   head: () => ({
     meta: [
-      { title: 'Media & Partners — C0insiglieri' },
-      { name: 'description', content: 'Featured in The Paypers, HackerNoon, Agerpres, Crypto.ro, NoCash.ro, Clutch.co. 60+ ecosystem partners.' },
+      { title: "Media & Partners — C0insiglieri" },
+      {
+        name: "description",
+        content:
+          "Featured in The Paypers, HackerNoon, Agerpres, Crypto.ro, NoCash.ro, Clutch.co. 60+ ecosystem partners.",
+      },
     ],
   }),
   component: () => (
-    <div style={{ background: '#0a0e1a', minHeight: '100vh' }}>
+    <div style={{ background: "#0a0e1a", minHeight: "100vh" }}>
       <Navigation />
       <main>
         <Partners />
@@ -21,4 +25,4 @@ export const Route = createFileRoute('/media')({
       <Footer />
     </div>
   ),
-})
+});

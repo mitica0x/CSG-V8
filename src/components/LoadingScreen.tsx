@@ -1,8 +1,8 @@
-import { motion, AnimatePresence } from 'motion/react'
+import { motion, AnimatePresence } from "motion/react";
 
 interface Props {
-  isVisible: boolean
-  onComplete: () => void
+  isVisible: boolean;
+  onComplete: () => void;
 }
 
 export default function LoadingScreen({ isVisible, onComplete }: Props) {
@@ -11,16 +11,17 @@ export default function LoadingScreen({ isVisible, onComplete }: Props) {
       {isVisible && (
         <motion.div
           className="fixed inset-0 z-[9999] flex items-center justify-center"
-          style={{ background: '#09090b' }}
+          style={{ background: "#09090b" }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
           onAnimationComplete={onComplete}
         >
           {/* Radial glow background */}
           <div
             className="absolute inset-0"
             style={{
-              background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(24,180,212,0.08) 0%, transparent 70%)',
+              background:
+                "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(24,180,212,0.08) 0%, transparent 70%)",
             }}
           />
 
@@ -41,35 +42,39 @@ export default function LoadingScreen({ isVisible, onComplete }: Props) {
               <span
                 className="text-5xl font-semibold select-none"
                 style={{
-                  fontFamily: 'Geist, sans-serif',
-                  letterSpacing: '-0.02em',
+                  fontFamily: "Geist, sans-serif",
+                  letterSpacing: "-0.02em",
                 }}
               >
-                <span style={{ color: '#e4e4e7' }}>Coin</span>
-                <span style={{ color: '#18b4d4' }}>Siglieri</span>
+                <span style={{ color: "#e4e4e7" }}>Coin</span>
+                <span style={{ color: "#18b4d4" }}>Siglieri</span>
               </span>
             </motion.div>
 
             {/* Progress bar */}
             <motion.div
               className="h-px rounded-full"
-              style={{ background: 'rgba(255,255,255,0.08)', width: 220 }}
+              style={{ background: "rgba(255,255,255,0.08)", width: 220 }}
             >
               <motion.div
                 className="h-full rounded-full"
-                style={{ background: '#18b4d4' }}
-                initial={{ width: '0%' }}
-                animate={{ width: '100%' }}
-                transition={{ duration: 0.9, ease: 'easeInOut', delay: 0.2 }}
+                style={{ background: "#18b4d4" }}
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 0.9, ease: "easeInOut", delay: 0.2 }}
                 onAnimationComplete={() => {
-                  setTimeout(onComplete, 150)
+                  setTimeout(onComplete, 150);
                 }}
               />
             </motion.div>
 
             <motion.p
               className="text-xs uppercase"
-              style={{ color: '#71717a', letterSpacing: '0.22em', fontFamily: 'Geist Mono, monospace' }}
+              style={{
+                color: "#71717a",
+                letterSpacing: "0.22em",
+                fontFamily: "Geist Mono, monospace",
+              }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
@@ -80,5 +85,5 @@ export default function LoadingScreen({ isVisible, onComplete }: Props) {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }
