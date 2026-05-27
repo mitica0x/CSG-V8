@@ -5,7 +5,7 @@ import ProductMark from "../ProductMark";
 const DASHBOARD_URL = "https://app.coinsiglieri.com";
 
 type Status = "live" | "coming" | "in-dev";
-type Product = "c0insiglieri" | "ax0n" | "sc0rx";
+type Product = "c0insiglieri" | "ax0n";
 
 type Card = {
   product: Product;
@@ -30,7 +30,7 @@ const cards: Card[] = [
     statusLabel: "LIVE",
     tagline: "Market intelligence for exchanges.",
     body: "Know what the competition is doing. Know where the EU gaps are. Automated. Always current.",
-    price: "$499/month",
+    price: "$699/month",
     meta: "Live. Automated. Now.",
     ctaLabel: "OPEN THE DASHBOARD →",
     ctaHref: DASHBOARD_URL,
@@ -46,18 +46,6 @@ const cards: Card[] = [
     tag: "Signal · Route · Execute",
     ctaLabel: "FOLLOW THE BUILD →",
     ctaHref: "https://ax0n.run",
-    ctaVariant: "outline",
-  },
-  {
-    product: "sc0rx",
-    accent: "#6366f1",
-    status: "in-dev",
-    statusLabel: "IN DEV",
-    tagline: "Every exchange has a score.",
-    body: "Not all of them want you to see it.",
-    tag: "Algorithmic. Independent. Transparent.",
-    ctaLabel: "FOLLOW THE BUILD →",
-    ctaHref: "https://sc0rx.com",
     ctaVariant: "outline",
   },
 ];
@@ -320,13 +308,13 @@ export default function Stack() {
               lineHeight: 1.15,
             }}
           >
-            Three products. One stack.
+            Two products. One stack.
           </h2>
         </div>
 
         {/* Grid: 1px separator lines achieved via background showing through 1px gap */}
         <div
-          className="grid grid-cols-1 md:grid-cols-3"
+          className="grid grid-cols-1 md:grid-cols-2"
           style={{
             background: "rgba(255,255,255,0.07)",
             gap: 1,

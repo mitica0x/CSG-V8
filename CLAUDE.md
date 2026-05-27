@@ -85,7 +85,7 @@ Red #ff4d6d = N0VA/TRUE alerts/system errors
 Fonts: Geist + Geist Mono (instalat, self-hosted)
 Nav LOCKED: STATUS, EVENTS, Ask C0insiglieri, HISTORY, N0VA
 Tagline LOCKED: ALL SIGNAL. 0 GUESS.
-Preț LOCKED: $499/lună
+Preț LOCKED: $699/lună
 
 Link rule (global): orice link/URL/text subliniat în app = clickable + tab nou. Fără excepții.
 
