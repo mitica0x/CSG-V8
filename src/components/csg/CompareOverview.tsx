@@ -1,17 +1,16 @@
 import { motion } from "motion/react";
-import { Wrench, RefreshCw, BarChart3, ShieldCheck } from "lucide-react";
+import { Settings, RefreshCw, BarChart2, Shield } from "lucide-react";
 
-// /compare → Overview block. Hero copy + trust band. The 5 weighted pillars
-// from the scoring methodology are referenced briefly here (the full table
-// is intentionally NOT on this page — user dropped the Methodology tab).
+// /compare → Overview block. Hero copy + 4-item trust band with vertical
+// dividers between items.
 
 const SOFT = [0.22, 1, 0.36, 1] as const;
 
 const TRUST = [
-  { Icon: Wrench,       label: "Hands-on testing" },
-  { Icon: RefreshCw,    label: "Review cycle · 30 days" },
-  { Icon: BarChart3,    label: "Methodology · 5 weighted pillars" },
-  { Icon: ShieldCheck,  label: "Editorial independence" },
+  { Icon: Settings,  label: "Hands-on testing" },
+  { Icon: RefreshCw, label: "30-day review cycle" },
+  { Icon: BarChart2, label: "5 weighted pillars" },
+  { Icon: Shield,    label: "Editorial independence" },
 ];
 
 export default function CompareOverview() {
@@ -59,28 +58,28 @@ export default function CompareOverview() {
         transition={{ duration: 0.5, ease: SOFT, delay: 0.1 }}
         style={{
           fontFamily: "Geist, sans-serif",
-          fontSize: 17,
+          fontSize: 15,
           lineHeight: 1.55,
-          color: "#a1a1aa",
+          color: "#71717a",
           maxWidth: 720,
-          marginBottom: 28,
+          marginBottom: 32,
         }}
       >
-        Scored by algorithm. Not by who pays us. The featured slot is editorial real estate —
-        commercial, disclosed, and scored independently of the placement.
+        Scored by algorithm. Not by who pays us. Featured slot is editorial, not commercial.
       </motion.p>
 
-      {/* Trust band — 4 horizontal items */}
+      {/* Trust band — 4 horizontal items with vertical dividers between them */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: 16,
-          padding: "20px 24px",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          alignItems: "center",
           background: "#0f1422",
           border: "0.5px solid rgba(255,255,255,0.07)",
           borderRadius: 3,
+          overflow: "hidden",
         }}
+        className="trust-band"
       >
         {TRUST.map(({ Icon, label }, i) => (
           <motion.div
@@ -93,17 +92,37 @@ export default function CompareOverview() {
               display: "flex",
               alignItems: "center",
               gap: 10,
+              padding: "18px 20px",
+              borderLeft: i > 0 ? "0.5px solid rgba(255,255,255,0.07)" : "none",
               fontFamily: "Geist Mono, monospace",
               fontSize: 11,
               letterSpacing: "0.06em",
-              color: "#d4d4d8",
+              color: "#a1a1aa",
+              minWidth: 0,
             }}
           >
-            <Icon size={14} strokeWidth={1.75} color="#0dbe82" />
-            {label}
+            <Icon size={16} strokeWidth={1.75} color="#0dbe82" style={{ flexShrink: 0 }} />
+            <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              {label}
+            </span>
           </motion.div>
         ))}
       </div>
+
+      <style>{`
+        @media (max-width: 880px) {
+          .trust-band {
+            grid-template-columns: 1fr 1fr !important;
+          }
+          .trust-band > div:nth-child(3) {
+            border-left: none !important;
+            border-top: 0.5px solid rgba(255,255,255,0.07) !important;
+          }
+          .trust-band > div:nth-child(4) {
+            border-top: 0.5px solid rgba(255,255,255,0.07) !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

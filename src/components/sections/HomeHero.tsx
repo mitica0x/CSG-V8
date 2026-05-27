@@ -117,15 +117,31 @@ export default function HomeHero() {
             Everything in financial markets was built for humans.
           </motion.p>
 
+          {/* Tagline — one of the 4 reserved tagline placements site-wide */}
+          <motion.p
+            {...fade(0.32)}
+            style={{
+              fontFamily: "Geist Mono, monospace",
+              fontSize: 11,
+              fontWeight: 600,
+              color: "#18b4d4",
+              letterSpacing: "0.22em",
+              marginTop: 20,
+              textTransform: "uppercase",
+            }}
+          >
+            All Signal. <span style={{ color: "#0dbe82" }}>0</span> Guess.
+          </motion.p>
+
           {/* Mono tag */}
           <motion.p
-            {...fade(0.36)}
+            {...fade(0.4)}
             style={{
               fontFamily: "Geist Mono, monospace",
               fontSize: 12,
               color: "#71717a",
               letterSpacing: "0.08em",
-              marginTop: 24,
+              marginTop: 16,
             }}
           >
             Crypto · Web3 · Now AI · In the market since 2017

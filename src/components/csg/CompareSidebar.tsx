@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
-import { Info, Trophy, Table, FileText } from "lucide-react";
+import { Info, Trophy, Table, FileText, BarChart2 } from "lucide-react";
 
-// Sticky 4-item sidebar for /compare. Scroll-spy via IntersectionObserver —
+// Sticky 5-item sidebar for /compare. Scroll-spy via IntersectionObserver —
 // updates `active` based on which section is closest to the top of viewport.
 
-export type CompareSection = "overview" | "top-exchanges" | "comparison-table" | "reviews";
+export type CompareSection =
+  | "overview"
+  | "top-exchanges"
+  | "comparison-table"
+  | "reviews"
+  | "methodology";
 
 const ITEMS: { id: CompareSection; label: string; Icon: typeof Info }[] = [
-  { id: "overview",          label: "Overview",         Icon: Info },
-  { id: "top-exchanges",     label: "Top Exchanges",    Icon: Trophy },
-  { id: "comparison-table",  label: "Comparison Table", Icon: Table },
-  { id: "reviews",           label: "Exchange Reviews", Icon: FileText },
+  { id: "overview",         label: "Overview",         Icon: Info },
+  { id: "top-exchanges",    label: "Top Exchanges",    Icon: Trophy },
+  { id: "comparison-table", label: "Comparison Table", Icon: Table },
+  { id: "reviews",          label: "Exchange Reviews", Icon: FileText },
+  { id: "methodology",      label: "Methodology",      Icon: BarChart2 },
 ];
 
 const SNAP = "cubic-bezier(0.16, 1, 0.3, 1)";

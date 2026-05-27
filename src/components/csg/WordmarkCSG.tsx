@@ -7,6 +7,18 @@ interface Props {
   style?: React.CSSProperties;
 }
 
+// Public site brand: "Coin" in primary text + "Siglieri" in cyan. The single
+// source of truth for the brand mark on coinsiglieri.com — anywhere this
+// renders, the colour split is locked.
+export function CoinSiglieri({ className, style }: Props) {
+  return (
+    <span className={className} style={style}>
+      <span style={{ color: "#e4e4e7" }}>Coin</span>
+      <span style={{ color: "#18b4d4" }}>Siglieri</span>
+    </span>
+  );
+}
+
 export function C0insiglieri({ className, style }: Props) {
   return (
     <span className={className} style={style}>

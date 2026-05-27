@@ -7,11 +7,11 @@ import BybitFeaturedCard from "@/components/csg/BybitFeaturedCard";
 import ExchangeListRow from "@/components/csg/ExchangeListRow";
 import CompareTable from "@/components/csg/CompareTable";
 import ExchangeReviewBlock from "@/components/csg/ExchangeReviewBlock";
+import CompareMethodology from "@/components/csg/CompareMethodology";
 import { EXCHANGES } from "@/data/exchanges";
 
-// /compare — 4-section sidebar layout (Overview · Top Exchanges · Comparison
-// Table · Exchange Reviews). The Methodology tab from the original 5-section
-// spec is deliberately out of scope here per the latest brief.
+// /compare — 5-section sidebar layout: Overview · Top Exchanges · Comparison
+// Table · Exchange Reviews · Methodology.
 
 export const Route = createFileRoute("/compare")({
   head: () => ({
@@ -129,6 +129,9 @@ function ComparePage() {
                 ))}
               </div>
             </section>
+
+            {/* Section 5 — Methodology */}
+            <CompareMethodology />
           </div>
         </div>
       </main>

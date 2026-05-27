@@ -156,12 +156,12 @@ export default function ExchangeReviewBlock({ exchange }: { exchange: Exchange }
       id={`review-${exchange.id}`}
     >
       {/* Header */}
-      <header style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 24, flexWrap: "wrap" }}>
+      <header style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 24, flexWrap: "wrap" }}>
         <img
           src={`https://logo.clearbit.com/${exchange.domain}`}
           alt={exchange.name}
-          width={48}
-          height={48}
+          width={56}
+          height={56}
           loading="lazy"
           style={{ borderRadius: 3, background: "#0a0e1c", flexShrink: 0 }}
           onError={(e) => ((e.currentTarget as HTMLImageElement).style.visibility = "hidden")}

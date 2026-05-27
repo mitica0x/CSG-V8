@@ -13,12 +13,14 @@ import { Route as TeamRouteImport } from './routes/team'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as NewsRouteImport } from './routes/news'
 import { Route as MediaRouteImport } from './routes/media'
 import { Route as FindMyExchangeRouteImport } from './routes/find-my-exchange'
 import { Route as CryptoPosRouteImport } from './routes/crypto-pos'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CompetitionRouteImport } from './routes/competition'
 import { Route as CompareRouteImport } from './routes/compare'
+import { Route as CardsRouteImport } from './routes/cards'
 import { Route as AdvertiseRouteImport } from './routes/advertise'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
@@ -42,6 +44,11 @@ const ProductsRoute = ProductsRouteImport.update({
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MediaRoute = MediaRouteImport.update({
@@ -74,6 +81,11 @@ const CompareRoute = CompareRouteImport.update({
   path: '/compare',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CardsRoute = CardsRouteImport.update({
+  id: '/cards',
+  path: '/cards',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdvertiseRoute = AdvertiseRouteImport.update({
   id: '/advertise',
   path: '/advertise',
@@ -99,12 +111,14 @@ const BlogBestMicarLicensedCryptoExchangesEu2026Route =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/advertise': typeof AdvertiseRoute
+  '/cards': typeof CardsRoute
   '/compare': typeof CompareRoute
   '/competition': typeof CompetitionRoute
   '/contact': typeof ContactRoute
   '/crypto-pos': typeof CryptoPosRoute
   '/find-my-exchange': typeof FindMyExchangeRoute
   '/media': typeof MediaRoute
+  '/news': typeof NewsRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
@@ -115,12 +129,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/advertise': typeof AdvertiseRoute
+  '/cards': typeof CardsRoute
   '/compare': typeof CompareRoute
   '/competition': typeof CompetitionRoute
   '/contact': typeof ContactRoute
   '/crypto-pos': typeof CryptoPosRoute
   '/find-my-exchange': typeof FindMyExchangeRoute
   '/media': typeof MediaRoute
+  '/news': typeof NewsRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
@@ -132,12 +148,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/advertise': typeof AdvertiseRoute
+  '/cards': typeof CardsRoute
   '/compare': typeof CompareRoute
   '/competition': typeof CompetitionRoute
   '/contact': typeof ContactRoute
   '/crypto-pos': typeof CryptoPosRoute
   '/find-my-exchange': typeof FindMyExchangeRoute
   '/media': typeof MediaRoute
+  '/news': typeof NewsRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
@@ -150,12 +168,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/advertise'
+    | '/cards'
     | '/compare'
     | '/competition'
     | '/contact'
     | '/crypto-pos'
     | '/find-my-exchange'
     | '/media'
+    | '/news'
     | '/pricing'
     | '/products'
     | '/services'
@@ -166,12 +186,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/advertise'
+    | '/cards'
     | '/compare'
     | '/competition'
     | '/contact'
     | '/crypto-pos'
     | '/find-my-exchange'
     | '/media'
+    | '/news'
     | '/pricing'
     | '/products'
     | '/services'
@@ -182,12 +204,14 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/advertise'
+    | '/cards'
     | '/compare'
     | '/competition'
     | '/contact'
     | '/crypto-pos'
     | '/find-my-exchange'
     | '/media'
+    | '/news'
     | '/pricing'
     | '/products'
     | '/services'
@@ -199,12 +223,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdvertiseRoute: typeof AdvertiseRoute
+  CardsRoute: typeof CardsRoute
   CompareRoute: typeof CompareRoute
   CompetitionRoute: typeof CompetitionRoute
   ContactRoute: typeof ContactRoute
   CryptoPosRoute: typeof CryptoPosRoute
   FindMyExchangeRoute: typeof FindMyExchangeRoute
   MediaRoute: typeof MediaRoute
+  NewsRoute: typeof NewsRoute
   PricingRoute: typeof PricingRoute
   ProductsRoute: typeof ProductsRoute
   ServicesRoute: typeof ServicesRoute
@@ -241,6 +267,13 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/media': {
@@ -285,6 +318,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CompareRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cards': {
+      id: '/cards'
+      path: '/cards'
+      fullPath: '/cards'
+      preLoaderRoute: typeof CardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advertise': {
       id: '/advertise'
       path: '/advertise'
@@ -319,12 +359,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdvertiseRoute: AdvertiseRoute,
+  CardsRoute: CardsRoute,
   CompareRoute: CompareRoute,
   CompetitionRoute: CompetitionRoute,
   ContactRoute: ContactRoute,
   CryptoPosRoute: CryptoPosRoute,
   FindMyExchangeRoute: FindMyExchangeRoute,
   MediaRoute: MediaRoute,
+  NewsRoute: NewsRoute,
   PricingRoute: PricingRoute,
   ProductsRoute: ProductsRoute,
   ServicesRoute: ServicesRoute,

@@ -113,7 +113,7 @@ export default function BybitFeaturedCard({ exchange }: { exchange: Exchange }) 
           >
             #{1}
           </p>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 14 }}>
             <img
               src={`https://logo.clearbit.com/${exchange.domain}`}
               alt={exchange.name}
@@ -173,11 +173,14 @@ export default function BybitFeaturedCard({ exchange }: { exchange: Exchange }) 
           </div>
         </div>
 
-        {/* RIGHT — metrics + CTA */}
+        {/* RIGHT — metrics + understated CTA */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10, minWidth: 0 }}>
           <Vital label="24H VOL" value={BYBIT_VITALS.vol24h.value} note={BYBIT_VITALS.vol24h.delta} noteColor={EMERALD} />
           <Vital label="SPREAD BTC" value={BYBIT_VITALS.spreadBtc.value} note={BYBIT_VITALS.spreadBtc.note} noteColor={LIME} />
           <Vital label="UPTIME 90D" value={BYBIT_VITALS.uptime90d.value} note={BYBIT_VITALS.uptime90d.note} noteColor={EMERALD} />
+
+          {/* Cyan text-link CTA — understated by design; the featured-rust
+              border carries the placement weight, the link is the conversion. */}
           <a
             href={exchange.affiliateUrl}
             target="_blank"
@@ -186,35 +189,33 @@ export default function BybitFeaturedCard({ exchange }: { exchange: Exchange }) 
               marginTop: 10,
               display: "inline-flex",
               alignItems: "center",
-              gap: 8,
-              padding: "10px 14px",
-              background: RUST,
-              color: "#080b16",
-              fontFamily: "Geist, sans-serif",
-              fontSize: 13,
-              fontWeight: 700,
-              letterSpacing: "0.01em",
-              borderRadius: 3,
+              gap: 6,
+              fontFamily: "Geist Mono, monospace",
+              fontSize: 12,
+              fontWeight: 600,
+              letterSpacing: "0.04em",
+              color: "#18b4d4",
               textDecoration: "none",
-              justifyContent: "center",
-              transition: "background 200ms cubic-bezier(0.22, 1, 0.36, 1)",
+              transition: "color 150ms cubic-bezier(0.16, 1, 0.3, 1)",
             }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#f08446")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = RUST)}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#22c4e5")}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#18b4d4")}
           >
-            Visit {exchange.name} <ArrowUpRight size={13} strokeWidth={2.25} />
+            Visit {exchange.name} <ArrowUpRight size={12} strokeWidth={2.25} />
           </a>
+
+          {/* Disclosure — own line, below CTA, never inside button */}
           <p
             style={{
+              marginTop: 8,
               fontFamily: "Geist Mono, monospace",
               fontSize: 9,
               color: "#52525b",
               letterSpacing: "0.06em",
-              marginTop: 2,
-              textAlign: "center",
+              lineHeight: 1.5,
             }}
           >
-            Sponsored · CTR 24h {BYBIT_VITALS.ctr24h} · Editorial score independent
+            Sponsored by Bybit · CTR 24h {BYBIT_VITALS.ctr24h} · Editorial score independent
           </p>
         </div>
       </div>
@@ -320,7 +321,7 @@ function MiniBar({
   delay: number;
 }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "120px 1fr 32px", gap: 10, alignItems: "center", minWidth: 0 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "100px 1fr 32px", gap: 12, alignItems: "center", minWidth: 0 }}>
       <span
         style={{
           fontFamily: "Geist Mono, monospace",

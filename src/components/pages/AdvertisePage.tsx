@@ -193,6 +193,24 @@ function Hero() {
           Independent intelligence. Algorithmic scoring. Commercial placement available — and
           clearly disclosed when it's there.
         </motion.p>
+
+        {/* Tagline — one of the 4 reserved tagline placements site-wide */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, ease: SOFT, delay: 0.16 }}
+          style={{
+            marginTop: 24,
+            fontFamily: "Geist Mono, monospace",
+            fontSize: 11,
+            fontWeight: 600,
+            color: "#18b4d4",
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+          }}
+        >
+          All Signal. <span style={{ color: "#0dbe82" }}>0</span> Guess.
+        </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

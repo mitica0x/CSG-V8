@@ -52,7 +52,7 @@ export default function CompareTable({ exchanges }: { exchanges: Exchange[] }) {
           borderBottom: "0.5px solid rgba(255,255,255,0.07)",
           position: "sticky",
           top: 64,
-          zIndex: 1,
+          zIndex: 10,
         }}
       >
         {HEAD.map((h) => (
@@ -108,8 +108,8 @@ export default function CompareTable({ exchanges }: { exchanges: Exchange[] }) {
                 <img
                   src={`https://logo.clearbit.com/${ex.domain}`}
                   alt={ex.name}
-                  width={22}
-                  height={22}
+                  width={24}
+                  height={24}
                   loading="lazy"
                   style={{ borderRadius: 3, background: "#0a0e1c", flexShrink: 0 }}
                   onError={(e) => ((e.currentTarget as HTMLImageElement).style.visibility = "hidden")}
